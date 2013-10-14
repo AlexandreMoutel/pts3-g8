@@ -42,6 +42,7 @@ public Button ajouter = null;
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.ajout, menu);
+		//Modif inutile
 		return true;
 	}
 
