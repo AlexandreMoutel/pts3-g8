@@ -36,6 +36,7 @@
         android:layout_below="@+id/saisieAjout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Ajouter" />
+        android:text="@string/ajouter"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>
