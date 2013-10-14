@@ -15,6 +15,8 @@ public TextView titre = null;
 public EditText saisie = null;
 public Button ajouter = null;
 
+//coucou
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
