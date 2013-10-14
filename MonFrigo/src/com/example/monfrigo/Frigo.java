@@ -11,6 +11,7 @@ public class Frigo {
 		leFrigo = new ArrayList<Aliment>();
 	}
 	
+	//gldhgjd
 	public void ajouterAliment(Aliment leJambon){
 		leFrigo.add(leJambon);
 	}
