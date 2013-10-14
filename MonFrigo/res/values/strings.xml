@@ -9,5 +9,6 @@
     <string name="ajout_d_apos_un_aliment_dans_le_frigo">Ajout d&amp;apos;un aliment dans le frigo</string>
     <string name="title_activity_ajout">Ajout</string>
     <string name="ajouter_un_aliment">Ajouter un aliment</string>
+    <string name="nameAliment">Nom de l\'aliment</string>
 
 </resources>
