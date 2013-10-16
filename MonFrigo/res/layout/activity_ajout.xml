@@ -8,27 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Ajout" >
 
+    <Button
+        android:id="@+id/buttonAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Ajouter" />
+
     <EditText
         android:id="@+id/saisieAjout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titreAjout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:ems="10" android:inputType="text">
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/buttonAjout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/saisieAjout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/ajouter"
-        tools:ignore="HardcodedText" />
+        android:ems="10"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/titreAjout"
@@ -36,7 +32,61 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
-        android:text="@string/nameAliment" />
+        android:layout_marginTop="28dp"
+        android:text="@string/ajouter_un_aliment" />
+
+    <TextView
+        android:id="@+id/afficheQuantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saisieAjout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Ajouter la date de péremption" />
+
+    <EditText
+        android:id="@+id/datePerem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/saisieAjout"
+        android:layout_below="@+id/afficheQuantite"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/afficheNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datePerem"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Quantité" />
+
+    <EditText
+        android:id="@+id/quantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/datePerem"
+        android:layout_below="@+id/afficheNom"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/afficheType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantite"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Type du produit :" />
+
+    <EditText
+        android:id="@+id/typeProd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quantite"
+        android:layout_below="@+id/afficheType"
+        android:ems="10"
+        android:inputType="text" />
 
 </RelativeLayout>

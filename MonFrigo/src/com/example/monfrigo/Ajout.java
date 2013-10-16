@@ -11,33 +11,83 @@ import android.widget.TextView;
 
 
 public class Ajout extends Activity {
-public TextView titre = null;
-public EditText saisie = null;
+//Bouton
 public Button ajouter = null;
+//
 
-//coucou
+//Nom produit 
+public EditText nomProduit = null;
+public TextView leProduit = null;
+//
+
+//Date Péremption
+public EditText editDatePerem = null;
+public TextView laDateDePerem = null;
+//
+
+//Type de produit
+public EditText editTypeProduit = null;
+public TextView leTypeDeProduit = null;
+//
+
+//Quantité
+public EditText quantite = null;
+public int laQuantite;
+//
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ajout);
-
-
-		TextView titre = (TextView) findViewById(R.id.titreAjout);
-		EditText saisie = (EditText) findViewById(R.id.saisieAjout);
-		Button ajouter = (Button) findViewById(R.id.buttonAjout);
 		
+		//Je créer un frigo parce que voila me faut un frigo
+		final Frigo leBienRempli = new Frigo();
+		//
 		
+		//On initialize les EditText
+		nomProduit = (EditText) findViewById(R.id.saisieAjout);
+		editDatePerem = (EditText) findViewById(R.id.datePerem);
+		editTypeProduit = (EditText) findViewById(R.id.typeProd);
+		quantite = (EditText) findViewById(R.id.quantite);
+		//
+		
+		//On initialize le bouton
+		ajouter = (Button) findViewById(R.id.buttonAjout);
+		//
+		
+		//Lorsque que l'on appuie sur le bouton ajouter
 		ajouter.setOnClickListener(new View.OnClickListener() {
-
 				public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(Ajout.this, Liste.class);
-				startActivity(intent);
+					
+					//On récupère la valeur des EditText
+					leProduit.setText(nomProduit.getText());
+					leTypeDeProduit.setText(editTypeProduit.getText());
+					laDateDePerem.setText(editDatePerem.getText());
+					laQuantite = Integer.parseInt(quantite.getText().toString());
+					//
+					
+					//On Crée un aliment et on l'ajoute au frigo
+					leBienRempli.ajouterAliment(new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite));
+					//
+					
+					//On crée la nouvelle activité
+					Intent intent = new Intent(Ajout.this, Liste.class);
+					//
+					
+					//On lui transmet en paramètre les valeurs de l'aliment ajouté.
+					Bundle tousLesString = new Bundle();
+					tousLesString.putCharSequence("nom", leProduit.getText());
+					tousLesString.putCharSequence("type", leTypeDeProduit.getText());
+					tousLesString.putCharSequence("date", laDateDePerem.getText());
+					tousLesString.putInt("quantite", laQuantite);
+					intent.putExtras(tousLesString);
+					//
+					
+					//On démarre l'activité
+					startActivity(intent);
+					//
 			}
-		
 		});
-			
 			
 	}
 	@Override

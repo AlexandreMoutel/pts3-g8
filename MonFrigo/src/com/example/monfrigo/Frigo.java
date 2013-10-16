@@ -6,12 +6,11 @@ import java.util.List;
 public class Frigo {
 	private List<Aliment> leFrigo;
 	
-	public Frigo(List<Aliment> leFrigo){
+	public Frigo(){
 		super();
 		leFrigo = new ArrayList<Aliment>();
 	}
 	
-	//gldhgjd
 	public void ajouterAliment(Aliment leJambon){
 		leFrigo.add(leJambon);
 	}

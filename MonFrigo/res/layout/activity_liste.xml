@@ -9,9 +9,38 @@
     tools:context=".Liste" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/afficheQuantite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/afficheNom"
+        android:layout_below="@+id/afficheNom"
+        android:layout_marginTop="66dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/afficheDateDePeremption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/afficheQuantite"
+        android:layout_below="@+id/afficheType"
+        android:layout_marginTop="89dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/afficheType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/afficheQuantite"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/afficheNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:text="@string/hello_world" />
 
 </RelativeLayout>
