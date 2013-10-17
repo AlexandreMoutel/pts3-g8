@@ -10,5 +10,10 @@
     <string name="title_activity_ajout">Ajout</string>
     <string name="ajouter_un_aliment">Ajouter un aliment</string>
     <string name="nameAliment">Nom de l\'aliment</string>
+    <string name="recettes">Recettes</string>
+    <string name="exit">Exit</string>
+    <string name="reglages">Reglages</string>
+    <string name="liste">Liste</string>
+    <string name="mes_frigos">Mes Frigos</string>
 
 </resources>

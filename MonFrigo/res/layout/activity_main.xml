@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="200dp"
-        android:text="Ajouter" />
+        android:text="@string/ajouter" />
 
     <Button
         android:id="@+id/buttonMonFrigo"
@@ -26,7 +26,8 @@
         android:layout_alignBottom="@+id/versAjout"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/versAjout"
-        android:text="Mes Frigos" />
+        android:text="@string/mes_frigos"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonListe"
@@ -35,7 +36,7 @@
         android:layout_alignLeft="@+id/versAjout"
         android:layout_below="@+id/versAjout"
         android:layout_marginTop="20dp"
-        android:text="Liste" />
+        android:text="@string/liste" />
 
     <Button
         android:id="@+id/buttonRecettes"
@@ -44,7 +45,7 @@
         android:layout_alignBaseline="@+id/buttonListe"
         android:layout_alignBottom="@+id/buttonListe"
         android:layout_alignLeft="@+id/buttonMonFrigo"
-        android:text="Recettes" />
+        android:text="@string/recettes" />
 
     <Button
         android:id="@+id/buttonReglages"
@@ -53,7 +54,7 @@
         android:layout_alignRight="@+id/buttonListe"
         android:layout_below="@+id/buttonListe"
         android:layout_marginTop="20dp"
-        android:text="Reglages" />
+        android:text="@string/reglages" />
 
     <Button
         android:id="@+id/buttonExit"
@@ -62,6 +63,6 @@
         android:layout_alignBaseline="@+id/buttonReglages"
         android:layout_alignBottom="@+id/buttonReglages"
         android:layout_alignLeft="@+id/buttonRecettes"
-        android:text="Exit" />
+        android:text="@string/exit" />
 
 </RelativeLayout>
