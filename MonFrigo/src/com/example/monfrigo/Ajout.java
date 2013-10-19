@@ -73,7 +73,12 @@ public class Ajout extends Activity {
 					laDateDePerem = editDatePerem.getText().toString();
 					laQuantite = Integer.parseInt(quantite.getText().toString());
 
-					//On Crée un aliment et on l'ajoute au frigo PARTIE A FAIRE
+					//On Crée un aliment et on l'ajoute au frigo
+					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
+					MesFrigos monFrigo = new MesFrigos();
+					monFrigo.ajouterAliment(monAliment);
+					monFrigo.setMonFrigo(monFrigo);
+					
 					
 					
 					//Le message toast apparait et on reste sur la vue d'ajout

@@ -21,6 +21,6 @@ public class Frigo {
 
 	@Override
 	public String toString() {
-		return "Frigo [leFrigo=" + leFrigo.get(0) + "]";
+		return "Frigo [leFrigo=" + leFrigo + "]";
 	}
 }

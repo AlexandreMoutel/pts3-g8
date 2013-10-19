@@ -23,7 +23,7 @@ public class Liste extends Activity {
 	    // monFrigo.ajouterAliment(new Aliment("Steack", "Viande", "12-12-2012", 2));
 	     //monFrigo.ajouterAliment(new Aliment("Pates", "Nutriments", "12-12-2012", 400));
 	     
-	     List<Aliment> leFrigo = monFrigo.getLeFrigo();
+	     List<Aliment> leFrigo = monFrigo.getMonFrigo();
 	     //List<Aliment> leFrigo = new ArrayList<Aliment>();
 	          
 	     ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);

@@ -1,14 +1,23 @@
 package com.example.monfrigo;
 
+import java.util.List;
+
+import android.util.Log;
+
 public class MesFrigos extends Frigo {
 	
-	public static Frigo monFrigo;
+	private static Frigo monFrigo;
 	
 	public void creerFrigo(){
-		monFrigo = new Frigo();
+		setMonFrigo(new Frigo());
 	}
-	
-	public Frigo getMesFrigos(){
-		return monFrigo;
+
+	public List<Aliment> getMonFrigo() {
+		return  monFrigo.getLeFrigo();
+	}
+
+	public static void setMonFrigo(Frigo monFrigoRecu) {
+		monFrigo = monFrigoRecu;
+		Log.e("DEBUG", "Contenu de la liste : "+monFrigo);
 	}
 }
