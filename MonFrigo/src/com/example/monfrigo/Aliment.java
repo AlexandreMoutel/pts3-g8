@@ -1,37 +1,44 @@
 package com.example.monfrigo;
 
-import java.util.Date;
-
-import android.widget.TextView;
 
 public class Aliment {
 
-	private TextView nom, type, date;
+	private String nom, type, date;
 	private int quantite;
 	
-	public Aliment(TextView nom, TextView type, TextView date, int quantite) {
+	public Aliment(String nom, String type, String date, int quantite) {
 		super();
 		this.nom = nom;
 		this.type = type;
 		this.date = date;
 		this.quantite = quantite;
 	}
+	
+	public Aliment(String nom, String type, String date, String quantite) {
+		super();
+		this.nom = nom;
+		this.type = type;
+		this.date = date;
+	}
 
-	public TextView getNom() {
+	public String getNom() {
 		return nom;
 	}
 
-	public TextView getType() {
+	public String getType() {
 		return type;
 	}
 
-	public TextView getDate() {
+	public String getDate() {
 		return date;
 	}
 
 	public int getQuantite() {
 		return quantite;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return ""+nom+"   "+type+"   "+date+"   "+quantite;
+	}
 }

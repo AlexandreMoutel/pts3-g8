@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="ajout">Добавление</string>
+    <string name="ajout_d_apos_un_aliment_dans_le_frigo">Добавление еда в холодильнике</string>
+    <string name="ajouter">добавлять</string>
+    <string name="ajouter_la_date_de_p_remption">Добавить срока годности</string>
+    <string name="ajouter_un_aliment">Добавить еды</string>
+    <string name="app_name">Мой холодильник</string>
+    <string name="exit">Выход</string>
+    <string name="liste">список</string>
+    <string name="mes_frigos">Мой Холодильники</string>
+    <string name="nameAliment">Название продукта</string>
+    <string name="quantit_">количество</string>
+    <string name="recettes">доход</string>
+    <string name="reglages">настройки</string>
+    <string name="title_activity_ajout">Добавление</string>
+    <string name="title_activity_liste">список</string>
+    <string name="type_du_produit_">Тип продукта :</string>
+
+</resources>

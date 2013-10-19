@@ -1,40 +1,35 @@
 package com.example.monfrigo;
 
-import android.os.Bundle;
+import java.util.List;
+
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Liste extends Activity {
-	
-	//On crée des TextView pour récupérer les valeurs que l'on avait passées en paramètre
-	public TextView leNom = null;
-	public TextView leType = null;
-	public TextView laDateDePeremption = null;
-	public TextView laQuantite;
-	//
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_liste);
-		
-		//On initialize les TextView
-		leNom = (TextView) findViewById(R.id.afficheNom);
-		leType = (TextView) findViewById(R.id.afficheType);
-		laDateDePeremption = (TextView) findViewById(R.id.afficheDateDePeremption);
-		laQuantite = (TextView) findViewById(R.id.afficheQuantite);
-		//
-		
-		//On ajoute les informations de l'aliment dans les TextView
-		Bundle jeRecupereTousLesString = this.getIntent().getExtras();
-		leNom.setText(jeRecupereTousLesString.getCharSequence("nom"));
-		leType.setText(jeRecupereTousLesString.getCharSequence("type"));
-		laDateDePeremption.setText(jeRecupereTousLesString.getCharSequence("date"));
-		laQuantite.setText(jeRecupereTousLesString.getInt("quantite"));
-		//
-	}
+     
+     
+	  @Override
+	  public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.activity_liste);
+	     ListView maListe = (ListView) findViewById(R.id.listView_liste);
+	     
+	     MesFrigos monFrigo = new MesFrigos();
+	     //monFrigo.ajouterAliment(new Aliment("Nom", "Type", "Date", "Quantite"));
+	    // monFrigo.ajouterAliment(new Aliment("Jambon", "Viande", "12-12-2012", 4));
+	    // monFrigo.ajouterAliment(new Aliment("Steack", "Viande", "12-12-2012", 2));
+	     //monFrigo.ajouterAliment(new Aliment("Pates", "Nutriments", "12-12-2012", 400));
+	     
+	     List<Aliment> leFrigo = monFrigo.getLeFrigo();
+	     //List<Aliment> leFrigo = new ArrayList<Aliment>();
+	          
+	     ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
+	     maListe.setAdapter(adapter);
+
+	  }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -15,5 +15,10 @@
     <string name="reglages">Reglages</string>
     <string name="liste">Liste</string>
     <string name="mes_frigos">Mes Frigos</string>
+    <string name="ajout">Ajout</string>
+    <string name="ajouter_la_date_de_p_remption">Ajouter la date de péremption</string>
+    <string name="quantit_">Quantité</string>
+    <string name="type_du_produit_">Type du produit :</string>
+    <string name="textview">TextView</string>
 
 </resources>
