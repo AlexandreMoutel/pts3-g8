@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Frigo {
 	private List<Aliment> leFrigo;
+	private String nom;
 	
-	public Frigo(){
+	public Frigo(String nom){
 		super();
 		leFrigo = new ArrayList<Aliment>();
+		this.nom = nom;
 	}
 	
 	public void ajouterAliment(Aliment leJambon){
@@ -17,6 +19,10 @@ public class Frigo {
 
 	public List<Aliment> getLeFrigo() {
 		return leFrigo;
+	}
+	
+	public String getNom(){
+		return nom;
 	}
 
 	@Override

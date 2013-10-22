@@ -1,23 +1,27 @@
 package com.example.monfrigo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.util.Log;
 
-public class MesFrigos extends Frigo {
+public class MesFrigos{
+	private static List<Frigo> mesFrigos;
 	
-	private static Frigo monFrigo;
+	public MesFrigos(){
+		mesFrigos = new ArrayList<Frigo>();
+	}
 	
-	public void creerFrigo(){
-		setMonFrigo(new Frigo());
+	public void ajouterFrigo(String nom){
+		mesFrigos.add(new Frigo(nom));
 	}
-
-	public List<Aliment> getMonFrigo() {
-		return  monFrigo.getLeFrigo();
+	
+	public static Frigo getUnFrigo(String nom){
+		for(Frigo f : mesFrigos){
+			if(f.getNom().equals(nom))
+				return f;
+		}
+		return null;
 	}
-
-	public static void setMonFrigo(Frigo monFrigoRecu) {
-		monFrigo = monFrigoRecu;
-		Log.e("DEBUG", "Contenu de la liste : "+monFrigo);
-	}
+	
 }

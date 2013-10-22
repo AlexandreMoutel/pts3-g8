@@ -56,8 +56,8 @@ public class Ajout extends Activity {
 		//Lorsque que l'on appuie sur le bouton ajouter
 		ajouter.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+				
 				//Vérification si les champs sont bien rempli
-
 				if("".equals(nomProduit.getText().toString()))
 					Toast.makeText(Ajout.this,"Veuillez renseigner le nom de l'aliment.", Toast.LENGTH_LONG).show();
 				else if("".equals(editDatePerem.getText().toString()))
@@ -67,6 +67,7 @@ public class Ajout extends Activity {
 				else if("".equals(quantite.getText().toString()))
 					Toast.makeText(Ajout.this,"Veuillez renseigner la quantité", Toast.LENGTH_LONG).show();
 				else{
+					
 					//On crée l'aliment et on met dans la liste
 					leProduit = nomProduit.getText().toString();
 					leTypeDeProduit = editTypeProduit.getText().toString();
@@ -75,10 +76,7 @@ public class Ajout extends Activity {
 
 					//On Crée un aliment et on l'ajoute au frigo
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
-					MesFrigos monFrigo = new MesFrigos();
-					monFrigo.ajouterAliment(monAliment);
-					monFrigo.setMonFrigo(monFrigo);
-					
+					MesFrigos.getUnFrigo("Frigo1").ajouterAliment(monAliment);
 					
 					
 					//Le message toast apparait et on reste sur la vue d'ajout

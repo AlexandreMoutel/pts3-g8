@@ -17,14 +17,7 @@ public class Liste extends Activity {
 	    setContentView(R.layout.activity_liste);
 	     ListView maListe = (ListView) findViewById(R.id.listView_liste);
 	     
-	     MesFrigos monFrigo = new MesFrigos();
-	     //monFrigo.ajouterAliment(new Aliment("Nom", "Type", "Date", "Quantite"));
-	    // monFrigo.ajouterAliment(new Aliment("Jambon", "Viande", "12-12-2012", 4));
-	    // monFrigo.ajouterAliment(new Aliment("Steack", "Viande", "12-12-2012", 2));
-	     //monFrigo.ajouterAliment(new Aliment("Pates", "Nutriments", "12-12-2012", 400));
-	     
-	     List<Aliment> leFrigo = monFrigo.getMonFrigo();
-	     //List<Aliment> leFrigo = new ArrayList<Aliment>();
+	     List<Aliment> leFrigo = MesFrigos.getUnFrigo("Frigo1").getLeFrigo();
 	          
 	     ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
 	     maListe.setAdapter(adapter);
