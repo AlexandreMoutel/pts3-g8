@@ -30,6 +30,10 @@
             android:name="com.example.monfrigo.Ajout"
             android:label="@string/title_activity_ajout" >
         </activity>
+        <activity
+            android:name="com.example.monfrigo.CreerFrigo"
+            android:label="@string/title_activity_creer_frigo" >
+        </activity>
     </application>
 
 </manifest>
