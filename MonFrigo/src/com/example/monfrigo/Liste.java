@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 public class Liste extends Activity {
      
-     
 	  @Override
 	  public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);

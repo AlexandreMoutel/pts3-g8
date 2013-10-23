@@ -16,6 +16,10 @@ public class Frigo {
 	public void ajouterAliment(Aliment leJambon){
 		leFrigo.add(leJambon);
 	}
+	
+	public void mangerUnAliment(Aliment lePaté){
+		leFrigo.remove(lePaté);
+	}
 
 	public List<Aliment> getLeFrigo() {
 		return leFrigo;
