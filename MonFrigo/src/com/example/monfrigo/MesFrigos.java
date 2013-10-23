@@ -12,8 +12,12 @@ public class MesFrigos{
 		mesFrigos = new ArrayList<Frigo>();
 	}
 	
-	public void ajouterFrigo(String nom){
+	public static void ajouterFrigo(String nom){
 		mesFrigos.add(new Frigo(nom));
+	}
+	
+	public static void supprimerFrigo(String nom){
+		mesFrigos.remove(nom);
 	}
 	
 	public static Frigo getUnFrigo(String nom){
