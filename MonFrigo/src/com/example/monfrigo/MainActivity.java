@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 public class MainActivity extends Activity {
 
 	public ImageButton goAjout = null;
-	public Button frigo = null;
+	public ImageButton frigo = null;
 	public ImageButton liste = null;
 	public Button recette = null;
 	public Button reglage = null;
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		
 		
 		goAjout = (ImageButton) findViewById(R.id.imageButton_ajout);
-		//frigo = (Button) findViewById(R.id.buttonMonFrigo);
+		frigo = (ImageButton) findViewById(R.id.buttonMonFrigo);
 	    liste = (ImageButton) findViewById(R.id.imageButton_liste);
 		//recette = (Button) findViewById(R.id.buttonRecettes);
 		//reglage = (Button) findViewById(R.id.buttonReglages);
