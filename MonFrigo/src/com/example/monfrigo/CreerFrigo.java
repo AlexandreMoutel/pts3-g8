@@ -39,6 +39,7 @@ public class CreerFrigo extends Activity {
 				alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						
+						
 						//Le nom du frigo
 						CharSequence value = input.getText();
 						MesFrigos.ajouterFrigo(value.toString());
