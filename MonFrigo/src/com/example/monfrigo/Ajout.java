@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class Ajout extends Activity {
 	//Bouton
 	public Button ajouter = null;
@@ -76,6 +75,7 @@ public class Ajout extends Activity {
 
 					//On Crée un aliment et on l'ajoute au frigo
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
+					MesFrigos.ajouterFrigo("Frigo1");
 					MesFrigos.getUnFrigo("Frigo1").ajouterAliment(monAliment);
 					
 					
