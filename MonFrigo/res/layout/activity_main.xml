@@ -31,4 +31,13 @@
         android:contentDescription="@string/liste"
         android:src="@android:drawable/ic_menu_sort_by_size" />
 
+    <ImageButton
+        android:id="@+id/buttonMonFrigo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/imageButton_ajout"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_menu_today" 
+        android:contentDescription="@string/frigo"/>
+
 </RelativeLayout>

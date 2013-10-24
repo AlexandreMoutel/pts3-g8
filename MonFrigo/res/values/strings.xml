@@ -22,5 +22,6 @@
     <string name="textview">TextView</string>
     <string name="title_activity_creer_frigo">CreerFrigo</string>
     <string name="new_frigo">Nouveau frigo</string>
+    <string name="frigo">Frigo</string>
 
 </resources>
