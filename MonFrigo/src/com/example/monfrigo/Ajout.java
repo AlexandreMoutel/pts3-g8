@@ -3,6 +3,7 @@ package com.example.monfrigo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -74,9 +75,11 @@ public class Ajout extends Activity {
 					laQuantite = Integer.parseInt(quantite.getText().toString());
 
 					//On Crée un aliment et on l'ajoute au frigo
+					
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
 					MesFrigos.ajouterFrigo("Frigo1");
 					MesFrigos.getUnFrigo("Frigo1").ajouterAliment(monAliment);
+					Log.e("DEBUG", "Contenu liste frigo :"+MesFrigos.getUnFrigo("Frigo1"));
 					
 					
 					//Le message toast apparait et on reste sur la vue d'ajout

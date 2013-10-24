@@ -6,10 +6,9 @@ import java.util.List;
 import android.util.Log;
 
 public class MesFrigos{
-	private static List<Frigo> mesFrigos;
+	private static List<Frigo> mesFrigos = new ArrayList<Frigo>();
 	
 	public MesFrigos(){
-		mesFrigos = new ArrayList<Frigo>();
 	}
 	
 	public static void ajouterFrigo(String nom){
