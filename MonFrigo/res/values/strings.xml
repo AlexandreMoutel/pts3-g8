@@ -24,4 +24,17 @@
     <string name="new_frigo">Nouveau frigo</string>
     <string name="frigo">Frigo</string>
 
+    <string name="autocompletion_ajout">Autocompletion</string>
+	<string-array name="tableau">
+		<item>Patates</item>
+		<item>Bananes</item>
+		<item>Tomates</item>
+		<item>Riz</item>
+		<item>Pâtes</item>
+		<item>Coca-Cola</item>
+		<item>Eau</item>		
+		<item>Haricots Verts</item>
+		<item>Haricots Blancs</item>
+		<item>Ketchup</item>
+	</string-array>
 </resources>
