@@ -94,11 +94,12 @@
         android:text="@string/ajouter" />
 
     <Button
-        android:id="@+id/button_liste"
+        android:id="@+id/button_scanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/buttonAjout"
-        android:layout_alignLeft="@+id/afficheQuantite"
-        android:text="@string/liste" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/afficheNom"
+        android:layout_marginBottom="14dp"
+        android:text="@string/scanner" />
 
 </RelativeLayout>

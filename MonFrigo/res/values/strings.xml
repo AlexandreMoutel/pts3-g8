@@ -23,18 +23,29 @@
     <string name="title_activity_creer_frigo">CreerFrigo</string>
     <string name="new_frigo">Nouveau frigo</string>
     <string name="frigo">Frigo</string>
-
     <string name="autocompletion_ajout">Autocompletion</string>
-	<string-array name="tableau">
-		<item>Patates</item>
-		<item>Bananes</item>
-		<item>Tomates</item>
-		<item>Riz</item>
-		<item>Pâtes</item>
-		<item>Coca-Cola</item>
-		<item>Eau</item>		
-		<item>Haricots Verts</item>
-		<item>Haricots Blancs</item>
-		<item>Ketchup</item>
-	</string-array>
+
+    <string-array name="tableau">
+        <item>Patates</item>
+        <item>Bananes</item>
+        <item>Tomates</item>
+        <item>Riz</item>
+        <item>Pâtes</item>
+        <item>Coca-Cola</item>
+        <item>Eau</item>
+        <item>Haricots Verts</item>
+        <item>Haricots Blancs</item>
+        <item>Ketchup</item>
+    </string-array>
+
+    <string name="title_activity_tab_test">TabTest</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_scan">Scan</string>
+    <string name="scan">Page du scan</string>
+    <string name="scanner">Scanner</string>
+    <string name="title_activity_scanner">Scanner</string>
+    <string name="tri_alpha">Tri alphabétique</string>
+    <string name="tri_ldc">Tri par date de consommation</string>
+    <string name="tri_categorie">Tri par catégorie</string>
+
 </resources>

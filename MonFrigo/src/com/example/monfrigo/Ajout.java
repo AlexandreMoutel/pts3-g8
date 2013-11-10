@@ -12,11 +12,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+import org.apache.cordova.*;
 
 public class Ajout extends Activity {
 	//Bouton
 	public Button ajouter = null;
-	public Button liste = null;
+	public Button scanner = null;
 	//
 
 	//Nom produit 
@@ -70,7 +71,7 @@ public class Ajout extends Activity {
 
 		//On initialise le bouton
 		ajouter = (Button) findViewById(R.id.buttonAjout);
-		liste = (Button) findViewById(R.id.button_liste);
+		scanner = (Button) findViewById(R.id.button_scanner);
 
 
 		//Lorsque que l'on appuie sur le bouton ajouter
@@ -111,13 +112,13 @@ public class Ajout extends Activity {
 				}
 			}
 		});
-
-		liste.setOnClickListener(new View.OnClickListener() {
+		
+		scanner.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				//On crée la nouvelle activité
-				Intent intent = new Intent(Ajout.this, Liste.class);
+				Intent intent = new Intent(Ajout.this, Scanner.class);
 				//On lance l'activité
 				startActivity(intent);
 			}

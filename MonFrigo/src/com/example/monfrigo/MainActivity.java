@@ -1,62 +1,47 @@
 package com.example.monfrigo;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
+import android.app.TabActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-
-public class MainActivity extends Activity {
-
-	public ImageButton goAjout = null;
-	public ImageButton frigo = null;
-	public ImageButton liste = null;
-	public Button recette = null;
-	public Button reglage = null;
-	public Button exit = null;
-	public MesFrigos leGrosFrigo;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		
-		
-		goAjout = (ImageButton) findViewById(R.id.imageButton_ajout);
-		frigo = (ImageButton) findViewById(R.id.buttonMonFrigo);
-	    liste = (ImageButton) findViewById(R.id.imageButton_liste);
-		//recette = (Button) findViewById(R.id.buttonRecettes);
-		//reglage = (Button) findViewById(R.id.buttonReglages);
-		//exit = (Button) findViewById(R.id.buttonExit);
-
-		goAjout.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, Ajout.class);
-				startActivity(intent);
-			}
-		});
-		
-		liste.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent1 = new Intent(MainActivity.this, Liste.class);
-				startActivity(intent1);
-			}
-		});
+import android.widget.TabHost;
+import android.widget.TextView;
+ 
+@SuppressWarnings("deprecation")
+public class MainActivity extends TabActivity {
+ 
+	private TabHost tabHost;
+ 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+ 
+        this.tabHost = getTabHost();
+        
+        setupTab("Ajout", "tab1", new Intent().setClass(this, Ajout.class));
+        setupTab("Liste", "tab2", new Intent().setClass(this, Liste.class));
+        setupTab("Mes Frigos", "tab3", new Intent().setClass(this, Ajout.class));
+        setupTab("Paramètre", "tab4", new Intent().setClass(this, Ajout.class));
+        
+        this.tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
+        
+        
+    }
+ 
+    private void setupTab(String name, String tag, Intent intent) {
+		tabHost.addTab(tabHost.newTabSpec(tag).setIndicator(createTabView(tabHost.getContext(), name)).setContent(intent));
 	}
-
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+ 
+	private static View createTabView(final Context context, final String text) {
+		View view = LayoutInflater.from(context).inflate(R.layout.tab_item, null);
+		TextView tv = (TextView) view.findViewById(R.id.tabsText);
+		tv.setText(text);
+ 
+		return view;
 	}
-
 }	
 
 
