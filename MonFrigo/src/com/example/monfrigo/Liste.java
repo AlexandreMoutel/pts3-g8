@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 
 import android.app.Activity;
 import android.content.Context;
@@ -51,21 +50,6 @@ public class Liste extends Activity {
 		final ListView maListe = (ListView) findViewById(R.id.listView_liste);
 
 		final List<Aliment> leFrigo = MesFrigos.getUnFrigo("Frigo1").getLeFrigo();
-
-		//Aliment de test
-		leFrigo.add(new Aliment("Steack", "Viande", "12/12/2012", 3));
-		leFrigo.add(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
-		leFrigo.add(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
-		leFrigo.add(new Aliment("Truite", "Poisson", "12/11/2012", 3));
-		leFrigo.add(new Aliment("Boeuf", "Viande", "12/11/2012", 3));
-		leFrigo.add(new Aliment("Poisson pané", "Poisson", "12/12/2009", 9));
-		leFrigo.add(new Aliment("Gruyère", "Fromage", "12/09/2010", 3));
-		leFrigo.add(new Aliment("Pates", "Féculent", "12/12/2010", 3));
-		leFrigo.add(new Aliment("Patates", "Féculent", "12/12/2000", 8));
-		leFrigo.add(new Aliment("Eau", "Boisson", "12/12/2999", 99));
-		leFrigo.add(new Aliment("Côte de porc", "Viande", "02/12/2013", 4));
-		leFrigo.add(new Aliment("Lasagne", "Féculent", "12/05/2010", 1));
-		//------------------------------------------------------------------------------
 
 		remplirTableau(leFrigo); //On remplit les tableaux suivant la liste pour faire la hashmap
 

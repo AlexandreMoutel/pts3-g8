@@ -15,7 +15,8 @@
         android:layout_below="@+id/titreAjout"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="text" >
+        android:inputType="text"
+        tools:ignore="LabelFor" >
 
         <requestFocus />
 
@@ -64,7 +65,8 @@
         android:layout_alignLeft="@+id/datePerem"
         android:layout_below="@+id/afficheNom"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/afficheType"
@@ -82,15 +84,15 @@
         android:layout_alignLeft="@+id/quantite"
         android:layout_below="@+id/afficheType"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/buttonAjout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/afficheQuantite"
         android:layout_below="@+id/typeProd"
-        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/ajouter" />
 
     <Button
@@ -98,8 +100,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/afficheNom"
-        android:layout_marginBottom="14dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
         android:text="@string/scanner" />
 
 </RelativeLayout>

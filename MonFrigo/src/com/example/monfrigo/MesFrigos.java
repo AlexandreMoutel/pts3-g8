@@ -2,9 +2,6 @@ package com.example.monfrigo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import android.util.Log;
-
 public class MesFrigos{
 	private static List<Frigo> mesFrigos = new ArrayList<Frigo>();
 	

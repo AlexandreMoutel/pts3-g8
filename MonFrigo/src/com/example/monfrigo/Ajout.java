@@ -1,7 +1,6 @@
 package com.example.monfrigo;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-import org.apache.cordova.*;
 
 public class Ajout extends Activity {
 	//Bouton
@@ -64,7 +62,7 @@ public class Ajout extends Activity {
 
 		//On initialise les EditText
 		nomProduit = (AutoCompleteTextView) findViewById(R.id.saisieAjout);
-		editDatePerem = (DatePicker) findViewById(R.id.datePerem);
+		//editDatePerem = (DatePicker) findViewById(R.id.datePerem);
 		editTypeProduit = (EditText) findViewById(R.id.typeProd);
 		quantite = (EditText) findViewById(R.id.quantite);
 		//
@@ -72,6 +70,19 @@ public class Ajout extends Activity {
 		//On initialise le bouton
 		ajouter = (Button) findViewById(R.id.buttonAjout);
 		scanner = (Button) findViewById(R.id.button_scanner);
+		MesFrigos.ajouterFrigo("Frigo1");
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Steack", "Viande", "12/12/2012", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Truite", "Poisson", "12/11/2012", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Boeuf", "Viande", "12/11/2012", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Poisson pané", "Poisson", "12/12/2009", 9));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Gruyère", "Fromage", "12/09/2010", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Pates", "Féculent", "12/12/2010", 3));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Patates", "Féculent", "12/12/2000", 8));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Eau", "Boisson", "12/12/2999", 99));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Côte de porc", "Viande", "02/12/2013", 4));
+		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Lasagne", "Féculent", "12/05/2010", 1));
 
 
 		//Lorsque que l'on appuie sur le bouton ajouter
@@ -118,9 +129,9 @@ public class Ajout extends Activity {
 			@Override
 			public void onClick(View v) {
 				//On crée la nouvelle activité
-				Intent intent = new Intent(Ajout.this, Scanner.class);
+				//Intent intent = new Intent(Ajout.this, Scanner.class);
 				//On lance l'activité
-				startActivity(intent);
+		//		startActivity(intent);
 			}
 		});
 
