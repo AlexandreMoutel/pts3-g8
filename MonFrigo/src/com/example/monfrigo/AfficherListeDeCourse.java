@@ -29,7 +29,14 @@ public class AfficherListeDeCourse extends Activity {
 		final ListView maListe = (ListView) findViewById(R.id.listView_liste);
 
 		final List<Aliment> laListeDeCourse = ListeDeCourse.getLaBouffeQuiFautAcheter();
-	
+		
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Steack", "Viande", "12/12/2012", 3));
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Truite", "Poisson", "12/11/2012", 3));
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Boeuf", "Viande", "12/11/2012", 3));
+		((ListeDeCourse) laListeDeCourse).ajouterAliment(new Aliment("Poisson pané", "Poisson", "12/12/2009", 9));
+		
 		remplirTableau(laListeDeCourse);
 		
 		aliment = new ArrayList<HashMap<String,Object>>();
