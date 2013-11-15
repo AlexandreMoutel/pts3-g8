@@ -8,9 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AfficherListeDeCourse" >
 
-    <TextView
+     <ListView
+        android:id="@+id/listView_liste"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+        android:layout_height="758dp"
+        android:layout_x="10dp"
+        android:layout_y="32dp" >
+    </ListView>
+    
+     
 </RelativeLayout>
