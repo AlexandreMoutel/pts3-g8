@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk 
+    <uses-sdk
         android:minSdkVersion="18"
         android:targetSdkVersion="18" />
 
@@ -14,7 +14,6 @@
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
-
 
     <application
         android:allowBackup="true"
@@ -58,6 +57,10 @@
         <activity
             android:name="com.example.monfrigo.Scanner"
             android:label="@string/title_activity_scanner" >
+        </activity>
+        <activity
+            android:name="com.example.monfrigo.AfficherListeDeCourse"
+            android:label="@string/title_activity_afficher_liste_de_course" >
         </activity>
     </application>
 

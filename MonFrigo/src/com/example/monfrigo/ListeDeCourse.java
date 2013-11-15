@@ -18,7 +18,7 @@ public class ListeDeCourse {
 		laListeDeBouffe.remove(leBonFoieGras);
 	}
 
-	public List<Aliment> getLaBouffeQuiFautAcheter() {
+	public static List<Aliment> getLaBouffeQuiFautAcheter() {
 		return laListeDeBouffe;
 	}
 }
