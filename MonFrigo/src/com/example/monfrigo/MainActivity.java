@@ -22,7 +22,7 @@ public class MainActivity extends TabActivity {
         this.tabHost = getTabHost();
         
         setupTab("Ajout", "tab1", new Intent().setClass(this, Ajout.class));
-        setupTab("Liste", "tab2", new Intent().setClass(this, Liste.class));
+        setupTab("Liste", "tab2", new Intent().setClass(this, CreerFrigo.class));
         setupTab("Mes Frigos", "tab3", new Intent().setClass(this, Ajout.class));
         setupTab("Paramètre", "tab4", new Intent().setClass(this, Ajout.class));
         

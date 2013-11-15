@@ -62,7 +62,7 @@ public class Ajout extends Activity {
 
 		//On initialise les EditText
 		nomProduit = (AutoCompleteTextView) findViewById(R.id.saisieAjout);
-		//editDatePerem = (DatePicker) findViewById(R.id.datePerem);
+		editDatePerem = (DatePicker) findViewById(R.id.datePerem);
 		editTypeProduit = (EditText) findViewById(R.id.typeProd);
 		quantite = (EditText) findViewById(R.id.quantite);
 		//
@@ -131,7 +131,7 @@ public class Ajout extends Activity {
 				//On crée la nouvelle activité
 				//Intent intent = new Intent(Ajout.this, Scanner.class);
 				//On lance l'activité
-		//		startActivity(intent);
+				//startActivity(intent);
 			}
 		});
 
