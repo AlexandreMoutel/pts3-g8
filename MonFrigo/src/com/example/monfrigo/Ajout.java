@@ -66,7 +66,7 @@ public class Ajout extends Activity {
 		editTypeProduit = (EditText) findViewById(R.id.typeProd);
 		quantite = (EditText) findViewById(R.id.quantite);
 		//
-
+ 
 		//On initialise le bouton
 		ajouter = (Button) findViewById(R.id.buttonAjout);
 		scanner = (Button) findViewById(R.id.button_scanner);

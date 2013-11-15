@@ -7,7 +7,7 @@ public class ListeDeCourse {
 	private final static List<Aliment> laListeDeBouffe = new ArrayList<Aliment>();
 	
 	public ListeDeCourse(){
-		
+		 
 	}
 	
 	public void ajouterAliment(Aliment leGrosJambon){
