@@ -29,6 +29,10 @@ public class Frigo {
 		return nom;
 	}
 
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
 	@Override
 	public String toString() {
 		return "Frigo [leFrigo=" + leFrigo + "]";

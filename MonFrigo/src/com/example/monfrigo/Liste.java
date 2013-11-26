@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Liste extends Activity {
 
@@ -31,6 +32,10 @@ public class Liste extends Activity {
 	ArrayList<HashMap<String, Object>> aliment;
 	HashMap<String, Object> temp;
 	LayoutInflater inflater;
+
+	private CustomAdapter adapter;
+
+	private List<Aliment> leFrigo;
 
 
 	@Override
@@ -49,7 +54,8 @@ public class Liste extends Activity {
 
 		final ListView maListe = (ListView) findViewById(R.id.listView_liste);
 
-		final List<Aliment> leFrigo = MesFrigos.getUnFrigo("Frigo1").getLeFrigo();
+		leFrigo = recupererListeAliment();
+
 
 		remplirTableau(leFrigo); //On remplit les tableaux suivant la liste pour faire la hashmap
 
@@ -59,7 +65,7 @@ public class Liste extends Activity {
 
 		//now populate the ArrayList players
 		remplirHashMap();
-		final CustomAdapter adapter=new CustomAdapter(this, android.R.layout.activity_list_item, aliment, inflater); 
+		adapter=new CustomAdapter(this, android.R.layout.activity_list_item, aliment, inflater); 
 
 		//Ancien adapter
 		//final ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
@@ -76,7 +82,7 @@ public class Liste extends Activity {
 						return a1.getNom().compareTo(a2.getNom());
 					}
 				});
-
+				leFrigo = recupererListeAliment();
 				remplirTableau(leFrigo);
 				remplirHashMap();
 				adapter.notifyDataSetChanged();
@@ -95,7 +101,7 @@ public class Liste extends Activity {
 						return a1.getType().compareTo(a2.getType());
 					}
 				});
-
+				leFrigo = recupererListeAliment();
 				remplirTableau(leFrigo);
 				remplirHashMap();
 				adapter.notifyDataSetChanged();
@@ -115,7 +121,7 @@ public class Liste extends Activity {
 						return date1.compareTo(date2);
 					}
 				});
-
+				leFrigo = recupererListeAliment();
 				remplirTableau(leFrigo);
 				remplirHashMap();
 				adapter.notifyDataSetChanged();
@@ -183,6 +189,18 @@ public class Liste extends Activity {
 		}
 	}
 
+	public List<Aliment> recupererListeAliment(){
+		return MesFrigos.getUnFrigo(MesFrigos.getFrigoActuel().getNom()).getLeFrigo();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		leFrigo = recupererListeAliment();
+		remplirTableau(leFrigo);
+		remplirHashMap();
+		adapter.notifyDataSetChanged();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

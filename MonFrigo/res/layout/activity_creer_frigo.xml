@@ -1,6 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,12 +14,19 @@
         android:id="@+id/button_new_frigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="63dp"
         android:text="@string/new_frigo" />
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listViewFrigo"
         android:layout_width="match_parent"
-        android:layout_height="379dp" >
+        android:layout_height="349dp"
+        android:layout_below="@+id/button_new_frigo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" >
     </ListView>
 
-</LinearLayout>
+</RelativeLayout>

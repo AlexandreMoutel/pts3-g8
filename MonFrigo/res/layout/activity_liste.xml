@@ -13,9 +13,9 @@
     <ListView
         android:id="@+id/listView_liste"
         android:layout_width="wrap_content"
-        android:layout_height="758dp"
+        android:layout_height="702dp"
         android:layout_x="10dp"
-        android:layout_y="32dp" >
+        android:layout_y="76dp" >
     </ListView>
     
     <Button

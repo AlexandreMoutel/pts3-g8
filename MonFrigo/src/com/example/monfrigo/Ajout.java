@@ -2,7 +2,6 @@ package com.example.monfrigo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -113,13 +112,12 @@ public class Ajout extends Activity {
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
 					MesFrigos.ajouterFrigo("Frigo1");
-					MesFrigos.getUnFrigo("Frigo1").ajouterAliment(monAliment);
-					Log.e("DEBUG", "Contenu liste frigo :"+MesFrigos.getUnFrigo("Frigo1"));
+					MesFrigos.getUnFrigo(MesFrigos.getFrigoActuel().getNom()).ajouterAliment(monAliment);
 
 
 					//Le message toast apparait et on reste sur la vue d'ajout
 					String stringAliment = nomProduit.getText().toString();
-					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté à votre liste.", Toast.LENGTH_LONG).show();	
+					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
 				}
 			}
 		});

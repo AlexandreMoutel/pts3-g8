@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Open Food Facts</title>
+
+<script src="cordova-2.5.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>   
+
+
+<script type="text/javascript" charset="utf-8">
+
+ function scan() {
+    
+    	console.log("Scanning");    	
+    	    	
+    	var scanner =  window.plugins.barcodeScanner;	
+    	    
+      	scanner.scan(function(result) {
+        		console.log("Got a barcode");
+        		console.log("Got a barcode: " + result.text + " format: " + result.format);
+                // alert("We got a barcode\n" + "Result: " + result.text + "\n" + "Format: " + result.format);
+                code = result.text; 
+                if (code != '') {
+                	$.mobile.changePage("#page_product?code=" + result.text);
+                }
+            }, function(error) {
+                console.log("Scanning failed: " + error);
+                alert("Scanning failed: " + error);
+            });
+            
+          console.log("Scanning -- done");
+    }
+    
+    function encode(type, data) {
+        window.plugins.barcodeScanner.encode(type, data, function(result) {
+                alert("encode success: " + result);
+            }, function(error) {
+                alert("encoding failed: " + error);
+            });
+    }
+    
+		function test(){
+		$.get('http://fr.openfoodfacts.org/api/v0/produit/3029330003533'.jqm.json',
+				 function(data) {
+				
+			// alert("data.status: " + data.status + " data.jqm: " + data.jqm);
+			$content = $("#page_product").children( ":jqmData(role=content)" )
+			if (data.status == 1) {
+				$content.html (data.jqm);
+				$header.find( "h1" ).html( data.title  );		
+				$page.trigger( "create" );
+			}
+			else {
+				//alert("nok data.status : " + data.status + " - verbose: " + data.status_verbose);
+				$("#loading").html (data.jqm);
+				$page.trigger( "create" );
+				
+			}
+		}
+            </script>
+  </head>
+  <body>
+  <a href="#" data-role="button" onclick="scan();">Scan</a> </ br>< /br>
+  <a href="#" data-role="button" onclick="test();();">Test</a>
+  </body>
+</html>
