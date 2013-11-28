@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class LaBDD extends SQLiteOpenHelper{
 	//Nom + Colonne Table Aliment
 	private final static String ALIMENT = "Aliment";
-	private final static String ID = "ID_Aliment";
 	private final static String NOM = "Nom";
 	private final static String TYPE = "Type";
 	private final static String DATEPEREMPTION = "Date de péremption";
@@ -25,7 +24,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + IDNOM + "Text PRIMARY KEY not null;";
 	
 	//Requête Table Aliment
-	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NOM + " Text not null, "
+	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " (" + NOM + " Text PRIMARY KEY not null, "
 			+ TYPE + " Text not null, " + DATEPEREMPTION + " Text not null, " + QUANTITE + " Integer not null, FOREIGN KEY (" + FRIGOETRANGER + ") REFERENCES " + FRIGO + " (" + IDNOM + "));";
 	
 	//Requête Création BDD

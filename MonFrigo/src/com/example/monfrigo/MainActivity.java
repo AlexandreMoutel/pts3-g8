@@ -12,13 +12,16 @@ import android.widget.TextView;
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
  
+	private static LaBDD laBelleDindeDorée;
 	public TabHost tabHost;
  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
- 
+        
+        laBelleDindeDorée = new LaBDD(this, "Gestion de frigo", null, 1);
+        
         this.tabHost = getTabHost();
         
         setupTab("Ajout", "tab1", new Intent().setClass(this, Ajout.class));
@@ -30,7 +33,11 @@ public class MainActivity extends TabActivity {
         this.tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
         
     }
- 
+    
+    public static LaBDD getLaBelleDindeDorée(){
+    	return laBelleDindeDorée;
+    }
+    
     private void setupTab(String name, String tag, Intent intent) {
 		tabHost.addTab(tabHost.newTabSpec(tag).setIndicator(createTabView(tabHost.getContext(), name)).setContent(intent));
 	}
