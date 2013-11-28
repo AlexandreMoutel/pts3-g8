@@ -2,6 +2,7 @@ package com.example.monfrigo;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class MesFrigos{
 	private static List<Frigo> mesFrigos = new ArrayList<Frigo>();
 	private static Frigo frigoActuel = new Frigo("test");
