@@ -100,7 +100,8 @@ public class CreerFrigo extends Activity {
 					{
 						String nomFrigoActuel = (String) ((TextView) v).getText();
 						String nomFrigo = modifNomFrigo.getText().toString();
-						MesFrigos.getUnFrigo(nomFrigoActuel).setNom(nomFrigo);
+						MesFrigos.setFrigoActuel(nomFrigoActuel);
+						MesFrigos.getFrigoActuel().setNom(nomFrigo);
 						listeFrigo = recupererListeFrigo();
 						maListe = (ListView) findViewById(R.id.listViewFrigo);
 						adapter = new ArrayAdapter<String>(CreerFrigo.this, R.layout.layout_liste_frigo, listeFrigo);
@@ -141,7 +142,7 @@ public class CreerFrigo extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int arg2,
 					long arg3) {
-				 MesFrigos.setFrigoActuel(MesFrigos.getUnFrigo((String) ((TextView) v).getText()));
+				 MesFrigos.setFrigoActuel(((TextView) v).getText().toString());
 			}
 		});
 	}

@@ -34,7 +34,7 @@ public class Frigo {
 		open();
 		ContentValues values = new ContentValues();
 		values.put(NOM, leJambon.getNom());
-		values.put(TYPE, leJambon.getNom());
+		values.put(TYPE, leJambon.getType	());
 		values.put(DATEPEREMPTION, leJambon.getDate());
 		values.put(QUANTITE, leJambon.getQuantite());
 		values.put(FRIGOETRANGER, this.getNom());
@@ -52,15 +52,28 @@ public class Frigo {
 		open();
 		ContentValues values = new ContentValues();
 		values.put(NOM, lePaté.getNom());
-		values.put(TYPE, lePaté.getNom());
+		values.put(TYPE, lePaté.getType());
 		values.put(DATEPEREMPTION, lePaté.getDate());
 		values.put(QUANTITE, lePaté.getQuantite());
 		values.put(FRIGOETRANGER, this.getNom());
 		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
 		close();
 	}
-
+	
+	public void onChangeLeFrigo(Aliment lePaté, String nomNewFrigo){
+		open();
+		ContentValues values = new ContentValues();
+		values.put(NOM, lePaté.getNom());
+		values.put(TYPE, lePaté.getType());
+		values.put(DATEPEREMPTION, lePaté.getDate());
+		values.put(QUANTITE, lePaté.getQuantite());
+		values.put(FRIGOETRANGER, nomNewFrigo);
+		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
+		close();
+	}
+	
 	public List<Aliment> getLeFrigo() {
+		open();
 		List<Aliment> leFrigo = new ArrayList<Aliment>();
 		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE}, null, null, null, null, null);
 
@@ -74,7 +87,7 @@ public class Frigo {
 				}while(laDinde.moveToNext());
 			}
 		}
-
+		close();
 		return leFrigo;
 	}
 
@@ -83,7 +96,14 @@ public class Frigo {
 	}
 
 	public void setNom(String nom) {
+		String ancienFrigo = MesFrigos.getFrigoActuel().getNom();
+		MesFrigos.setFrigoActuel(nom);
+		for(Aliment a : this.getLeFrigo()){
+			onChangeLeFrigo(a, nom);
+			MesFrigos.onAChangerLeFrigo(this.nom ,nom);
+		}
 		this.nom = nom;
+		MesFrigos.setFrigoActuel(ancienFrigo);
 	}
 
 }

@@ -3,42 +3,57 @@ package com.example.monfrigo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 public class MesFrigos{
-	private static List<Frigo> mesFrigos = new ArrayList<Frigo>();
-	private static Frigo frigoActuel = new Frigo("test");
+	private final static String FRIGO = "Frigo";
+	private final static String IDNOM = "Nom";
+	private static SQLiteDatabase laBelleDindeDorée;
+	private static Frigo frigoActuel = new Frigo("Mon Premier Frigo");
 	
 	public MesFrigos(){
 	}
 	
+	public static void open(){
+		laBelleDindeDorée = MainActivity.getLaBelleDindeDorée().getWritableDatabase();
+	}
+
+	public static void close(){
+		laBelleDindeDorée.close();
+	}
+	
 	public static void ajouterFrigo(String nom){
-		mesFrigos.add(new Frigo(nom));
-		mesFrigos.add(frigoActuel);
-		//pour tester
-		mesFrigos.add(new Frigo("frigo2"));
-		mesFrigos.add(new Frigo("frigo3"));
-		mesFrigos.add(new Frigo("frigo4"));
-		mesFrigos.add(new Frigo("frigo5"));
-		mesFrigos.add(new Frigo("frigo6"));
+		open();
+		ContentValues values = new ContentValues();
+		values.put(IDNOM, nom);
+		laBelleDindeDorée.insert(FRIGO, null, values);
+		close();
 	}
 	
 	public static void supprimerFrigo(String nom){
-		mesFrigos.remove(nom);
-	}
-	
-	public static Frigo getUnFrigo(String nom){
-		for(Frigo f : mesFrigos){
-			if(f.getNom().equals(nom))
-				return f;
-		}
-		return null;
+		open();
+		laBelleDindeDorée.delete(FRIGO, IDNOM + " = " + nom, null);
+		close();
 	}
 	
 	public static List<String> getMesFrigos(){
+		open();
 		List<String> ListeDesFrigos = new ArrayList<String>();
-		
-		for(Frigo f : mesFrigos){
-			ListeDesFrigos.add(f.getNom());
+		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, null, null, null, null, null);
+
+		if(laGrosseDinde.getCount() == 0){
+			return null;
 		}
+		else{
+			if(laGrosseDinde.moveToFirst()){
+				do{
+					ListeDesFrigos.add(laGrosseDinde.getString(0));
+				}while(laGrosseDinde.moveToNext());
+			}
+		}
+		close();
 		return ListeDesFrigos;
 	}
 	
@@ -46,8 +61,30 @@ public class MesFrigos{
 		return frigoActuel;
 	}
 
-	public static void setFrigoActuel(Frigo frigoActuel) {
-		MesFrigos.frigoActuel = frigoActuel;
+	public static void setFrigoActuel(String nom) {
+		open();
+		int count = 0;
+		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, null, null, null, null, null);
+		
+		if(laGrosseDinde.getCount() == 0){
+			ajouterFrigo(nom);
+		}
+		else{
+			if(laGrosseDinde.moveToFirst()){
+				do{
+					if(laGrosseDinde.getString(0).equals(nom)){
+						frigoActuel.setNom(laGrosseDinde.getString(0));
+					}
+				}while(laGrosseDinde.moveToNext());
+			}
+		}
+		close();
 	}
-	
+
+	public static void onAChangerLeFrigo(String ancienNom, String newNom) {
+		open();
+		ContentValues values = new ContentValues();
+		values.put(IDNOM, newNom);
+		laBelleDindeDorée.update(FRIGO, values, IDNOM + " = " + ancienNom, null);
+	}	
 }

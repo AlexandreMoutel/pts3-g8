@@ -190,7 +190,7 @@ public class Liste extends Activity {
 	}
 
 	public List<Aliment> recupererListeAliment(){
-		return MesFrigos.getUnFrigo(MesFrigos.getFrigoActuel().getNom()).getLeFrigo();
+		return (List<Aliment>) MesFrigos.getFrigoActuel();
 	}
 
 	@Override

@@ -70,6 +70,7 @@ public class Ajout extends Activity {
 		ajouter = (Button) findViewById(R.id.buttonAjout);
 		scanner = (Button) findViewById(R.id.button_scanner);
 		MesFrigos.ajouterFrigo("Frigo1");
+		/*
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Steack", "Viande", "12/12/2012", 3));
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
@@ -82,7 +83,7 @@ public class Ajout extends Activity {
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Eau", "Boisson", "12/12/2999", 99));
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Côte de porc", "Viande", "02/12/2013", 4));
 		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Lasagne", "Féculent", "12/05/2010", 1));
-
+*/
 
 		//Lorsque que l'on appuie sur le bouton ajouter
 		ajouter.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +113,7 @@ public class Ajout extends Activity {
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
 					MesFrigos.ajouterFrigo("Frigo1");
-					MesFrigos.getUnFrigo(MesFrigos.getFrigoActuel().getNom()).ajouterAliment(monAliment);
+					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
 
 
 					//Le message toast apparait et on reste sur la vue d'ajout
