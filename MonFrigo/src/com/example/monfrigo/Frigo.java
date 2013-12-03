@@ -59,7 +59,7 @@ public class Frigo {
 		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
 		close();
 	}
-	
+	 
 	public void onChangeLeFrigo(Aliment lePaté, String nomNewFrigo){
 		open();
 		ContentValues values = new ContentValues();

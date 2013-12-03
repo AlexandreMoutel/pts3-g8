@@ -28,7 +28,7 @@ public class Liste extends Activity {
 	int[] quantite;
 	String[] type;
 	String[] date;
-
+ 
 	ArrayList<HashMap<String, Object>> aliment;
 	HashMap<String, Object> temp;
 	LayoutInflater inflater;

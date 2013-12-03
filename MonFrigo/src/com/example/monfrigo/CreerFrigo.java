@@ -95,7 +95,7 @@ public class CreerFrigo extends Activity {
 				.setMessage("Nom du frigo")
 				.setView(modifNomFrigo)
 				.setPositiveButton("Modifier", new DialogInterface.OnClickListener()
-				{
+				{ 
 					public void onClick(DialogInterface dialog, int whichButton)
 					{
 						String nomFrigoActuel = (String) ((TextView) v).getText();

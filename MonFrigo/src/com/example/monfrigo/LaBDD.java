@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-
+ 
 public class LaBDD extends SQLiteOpenHelper{
 	//Nom + Colonne Table Aliment
 	private final static String ALIMENT = "Aliment";

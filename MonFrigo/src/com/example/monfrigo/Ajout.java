@@ -108,7 +108,7 @@ public class Ajout extends Activity {
 					leTypeDeProduit = editTypeProduit.getText().toString();
 					laDateDePerem = mois +"/"+ jour +"/" + annee;
 					laQuantite = Integer.parseInt(quantite.getText().toString());
-
+ 
 					//On Crée un aliment et on l'ajoute au frigo
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);

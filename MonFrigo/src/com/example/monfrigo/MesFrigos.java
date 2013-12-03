@@ -60,7 +60,7 @@ public class MesFrigos{
 	public static Frigo getFrigoActuel(){
 		return frigoActuel;
 	}
-
+ 
 	public static void setFrigoActuel(String nom) {
 		open();
 		int count = 0;
@@ -68,7 +68,7 @@ public class MesFrigos{
 		
 		if(laGrosseDinde.getCount() == 0){
 			ajouterFrigo(nom);
-		}
+		} 
 		else{
 			if(laGrosseDinde.moveToFirst()){
 				do{

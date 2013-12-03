@@ -15,7 +15,7 @@ public class AfficherListeDeCourse extends Activity {
 	ArrayList<HashMap<String, Object>> aliment;
 	HashMap<String, Object> temp;
 	LayoutInflater inflater;
-	
+	 
 	String[] nom;
 	int[] quantite;
 	String[] type;
