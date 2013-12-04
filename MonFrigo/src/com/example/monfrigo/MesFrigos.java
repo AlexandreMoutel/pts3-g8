@@ -12,10 +12,10 @@ public class MesFrigos{
 	private final static String IDNOM = "Nom";
 	private static SQLiteDatabase laBelleDindeDorée;
 	private static Frigo frigoActuel = new Frigo("Mon Premier Frigo");
-	
+
 	public MesFrigos(){
 	}
-	
+
 	public static void open(){
 		laBelleDindeDorée = MainActivity.getLaBelleDindeDorée().getWritableDatabase();
 	}
@@ -23,7 +23,7 @@ public class MesFrigos{
 	public static void close(){
 		laBelleDindeDorée.close();
 	}
-	
+
 	public static void ajouterFrigo(String nom){
 		open();
 		ContentValues values = new ContentValues();
@@ -31,13 +31,13 @@ public class MesFrigos{
 		laBelleDindeDorée.insert(FRIGO, null, values);
 		close();
 	}
-	
+
 	public static void supprimerFrigo(String nom){
 		open();
 		laBelleDindeDorée.delete(FRIGO, IDNOM + " = " + nom, null);
 		close();
 	}
-	
+
 	public static List<String> getMesFrigos(){
 		open();
 		List<String> ListeDesFrigos = new ArrayList<String>();
@@ -56,16 +56,36 @@ public class MesFrigos{
 		close();
 		return ListeDesFrigos;
 	}
-	
+
+	public static Frigo getUnFrigo(String nom){
+		open();
+		Frigo leFrigo = null;
+		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, IDNOM + " = " + nom, null, null, null, null);
+		if(laGrosseDinde.getString(0).equals(nom)){
+			if(laGrosseDinde.getCount() == 0){
+				return null;
+			}
+			else{
+				if(laGrosseDinde.moveToFirst()){
+					leFrigo = new Frigo(nom);
+				}
+			}
+			close();
+			return leFrigo;
+		}
+		else 
+			return null;
+	}
+
 	public static Frigo getFrigoActuel(){
 		return frigoActuel;
 	}
- 
+
 	public static void setFrigoActuel(String nom) {
 		open();
 		int count = 0;
 		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, null, null, null, null, null);
-		
+
 		if(laGrosseDinde.getCount() == 0){
 			ajouterFrigo(nom);
 		} 
@@ -80,11 +100,4 @@ public class MesFrigos{
 		}
 		close();
 	}
-
-	public static void onAChangerLeFrigo(String ancienNom, String newNom) {
-		open();
-		ContentValues values = new ContentValues();
-		values.put(IDNOM, newNom);
-		laBelleDindeDorée.update(FRIGO, values, IDNOM + " = " + ancienNom, null);
-	}	
 }

@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class Frigo {
+	public static boolean modifierNom = false;
 	private String nom;
 	private final static String ALIMENT = "Aliment";
 	private final static String NOM = "Nom";
@@ -59,19 +60,7 @@ public class Frigo {
 		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
 		close();
 	}
-	 
-	public void onChangeLeFrigo(Aliment lePaté, String nomNewFrigo){
-		open();
-		ContentValues values = new ContentValues();
-		values.put(NOM, lePaté.getNom());
-		values.put(TYPE, lePaté.getType());
-		values.put(DATEPEREMPTION, lePaté.getDate());
-		values.put(QUANTITE, lePaté.getQuantite());
-		values.put(FRIGOETRANGER, nomNewFrigo);
-		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
-		close();
-	}
-	
+
 	public List<Aliment> getLeFrigo() {
 		open();
 		List<Aliment> leFrigo = new ArrayList<Aliment>();
@@ -95,15 +84,12 @@ public class Frigo {
 		return nom;
 	}
 
+	public void updateFrigo(){
+
+	}
+
 	public void setNom(String nom) {
-		String ancienFrigo = MesFrigos.getFrigoActuel().getNom();
-		MesFrigos.setFrigoActuel(nom);
-		for(Aliment a : this.getLeFrigo()){
-			onChangeLeFrigo(a, nom);
-			MesFrigos.onAChangerLeFrigo(this.nom ,nom);
-		}
 		this.nom = nom;
-		MesFrigos.setFrigoActuel(ancienFrigo);
 	}
 
 }
