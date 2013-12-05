@@ -60,11 +60,23 @@ public class Frigo {
 		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
 		close();
 	}
+	
+	public void changerUnAlimentDeFrigo(Aliment lesBiscuits, String nomNouveauFrigo){
+		open();
+		ContentValues values = new ContentValues();
+		values.put(NOM, lesBiscuits.getNom());
+		values.put(TYPE, lesBiscuits.getType());
+		values.put(DATEPEREMPTION, lesBiscuits.getDate());
+		values.put(QUANTITE, lesBiscuits.getQuantite());
+		values.put(FRIGOETRANGER, nomNouveauFrigo);
+		laBelleDindeDorée.update(ALIMENT, values, FRIGOETRANGER + " = " + this.nom, null);
+		close();
+	}
 
 	public List<Aliment> getLeFrigo() {
 		open();
 		List<Aliment> leFrigo = new ArrayList<Aliment>();
-		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE}, null, null, null, null, null);
+		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE}, FRIGOETRANGER + " = " + this.nom, null, null, null, null);
 
 		if(laDinde.getCount() == 0){
 			return null;
@@ -84,11 +96,18 @@ public class Frigo {
 		return nom;
 	}
 
-	public void updateFrigo(){
-
+	public void setNom(String nom){
+		MesFrigos.supprimerFrigo(this.nom);
+		if(this.getLeFrigo() != null){
+			for(Aliment a : this.getLeFrigo()){
+				changerUnAlimentDeFrigo(a, nom);
+			}
+		}
+		MesFrigos.ajouterFrigo(nom);
+		this.nom = nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNomFrigoActuel(String nom) {
 		this.nom = nom;
 	}
 

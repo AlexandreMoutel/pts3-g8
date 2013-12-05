@@ -93,7 +93,7 @@ public class MesFrigos{
 			if(laGrosseDinde.moveToFirst()){
 				do{
 					if(laGrosseDinde.getString(0).equals(nom)){
-						frigoActuel.setNom(laGrosseDinde.getString(0));
+						frigoActuel.setNomFrigoActuel(laGrosseDinde.getString(0));
 					}
 				}while(laGrosseDinde.moveToNext());
 			}
