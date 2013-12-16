@@ -1,7 +1,27 @@
 package com.example.monfrigo;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +30,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.fasterxml.jackson.core.JsonParser;
 
 public class Ajout extends Activity {
 	//Bouton
@@ -37,13 +59,13 @@ public class Ajout extends Activity {
 	public int laQuantite;
 	//
 
-	
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ajout);
-		
+
 		//On récupère le tableau de String créé dans le fichier string.xml
 		String[] tableauAliments = getResources().getStringArray(R.array.tableau);
 
@@ -65,25 +87,10 @@ public class Ajout extends Activity {
 		editTypeProduit = (EditText) findViewById(R.id.typeProd);
 		quantite = (EditText) findViewById(R.id.quantite);
 		//
- 
+
 		//On initialise le bouton
 		ajouter = (Button) findViewById(R.id.buttonAjout);
 		scanner = (Button) findViewById(R.id.button_scanner);
-		MesFrigos.ajouterFrigo("Frigo1");
-		/*
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Steack", "Viande", "12/12/2012", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Truite", "Poisson", "12/11/2012", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Boeuf", "Viande", "12/11/2012", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Poisson pané", "Poisson", "12/12/2009", 9));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Gruyère", "Fromage", "12/09/2010", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Pates", "Féculent", "12/12/2010", 3));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Patates", "Féculent", "12/12/2000", 8));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Eau", "Boisson", "12/12/2999", 99));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Côte de porc", "Viande", "02/12/2013", 4));
-		MesFrigos.getUnFrigo("Frigo1").ajouterAliment(new Aliment("Lasagne", "Féculent", "12/05/2010", 1));
-*/
 
 		//Lorsque que l'on appuie sur le bouton ajouter
 		ajouter.setOnClickListener(new View.OnClickListener() {
@@ -108,11 +115,10 @@ public class Ajout extends Activity {
 					leTypeDeProduit = editTypeProduit.getText().toString();
 					laDateDePerem = mois +"/"+ jour +"/" + annee;
 					laQuantite = Integer.parseInt(quantite.getText().toString());
- 
+
 					//On Crée un aliment et on l'ajoute au frigo
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
-					MesFrigos.ajouterFrigo("Frigo1");
 					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
 
 
@@ -121,19 +127,74 @@ public class Ajout extends Activity {
 					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
 				}
 			}
-		}); 
-		
+		});
+
 		scanner.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				//On crée la nouvelle activité
-				//Intent intent = new Intent(Ajout.this, Scanner.class);
-				//On lance l'activité
-				//startActivity(intent);
+				IntentIntegrator integrator = new IntentIntegrator();
+				integrator.initiateScan(Ajout.this);
 			}
-		});
+		});	
+	}
 
+	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+		if (scanResult != null) {
+			Toast.makeText(getBaseContext(), "" + scanResult.getContents(), Toast.LENGTH_LONG).show();	
+
+
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy); 
+
+			// On télécharge le fichier JSON
+			DefaultHttpClient   httpclient = new DefaultHttpClient(new BasicHttpParams());
+			URI url = null;
+			try {
+				url = new URI("http://fr.openfoodfacts.org/api/v0/produit/"+scanResult.getContents()+".json");
+			} catch (URISyntaxException e1) {
+				Log.e("ERREUR", "Erreur dans 'laccès à l'url");
+				e1.printStackTrace();
+			}
+
+			HttpPost httppost = new HttpPost(url);
+			// Depends on your web service
+			httppost.setHeader("Content-type", "application/json");
+
+			InputStream inputStream = null;
+			String result = null;
+			try {
+				HttpResponse response = httpclient.execute(httppost);           
+				HttpEntity entity = response.getEntity();
+
+				inputStream = entity.getContent();
+				// json is UTF-8 by default
+				BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
+				StringBuilder sb = new StringBuilder();
+
+				String line = null;
+				while ((line = reader.readLine()) != null)
+				{
+					sb.append(line + "\n");
+				}
+				result = sb.toString();
+			} catch (Exception e) { 
+				Log.e("Erreur", "Erreur dans la récupération du fichier json" + e.toString());
+			}
+			finally {
+				Log.e("SUCCESS", "Fichier téléchargé");
+				try{if(inputStream != null)inputStream.close();}catch(Exception squish){}
+			}
+
+			try {
+				JSONObject jObject = new JSONObject(result);
+				Log.e("test", "résultat : "+ jObject.toString());
+			} catch (JSONException e) {
+				Log.e("Erreur", "Erreur dans la récupération de donnée" + e.toString());
+				e.printStackTrace();
+			}
+		}
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,5 +203,5 @@ public class Ajout extends Activity {
 		//Modif inutile
 		return true;
 	}
-	
+
 }
