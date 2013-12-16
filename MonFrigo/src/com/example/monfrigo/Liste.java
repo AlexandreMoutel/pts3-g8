@@ -55,7 +55,7 @@ public class Liste extends Activity {
 
 		final ListView maListe = (ListView) findViewById(R.id.listView_liste);
 
-		leFrigo = recupererListeAliment();
+		leFrigo = recupererListeAliment(); 
 
 
 		remplirTableau(leFrigo); //On remplit les tableaux suivant la liste pour faire la hashmap

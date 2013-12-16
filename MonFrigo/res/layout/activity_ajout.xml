@@ -32,7 +32,7 @@
         android:text="@string/ajouter_la_date_de_p_remption" />
 
     <DatePicker
-        android:id="@+id/datePerem"
+        android:id="@+id/datePerem" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/saisieAjout"

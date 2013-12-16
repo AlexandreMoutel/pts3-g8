@@ -183,7 +183,7 @@ public class Ajout extends Activity {
 				Log.e("SUCCESS", "Fichier téléchargé");
 				try{if(inputStream != null)inputStream.close();}catch(Exception squish){}
 			}
-			String status = "";
+			String status = ""; 
 			try {
 				JSONObject jObject = new JSONObject(result);
 				JSONObject test = jObject.getJSONObject("product");
