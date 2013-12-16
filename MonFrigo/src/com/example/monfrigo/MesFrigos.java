@@ -5,13 +5,13 @@ import java.util.List;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase; 
+import android.database.sqlite.SQLiteDatabase;
 
 public class MesFrigos{
 	private final static String FRIGO = "Frigo";
 	private final static String IDNOM = "Nom";
 	private static SQLiteDatabase laBelleDindeDorée;
-	private static Frigo frigoActuel = new Frigo("Mon Premier Frigo");
+	private static Frigo frigoActuel = new Frigo("Mon_Premier_Frigo");
 
 	public MesFrigos(){
 	}
@@ -34,7 +34,7 @@ public class MesFrigos{
 
 	public static void supprimerFrigo(String nom){
 		open();
-		laBelleDindeDorée.delete(FRIGO, IDNOM + " = " + nom, null);
+		laBelleDindeDorée.delete(FRIGO, IDNOM + " = '" + nom + "'", null);
 		close();
 	}
 
@@ -60,7 +60,7 @@ public class MesFrigos{
 	public static Frigo getUnFrigo(String nom){
 		open();
 		Frigo leFrigo = null;
-		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, IDNOM + " = " + nom, null, null, null, null);
+		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, IDNOM + " = '" + nom + "'", null, null, null, null);
 		if(laGrosseDinde.getString(0).equals(nom)){
 			if(laGrosseDinde.getCount() == 0){
 				return null;
@@ -83,7 +83,6 @@ public class MesFrigos{
 
 	public static void setFrigoActuel(String nom) {
 		open();
-		int count = 0;
 		Cursor laGrosseDinde = laBelleDindeDorée.query(FRIGO, new String[] {IDNOM}, null, null, null, null, null);
 
 		if(laGrosseDinde.getCount() == 0){

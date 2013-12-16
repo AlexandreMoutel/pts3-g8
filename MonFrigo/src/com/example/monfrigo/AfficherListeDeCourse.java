@@ -17,8 +17,8 @@ public class AfficherListeDeCourse extends Activity {
 	LayoutInflater inflater;
 	 
 	String[] nom;
-	int[] quantite;
-	String[] type; 
+	String[] quantite;
+	String[] type;
 	String[] date;
 	
 	@Override
@@ -30,12 +30,12 @@ public class AfficherListeDeCourse extends Activity {
 
 		final List<Aliment> laListeDeCourse = ListeDeCourse.getLaBouffeQuiFautAcheter();
 		
-		laListeDeCourse.add(new Aliment("Steack", "Viande", "12/12/2012", 3));
-		laListeDeCourse.add(new Aliment("Haribo", "Bonbon", "13/12/2012", 5));
-		laListeDeCourse.add(new Aliment("Coca-Cola", "Boisson", "14/12/2012", 3));
-		laListeDeCourse.add(new Aliment("Truite", "Poisson", "12/11/2012", 3));
-		laListeDeCourse.add(new Aliment("Boeuf", "Viande", "12/11/2012", 3));
-		laListeDeCourse.add(new Aliment("Poisson pané", "Poisson", "12/12/2009", 9));
+		laListeDeCourse.add(new Aliment("Steack", "Viande", "12/12/2012", "3"));
+		laListeDeCourse.add(new Aliment("Haribo", "Bonbon", "13/12/2012", "5"));
+		laListeDeCourse.add(new Aliment("Coca-Cola", "Boisson", "14/12/2012", "3"));
+		laListeDeCourse.add(new Aliment("Truite", "Poisson", "12/11/2012", "3"));
+		laListeDeCourse.add(new Aliment("Boeuf", "Viande", "12/11/2012", "3"));
+		laListeDeCourse.add(new Aliment("Poisson pané", "Poisson", "12/12/2009", "9"));
 		 
 		remplirTableau(laListeDeCourse);
 		
@@ -65,7 +65,7 @@ public class AfficherListeDeCourse extends Activity {
 
 		//Recupération des quantite d'aliment
 
-		quantite = new int[tailleFrigo]; 
+		quantite = new String[tailleFrigo]; 
 		for(int i = 0; i < laListeDeCourse.size(); i++) {
 			quantite[i] = laListeDeCourse.get(i).getQuantite();
 		}

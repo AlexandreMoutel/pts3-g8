@@ -32,7 +32,7 @@ public class CreerFrigo extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_creer_frigo); 
+		setContentView(R.layout.activity_creer_frigo);
 
 		newFrigo = (Button) findViewById(R.id.button_new_frigo);
 		
@@ -98,9 +98,7 @@ public class CreerFrigo extends Activity {
 				{ 
 					public void onClick(DialogInterface dialog, int whichButton)
 					{
-						String nomFrigoActuel = (String) ((TextView) v).getText();
 						String nomFrigo = modifNomFrigo.getText().toString();
-						MesFrigos.setFrigoActuel(nomFrigoActuel);
 						MesFrigos.getFrigoActuel().setNom(nomFrigo);
 						listeFrigo = recupererListeFrigo();
 						maListe = (ListView) findViewById(R.id.listViewFrigo);
@@ -121,6 +119,7 @@ public class CreerFrigo extends Activity {
 						for(int i = 0; i < listeFrigo.size(); i++){
 							if(listeFrigo.get(i) == nomFrigo)
 								listeFrigo.remove(i);
+							MesFrigos.supprimerFrigo(MesFrigos.getFrigoActuel().getNom());
 						}
 						listeFrigo = recupererListeFrigo();
 						maListe = (ListView) findViewById(R.id.listViewFrigo);

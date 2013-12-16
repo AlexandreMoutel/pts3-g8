@@ -12,30 +12,32 @@ public class LaBDD extends SQLiteOpenHelper{
 	private final static String ALIMENT = "Aliment";
 	private final static String NOM = "Nom";
 	private final static String TYPE = "Type";
-	private final static String DATEPEREMPTION = "Date de péremption";
-	private final static String QUANTITE = "Quantité";
-	private final static String FRIGOETRANGER = "Frigo"; 
+	private final static String DATEPEREMPTION = "DateDePeremption";
+	private final static String QUANTITE = "Quantite";
+	private final static String FRIGOETRANGER = "Frigo";
 	
 	//Nom + Colonne Table Aliment
 	private final static String FRIGO = "Frigo";
 	private final static String IDNOM = "Nom";
 	
 	//Requête Table Frigo
-	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + IDNOM + "Text PRIMARY KEY not null;";
+	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + IDNOM + " Text PRIMARY KEY not null);";
 	
 	//Requête Table Aliment
 	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " (" + NOM + " Text PRIMARY KEY not null, "
-			+ TYPE + " Text not null, " + DATEPEREMPTION + " Text not null, " + QUANTITE + " Integer not null, FOREIGN KEY (" + FRIGOETRANGER + ") REFERENCES " + FRIGO + " (" + IDNOM + "));";
+			+ TYPE + " Text not null, " + DATEPEREMPTION + " Text not null, " + QUANTITE + " Integer not null, " + FRIGOETRANGER + " Text);";
 	
 	//Requête Création BDD
-	private final static String laBDD = CREATE_TABLE_FRIGO + CREATE_TABLE_ALIMENT;
+	//private final static String laBDD = CREATE_TABLE_FRIGO + CREATE_TABLE_ALIMENT;
 	
 	public LaBDD(Context context, String name, CursorFactory factory, int version) {
 		super(context, name, factory, version);
 	}
 
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(laBDD);
+		db.execSQL(CREATE_TABLE_ALIMENT);
+		db.execSQL(CREATE_TABLE_FRIGO);
+		db.execSQL("Insert into Frigo values ('Mon_Premier_Frigo')");
 	}
 
 	@Override

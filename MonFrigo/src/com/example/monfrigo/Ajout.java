@@ -56,7 +56,7 @@ public class Ajout extends Activity {
 
 	//Quantité
 	public EditText quantite = null;
-	public int laQuantite;
+	public String laQuantite;
 	//
 
 
@@ -114,8 +114,7 @@ public class Ajout extends Activity {
 					leProduit = nomProduit.getText().toString();
 					leTypeDeProduit = editTypeProduit.getText().toString();
 					laDateDePerem = mois +"/"+ jour +"/" + annee;
-					laQuantite = Integer.parseInt(quantite.getText().toString());
-
+					laQuantite = quantite.getText().toString();
 					//On Crée un aliment et on l'ajoute au frigo
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
@@ -154,12 +153,11 @@ public class Ajout extends Activity {
 			try {
 				url = new URI("http://fr.openfoodfacts.org/api/v0/produit/"+scanResult.getContents()+".json");
 			} catch (URISyntaxException e1) {
-				Log.e("ERREUR", "Erreur dans 'laccès à l'url");
+				Log.e("ERREUR", "Erreur dans l'accès à l'url");
 				e1.printStackTrace();
 			}
 
 			HttpPost httppost = new HttpPost(url);
-			// Depends on your web service
 			httppost.setHeader("Content-type", "application/json");
 
 			InputStream inputStream = null;
@@ -169,7 +167,6 @@ public class Ajout extends Activity {
 				HttpEntity entity = response.getEntity();
 
 				inputStream = entity.getContent();
-				// json is UTF-8 by default
 				BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
 				StringBuilder sb = new StringBuilder();
 

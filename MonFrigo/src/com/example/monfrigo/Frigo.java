@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class Frigo {
 	public static boolean modifierNom = false;
@@ -13,8 +14,8 @@ public class Frigo {
 	private final static String ALIMENT = "Aliment";
 	private final static String NOM = "Nom";
 	private final static String TYPE = "Type";
-	private final static String DATEPEREMPTION = "Date de péremption";
-	private final static String QUANTITE = "Quantité";
+	private final static String DATEPEREMPTION = "DateDePeremption";
+	private final static String QUANTITE = "Quantite";
 	private final static String FRIGOETRANGER = "Frigo";
 	private SQLiteDatabase laBelleDindeDorée;
 
@@ -31,11 +32,11 @@ public class Frigo {
 		this.nom = nom;
 	}
 
-	public void ajouterAliment(Aliment leJambon){ 
+	public void ajouterAliment(Aliment leJambon){
 		open();
 		ContentValues values = new ContentValues();
 		values.put(NOM, leJambon.getNom());
-		values.put(TYPE, leJambon.getType	());
+		values.put(TYPE, leJambon.getType());
 		values.put(DATEPEREMPTION, leJambon.getDate());
 		values.put(QUANTITE, leJambon.getQuantite());
 		values.put(FRIGOETRANGER, this.getNom());
@@ -45,7 +46,7 @@ public class Frigo {
 
 	public void mangerTousLesAliment(Aliment lePetitGigot){
 		open();
-		laBelleDindeDorée.delete(ALIMENT, NOM + " = " + lePetitGigot.getNom(), null);
+		laBelleDindeDorée.delete(ALIMENT, NOM + " = '" + lePetitGigot.getNom() + "'", null);
 		close();
 	}
 
@@ -57,7 +58,7 @@ public class Frigo {
 		values.put(DATEPEREMPTION, lePaté.getDate());
 		values.put(QUANTITE, lePaté.getQuantite());
 		values.put(FRIGOETRANGER, this.getNom());
-		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = " + lePaté.getNom(), null);
+		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = '" + lePaté.getNom() + "'", null);
 		close();
 	}
 	
@@ -69,14 +70,14 @@ public class Frigo {
 		values.put(DATEPEREMPTION, lesBiscuits.getDate());
 		values.put(QUANTITE, lesBiscuits.getQuantite());
 		values.put(FRIGOETRANGER, nomNouveauFrigo);
-		laBelleDindeDorée.update(ALIMENT, values, FRIGOETRANGER + " = " + this.nom, null);
+		laBelleDindeDorée.update(ALIMENT, values, FRIGOETRANGER + " = '" + this.nom + "'", null);
 		close();
 	}
 
-	public List<Aliment> getLeFrigo() {
+	public List<Aliment> getLaListeDeCourse() {
 		open();
-		List<Aliment> leFrigo = new ArrayList<Aliment>();
-		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE}, FRIGOETRANGER + " = " + this.nom, null, null, null, null);
+		List<Aliment> laListeDeCourse = new ArrayList<Aliment>();
+		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE, FRIGOETRANGER}, FRIGOETRANGER + " = '" + this.nom + "'", null, null, null, null);
 
 		if(laDinde.getCount() == 0){
 			return null;
@@ -84,6 +85,26 @@ public class Frigo {
 		else{
 			if(laDinde.moveToFirst()){
 				do{
+					laListeDeCourse.add(new Aliment(laDinde.getString(0), laDinde.getString(1), laDinde.getString(2), laDinde.getString(3)));
+				}while(laDinde.moveToNext());
+			}
+		}
+		close();
+		return laListeDeCourse;
+	}
+	
+	public List<Aliment> getLeFrigo() {
+		open();
+		List<Aliment> leFrigo = new ArrayList<Aliment>();
+		Cursor laDinde = laBelleDindeDorée.query(ALIMENT, new String[] {NOM, TYPE, DATEPEREMPTION, QUANTITE, FRIGOETRANGER}, FRIGOETRANGER + " = '" + this.nom + "'", null, null, null, null);
+
+		if(laDinde.getCount() == 0){
+			return null;
+		}
+		else{
+			if(laDinde.moveToFirst()){
+				do{
+					Log.e("DEBUG QUANTITE", "Quantité dans Frigo : "+ laDinde.getString(3));
 					leFrigo.add(new Aliment(laDinde.getString(0), laDinde.getString(1), laDinde.getString(2), laDinde.getString(3)));
 				}while(laDinde.moveToNext());
 			}

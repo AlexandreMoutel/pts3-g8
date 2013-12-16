@@ -3,22 +3,14 @@ package com.example.monfrigo;
 
 public class Aliment {
 
-	private String nom, type, date;
-	private int quantite;
-	
-	public Aliment(String nom, String type, String date, int quantite) {
-		super();
-		this.nom = nom;
-		this.type = type;
-		this.date = date;
-		this.quantite = quantite;
-	}
+	private String nom, type, date, quantite;
 	
 	public Aliment(String nom, String type, String date, String quantite) {
 		super();
 		this.nom = nom;
 		this.type = type;
-		this.date = date; 
+		this.date = date;
+		this.quantite = quantite;
 	}
 
 	public String getNom() {
@@ -33,7 +25,7 @@ public class Aliment {
 		return date;
 	}
 
-	public int getQuantite() {
+	public String getQuantite() {
 		return quantite;
 	}
 

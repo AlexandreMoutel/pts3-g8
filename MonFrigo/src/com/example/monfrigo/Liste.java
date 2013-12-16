@@ -10,6 +10,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -25,7 +26,7 @@ public class Liste extends Activity {
 
 	//Déclaration des tableaux
 	String[] nom;
-	int[] quantite;
+	String[] quantite;
 	String[] type;
 	String[] date;
  
@@ -141,11 +142,10 @@ public class Liste extends Activity {
 		for(int i=0;i<tailleHashMap;i++)
 		{
 			temp = new HashMap<String, Object>();
-
 			temp.put("nom", nom[i]);
 			temp.put("date", date[i]);    
 			temp.put("type", type[i]);
-			temp.put("quantite", quantite[i]);
+			temp.put("quantite", String.valueOf(quantite[i]));
 
 			aliment.add(temp);
 		}
@@ -160,7 +160,7 @@ public class Liste extends Activity {
 		//On vide les tableaux
 		nom = null;
 		quantite = null;
-		type = null; 
+		type = null;
 		date = null;
 
 		//Recupération des nom d'aliment
@@ -171,7 +171,7 @@ public class Liste extends Activity {
 
 		//Recupération des quantite d'aliment
 
-		quantite = new int[tailleFrigo]; 
+		quantite = new String[tailleFrigo]; 
 		for(int i = 0; i < leFrigo.size(); i++) {
 			quantite[i] = leFrigo.get(i).getQuantite();
 		}
