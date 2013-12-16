@@ -183,13 +183,16 @@ public class Ajout extends Activity {
 				Log.e("SUCCESS", "Fichier téléchargé");
 				try{if(inputStream != null)inputStream.close();}catch(Exception squish){}
 			}
-
+			String status = "";
 			try {
 				JSONObject jObject = new JSONObject(result);
-				Log.e("test", "résultat : "+ jObject.toString());
+				JSONObject test = jObject.getJSONObject("product");
+				String nom = test.getString("product_name");
+				String categorie = test.getString("categories");
+				Log.e("test", "nom = "+ nom + " categorie= " + categorie);
+				nomProduit.setText(nom);
+				editTypeProduit.setText(categorie);
 			} catch (JSONException e) {
-				Log.e("Erreur", "Erreur dans la récupération de donnée" + e.toString());
-				e.printStackTrace();
 			}
 		}
 	}

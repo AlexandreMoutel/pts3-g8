@@ -25,10 +25,9 @@ public class MainActivity extends TabActivity {
         this.tabHost = getTabHost();
         
         setupTab("Ajout", "tab1", new Intent().setClass(this, Ajout.class));
-        setupTab("Liste", "tab2", new Intent().setClass(this, Liste.class));
-        setupTab("Mes Frigos", "tab3", new Intent().setClass(this, CreerFrigo.class));
-        setupTab("Paramètre", "tab4", new Intent().setClass(this, Ajout.class));
-        setupTab("Liste De Course", "tab5", new Intent().setClass(this, AfficherListeDeCourse.class));
+        setupTab("Mon Frigos", "tab2", new Intent().setClass(this, Liste.class));
+        setupTab("Paramètre", "tab3", new Intent().setClass(this, CreerFrigo.class));
+        setupTab("Liste De Course", "tab4", new Intent().setClass(this, AfficherListeDeCourse.class));
         
         this.tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
         
