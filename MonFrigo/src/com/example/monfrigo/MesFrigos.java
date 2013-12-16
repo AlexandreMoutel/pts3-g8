@@ -5,7 +5,7 @@ import java.util.List;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase; 
 
 public class MesFrigos{
 	private final static String FRIGO = "Frigo";

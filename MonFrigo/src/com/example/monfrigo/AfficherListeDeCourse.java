@@ -18,7 +18,7 @@ public class AfficherListeDeCourse extends Activity {
 	 
 	String[] nom;
 	int[] quantite;
-	String[] type;
+	String[] type; 
 	String[] date;
 	
 	@Override

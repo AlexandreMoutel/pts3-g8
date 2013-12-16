@@ -11,7 +11,7 @@ public class ListeDeCourse {
 	}
 	
 	public void ajouterAliment(Aliment leGrosJambon){
-		laListeDeBouffe.add(leGrosJambon);
+		laListeDeBouffe.add(leGrosJambon); 
 	}
 	
 	public void acheterUnAliment(Aliment leBonFoieGras){

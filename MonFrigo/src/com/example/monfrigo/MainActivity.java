@@ -20,7 +20,7 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        laBelleDindeDorée = new LaBDD(this, "Gestion de frigo", null, 1);
+        laBelleDindeDorée = new LaBDD(this, "Gestion de frigo", null, 1); 
         
         this.tabHost = getTabHost();
         

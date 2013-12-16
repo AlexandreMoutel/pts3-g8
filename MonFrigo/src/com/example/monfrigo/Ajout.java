@@ -121,7 +121,7 @@ public class Ajout extends Activity {
 					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
 				}
 			}
-		});
+		}); 
 		
 		scanner.setOnClickListener(new View.OnClickListener() {
 

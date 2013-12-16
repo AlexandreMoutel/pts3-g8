@@ -19,7 +19,7 @@ class CustomAdapter extends ArrayAdapter<HashMap<String, Object>>
 	public CustomAdapter(Context context, int textViewResourceId,
 			ArrayList<HashMap<String, Object>> aliment, LayoutInflater inflater) {
 		super(context, textViewResourceId, aliment);
-		this.aliment = aliment;
+		this.aliment = aliment; 
 		this.inflater = inflater;
 	}
 

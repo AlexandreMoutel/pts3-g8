@@ -14,7 +14,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	private final static String TYPE = "Type";
 	private final static String DATEPEREMPTION = "Date de péremption";
 	private final static String QUANTITE = "Quantité";
-	private final static String FRIGOETRANGER = "Frigo";
+	private final static String FRIGOETRANGER = "Frigo"; 
 	
 	//Nom + Colonne Table Aliment
 	private final static String FRIGO = "Frigo";

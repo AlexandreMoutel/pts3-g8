@@ -160,7 +160,7 @@ public class Liste extends Activity {
 		//On vide les tableaux
 		nom = null;
 		quantite = null;
-		type = null;
+		type = null; 
 		date = null;
 
 		//Recupération des nom d'aliment

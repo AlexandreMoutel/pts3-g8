@@ -31,7 +31,7 @@ public class Frigo {
 		this.nom = nom;
 	}
 
-	public void ajouterAliment(Aliment leJambon){
+	public void ajouterAliment(Aliment leJambon){ 
 		open();
 		ContentValues values = new ContentValues();
 		values.put(NOM, leJambon.getNom());

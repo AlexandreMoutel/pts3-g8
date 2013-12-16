@@ -32,7 +32,7 @@ public class CreerFrigo extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_creer_frigo);
+		setContentView(R.layout.activity_creer_frigo); 
 
 		newFrigo = (Button) findViewById(R.id.button_new_frigo);
 		

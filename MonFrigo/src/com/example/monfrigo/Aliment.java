@@ -18,7 +18,7 @@ public class Aliment {
 		super();
 		this.nom = nom;
 		this.type = type;
-		this.date = date;
+		this.date = date; 
 	}
 
 	public String getNom() {
