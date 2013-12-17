@@ -49,7 +49,30 @@ public class Frigo {
 		laBelleDindeDorée.delete(ALIMENT, NOM + " = '" + lePetitGigot.getNom() + "'", null);
 		close();
 	}
-
+	public void mangerUnAliment(Aliment lePaté){
+		open();
+		ContentValues values = new ContentValues();
+		values.put(NOM, lePaté.getNom());
+		values.put(TYPE, lePaté.getType());
+		values.put(DATEPEREMPTION, lePaté.getDate());
+		values.put(QUANTITE, String.valueOf(Integer.parseInt(lePaté.getQuantite())-1));
+		values.put(FRIGOETRANGER, this.getNom());
+		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = '" + lePaté.getNom() + "'", null);
+		close();
+	}
+	
+	public void vomirUnAliment(Aliment lePaté){
+		open();
+		ContentValues values = new ContentValues();
+		values.put(NOM, lePaté.getNom());
+		values.put(TYPE, lePaté.getType());
+		values.put(DATEPEREMPTION, lePaté.getDate());
+		values.put(QUANTITE, String.valueOf(Integer.parseInt(lePaté.getQuantite())+1));
+		values.put(FRIGOETRANGER, this.getNom());
+		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = '" + lePaté.getNom() + "'", null);
+		close();
+	}
+	
 	public void transformerUnAliment(Aliment lePaté){
 		open();
 		ContentValues values = new ContentValues();
@@ -104,7 +127,6 @@ public class Frigo {
 		else{
 			if(laDinde.moveToFirst()){
 				do{
-					Log.e("DEBUG QUANTITE", "Quantité dans Frigo : "+ laDinde.getString(3));
 					leFrigo.add(new Aliment(laDinde.getString(0), laDinde.getString(1), laDinde.getString(2), laDinde.getString(3)));
 				}while(laDinde.moveToNext());
 			}

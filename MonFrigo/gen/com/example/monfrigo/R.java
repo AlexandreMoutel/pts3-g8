@@ -10,6 +10,7 @@ package com.example.monfrigo;
 public final class R {
     public static final class array {
         public static final int tableau=0x7f070000;
+        public static final int tableauCategorie=0x7f070001;
     }
     public static final class attr {
     }

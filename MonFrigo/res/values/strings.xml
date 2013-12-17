@@ -37,6 +37,1289 @@
         <item>Haricots Blancs</item>
         <item>Ketchup</item>
     </string-array>
+    <string-array name="tableauCategorie">
+        <item>Produits laitiers</item>
+        <item>Confiseries</item>
+        <item>Biscuits</item>
+        <item>Fromages</item>
+        <item>Légumes</item>
+        <item>Surgelés</item>
+        <item>Chocolats</item>
+        <item>Bio</item>
+        <item>Conserves</item>
+        <item>Jus et nectars de fruits</item>
+        <item>Jus de fruits</item>
+        <item>Sodas</item>
+        <item>Boissons chaudes</item>
+        <item>Boissons alcoolisées</item>
+        <item>Vins</item>
+        <item>Laits</item>
+        <item>Pains</item>
+        <item>Fromages de vache</item>
+        <item>Céréales pour petit-déjeuner</item>
+        <item>Compotes</item>
+        <item>Condiments</item>
+        <item>Chocolats noirs</item>
+        <item>Légumes en conserve</item>
+        <item>Infusions</item>
+        <item>Frais</item>
+        <item>Matières grasses animales</item>
+        <item>Beurres</item>
+        <item>Produits d’élevages</item>
+        <item>Bières</item>
+        <item>Soupes</item>
+        <item>Vins rouges</item>
+        <item>Chips et frites</item>
+        <item>Fruits secs</item>
+        <item>Sardines en conserve</item>
+        <item>Plats préparés à réchauffer au micro-ondes</item>
+        <item>Huiles</item>
+        <item>Poissons fumés</item>
+        <item>Chocolats au lait</item>
+        <item>Sucres</item>
+        <item>Glaces</item>
+        <item>Thons</item>
+        <item>Saucissons</item>
+        <item>Jus de fruits 100% pur jus</item>
+        <item>Eaux minérales</item>
+        <item>Sardines à l\'huile</item>
+        <item>Jambons blancs</item>
+        <item>Confitures</item>
+        <item>Fromages à pâte fraîche</item>
+        <item>Crèmes</item>
+        <item>Saumons fumés</item>
+        <item>Volailles</item>
+        <item>Sauces tomate</item>
+        <item>Boissons light</item>
+        <item>Moutardes</item>
+        <item>Beurres doux</item>
+        <item>Légumes secs</item>
+        <item>Fruits</item>
+        <item>Pains de mie</item>
+        <item>Biscottes</item>
+        <item>Pickles de légumes</item>
+        <item>Huiles d\'olive</item>
+        <item>Tablettes de chocolat</item>
+        <item>Pâtes fraîches</item>
+        <item>Sels</item>
+        <item>Fromages de chèvre</item>
+        <item>Produits labellisés</item>
+        <item>Plats préparés frais</item>
+        <item>Thés verts</item>
+        <item>Crèmes fraîches</item>
+        <item>Yaourts aux fruits</item>
+        <item>Vins blancs</item>
+        <item>Sardines à l\'huile d\'olive</item>
+        <item>Cidres</item>
+        <item>Saucisses françaises</item>
+        <item>Saumons fumés d\'élevage</item>
+        <item>Rillettes</item>
+        <item>Chewing-gum</item>
+        <item>Mayonnaises</item>
+        <item>Fruits à coques</item>
+        <item>Couscous</item>
+        <item>Pâtes à tartiner aux noisettes</item>
+        <item>Salades</item>
+        <item>Alcools forts</item>
+        <item>Limonades</item>
+        <item>Crustacés</item>
+        <item>Pâtisseries</item>
+        <item>Farines de blé</item>
+        <item>Riz long grain</item>
+        <item>Pains azymes</item>
+        <item>Riz Basmati</item>
+        <item>Fromages blancs</item>
+        <item>Ketchup</item>
+        <item>Nectars de fruits</item>
+        <item>Barres de céréales</item>
+        <item>Soupes déshydratées</item>
+        <item>Plats susceptibles de contenir de la viande de cheval - lots retirés de la vente en février 2013</item>
+        <item>Sucres de canne</item>
+        <item>Barres chocolatées</item>
+        <item>Eaux-de-vie</item>
+        <item>Lentilles sèches</item>
+        <item>Semoule-de-ble-dur</item>
+        <item>Chips de pommes de terre</item>
+        <item>Légumes surgelés</item>
+        <item>Sucrerie</item>
+        <item>Piments</item>
+        <item>Gaufres</item>
+        <item>Eaux gazeuses</item>
+        <item>Goûters et desserts pour bébé</item>
+        <item>Mozzarella</item>
+        <item>Produits à teneur réduite en sel</item>
+        <item>Fromages au lait cru</item>
+        <item>Vinaigres balsamiques</item>
+        <item>Margarines</item>
+        <item>Dès 12 mois</item>
+        <item>Foies gras</item>
+        <item>Gâteaux apéritifs</item>
+        <item>Petits beurres</item>
+        <item>Taboulés</item>
+        <item>Viandes de porc</item>
+        <item>Plantes condimentaires</item>
+        <item>Produits à tartiner salés</item>
+        <item>Crêpes</item>
+        <item>Oeufs labellisés</item>
+        <item>Thés glacés</item>
+        <item>Olives vertes</item>
+        <item>Lardons fumés</item>
+        <item>Poissons panés</item>
+        <item>Cornichons</item>
+        <item>Édulcorants</item>
+        <item>Rillettes de poissons</item>
+        <item>Thés noirs</item>
+        <item>Eaux minérales naturelles</item>
+        <item>Laits de coco</item>
+        <item>Quinoa</item>
+        <item>Plantes aromatiques</item>
+        <item>Jambons secs</item>
+        <item>Charcuteries à teneur réduite en sel</item>
+        <item>Pains de mie complet</item>
+        <item>Fromages à pâte persillée</item>
+        <item>Amandes</item>
+        <item>Chocolats dessert</item>
+        <item>Jambons de Paris</item>
+        <item>Poivres</item>
+        <item>Asperges</item>
+        <item>Yaourts entiers</item>
+        <item>Frites</item>
+        <item>Fromages italiens</item>
+        <item>Haricots verts en conserve</item>
+        <item>Laits écrémés</item>
+        <item>Soja</item>
+        <item>Olives noires</item>
+        <item>Champignons de Paris</item>
+        <item>Fromages fondus</item>
+        <item>Laits entiers</item>
+        <item>Produits Label Rouge</item>
+        <item>Herbes aromatiques</item>
+        <item>Aide-culinaire</item>
+        <item>Compotes pommes nature</item>
+        <item>Cookies au chocolat</item>
+        <item>Dès 04 mois</item>
+        <item>Fromages labéllisés</item>
+        <item>Gouters</item>
+        <item>Pate</item>
+        <item>Rhums</item>
+        <item>Sorbets</item>
+        <item>Jus d\'ananas</item>
+        <item>Bacon</item>
+        <item>Boisson-aux-fruits</item>
+        <item>Coquillettes</item>
+        <item>Coulommiers</item>
+        <item>Hachis parmentier</item>
+        <item>Menus Viandes pour bébé</item>
+        <item>Plats à base de viande bovine</item>
+        <item>Pois-chiches</item>
+        <item>Riz cargo</item>
+        <item>Sardines à la tomate</item>
+        <item>Sirops de menthe</item>
+        <item>Steaks-haches</item>
+        <item>Filets de poissons</item>
+        <item>Rillettes de viande</item>
+        <item>Biscuits-sales</item>
+        <item>Chorizos</item>
+        <item>Colins</item>
+        <item>Farines de blé type T45</item>
+        <item>Fromages industriels</item>
+        <item>Glaces au chocolat</item>
+        <item>Légumes préparés</item>
+        <item>Oeufs biologiques</item>
+        <item>Pâtes sèches</item>
+        <item>Pop-corn</item>
+        <item>Sauces au soja</item>
+        <item>Sels marins</item>
+        <item>Sodas à l\'orange</item>
+        <item>Sucre-en-poudre</item>
+        <item>Surimi</item>
+        <item>Thons à l’huile</item>
+        <item>Fromages à pâte molle à croûte lavée</item>
+        <item>Blé</item>
+        <item>Cafés en poudre</item>
+        <item>Choucroutes</item>
+        <item>Cordons bleus</item>
+        <item>Crèmes fraîches épaisses</item>
+        <item>Filets de sardine</item>
+        <item>Jus-de-citron</item>
+        <item>Nems</item>
+        <item>Pains azymes à la farine de froment</item>
+        <item>Poissons surgelés</item>
+        <item>Raviolis au boeuf</item>
+        <item>Sauces Pesto</item>
+        <item>Vins effervescents</item>
+        <item>Alcools artisanaux</item>
+        <item>Biscuits feuilletés</item>
+        <item>Confitures diététiques</item>
+        <item>Crèmes fraîches liquides</item>
+        <item>Fromages de brebis</item>
+        <item>Hamburgers</item>
+        <item>Jus de pamplemousse rose</item>
+        <item>Noix-de-cajou</item>
+        <item>Pâtes brisées</item>
+        <item>Pruneaux</item>
+        <item>Quenelles de poisson</item>
+        <item>Rillettes de thon</item>
+        <item>Thons blancs</item>
+        <item>Jus de pomme à base de concentré</item>
+        <item>Produits de montagne</item>
+        <item>Produits vendus avant l’an 2000</item>
+        <item>Bières blanches</item>
+        <item>Boissons-aux-fruits</item>
+        <item>Caramels</item>
+        <item>Champagne</item>
+        <item>Curry</item>
+        <item>Desserts au fruit pour bébé</item>
+        <item>Emmentals français</item>
+        <item>Fromages à pâte filée</item>
+        <item>Gateaux-pour-le-petit-dejeuner</item>
+        <item>Laits frais</item>
+        <item>Mayonnaises de Dijon</item>
+        <item>Mousses au chocolat</item>
+        <item>Pain-d-epices</item>
+        <item>Petits pois en conserve</item>
+        <item>Sardines à l\'ancienne</item>
+        <item>Saucissons secs</item>
+        <item>Steaks-haches-surgeles</item>
+        <item>Tofu</item>
+        <item>Bâtonnets</item>
+        <item>Biscuits pour bébé</item>
+        <item>Cacahuetes</item>
+        <item>Carottes</item>
+        <item>Cidres doux</item>
+        <item>Confiseries de France</item>
+        <item>Epinards</item>
+        <item>Fromages-a-pate-molle</item>
+        <item>Haricots en conserve</item>
+        <item>Lentilles corail</item>
+        <item>Morues</item>
+        <item>Noix de coco</item>
+        <item>Pains-au-lait</item>
+        <item>Petits pains grillés</item>
+        <item>Pour-gateaux</item>
+        <item>Riz parfumés</item>
+        <item>Sels naturels</item>
+        <item>Sucres roux</item>
+        <item>Thés aromatisés</item>
+        <item>Miels français</item>
+        <item>Whiskys</item>
+        <item>Abricots secs</item>
+        <item>Aromates</item>
+        <item>Baguettes</item>
+        <item>Bonbons-de-chocolat</item>
+        <item>Bouillons</item>
+        <item>Céréales préparées</item>
+        <item>Compotes pommes fraise</item>
+        <item>Confitures de fraises</item>
+        <item>Crackers</item>
+        <item>Dietetique</item>
+        <item>Farfalle</item>
+        <item>Fleurs de sel</item>
+        <item>Graines</item>
+        <item>Haricots-blancs</item>
+        <item>Jambons de Bayonne</item>
+        <item>Laits concentrés non sucrés</item>
+        <item>Levure</item>
+        <item>Mollusques</item>
+        <item>Pizzas ovales</item>
+        <item>Plats du soir pour bébé</item>
+        <item>Produit-frais</item>
+        <item>Raisins secs</item>
+        <item>Ratatouilles</item>
+        <item>Rillettes de porc</item>
+        <item>Rillettes de viande rouge</item>
+        <item>Riz de Camargue</item>
+        <item>Roqueforts</item>
+        <item>Sardines à l’huile et au citron</item>
+        <item>Sauces salades</item>
+        <item>Saucisses sèches</item>
+        <item>Surimis</item>
+        <item>Thons à l’huile d’olive</item>
+        <item>Tortellini</item>
+        <item>Veloutés de potiron</item>
+        <item>Viandes surgelées</item>
+        <item>Sirops d\'érable</item>
+        <item>Jus de pamplemousse 100% pur jus</item>
+        <item>Vins doux</item>
+        <item>Vins espagnols</item>
+        <item>Amuse-bouches</item>
+        <item>Artichauts en conserve</item>
+        <item>Bières ambrées</item>
+        <item>Bières brunes</item>
+        <item>Biscuit-fourre</item>
+        <item>Ble-precuit</item>
+        <item>Boudoirs</item>
+        <item>Brioches au chocolat</item>
+        <item>Cacao</item>
+        <item>Chicoree</item>
+        <item>Colorants alimentaire</item>
+        <item>Compotes pommes poires</item>
+        <item>Crèmes chantilly</item>
+        <item>Dès 18 mois</item>
+        <item>Filets d’anchois</item>
+        <item>Frites surgelées</item>
+        <item>Fruits-confits</item>
+        <item>Gateaux-secs</item>
+        <item>Gélifiants</item>
+        <item>Gratins de légumes</item>
+        <item>Jus-de-tomate</item>
+        <item>Laits d\'amande</item>
+        <item>Maïs doux</item>
+        <item>Non alimentaire</item>
+        <item>Pains-au-chocolat</item>
+        <item>Pains pour hamburgers</item>
+        <item>Pâtes d’amande</item>
+        <item>Pâtes de sarrazin</item>
+        <item>Poivres blancs</item>
+        <item>Poivrons rouges</item>
+        <item>Preparation-pour-pain</item>
+        <item>Purées d\'amande</item>
+        <item>Raviolis au fromage</item>
+        <item>Rhums agricoles</item>
+        <item>Rillettes de volaille</item>
+        <item>Sandwichs jambon fromage</item>
+        <item>Sauces Pesto Rosso</item>
+        <item>Saumons fumés sauvages</item>
+        <item>Sirops de fraise</item>
+        <item>Soupe de poissons</item>
+        <item>Suppléments</item>
+        <item>Tapenade</item>
+        <item>Tomates séchées</item>
+        <item>Verveine</item>
+        <item>Vinaigres aromatisés</item>
+        <item>Vins mutés de type vin doux naturel</item>
+        <item>Vinaigres de cidre</item>
+        <item>Yaourts aromatisés</item>
+        <item>Jus de fruits frais</item>
+        <item>Jus d\'ananas pur jus</item>
+        <item>Vinaigres blancs</item>
+        <item>Bacon en tranche</item>
+        <item>Beurres allégés</item>
+        <item>Biscottes complètes</item>
+        <item>Biscuits-fourres</item>
+        <item>Boisson-lactee</item>
+        <item>Boissons chaudes instantanées</item>
+        <item>Camemberts au lait microfiltré</item>
+        <item>Carotte</item>
+        <item>Charcuteries cuites</item>
+        <item>Chocolats de Pâques</item>
+        <item>Cigarettes</item>
+        <item>Confitures d’abricot</item>
+        <item>Cordons bleus de poulet</item>
+        <item>Cotes-du-rhone</item>
+        <item>Creme-legere</item>
+        <item>Dosettes-cafe</item>
+        <item>Escalopes de poulet</item>
+        <item>Fecules</item>
+        <item>Financiers</item>
+        <item>Fromages des Pays-Bas</item>
+        <item>Gambas</item>
+        <item>Goudas</item>
+        <item>Houmous</item>
+        <item>Jus</item>
+        <item>Laits 1er âge</item>
+        <item>Legumes-cuisines</item>
+        <item>Moules</item>
+        <item>Munsters</item>
+        <item>Oeufs-de-poule</item>
+        <item>Pains spéciaux</item>
+        <item>Penne</item>
+        <item>Petits Munsters</item>
+        <item>Poivres noirs</item>
+        <item>Pommes</item>
+        <item>Pommes-noisettes</item>
+        <item>Pousses</item>
+        <item>Preparation-culinaire</item>
+        <item>Preparations-pour-patisseries</item>
+        <item>Puree-de-tomates</item>
+        <item>Repas-pour-bebe</item>
+        <item>Rillettes du Mans</item>
+        <item>Riz-au-lait</item>
+        <item>Riz préparés</item>
+        <item>Salade-prete-a-l-emploi</item>
+        <item>Salamis</item>
+        <item>Saucisses de Toulouse</item>
+        <item>Spaghettis au blé complet</item>
+        <item>Sucre-vanille</item>
+        <item>Tartes aux poireaux</item>
+        <item>Tisane-vegetale</item>
+        <item>Tomates-au-jus</item>
+        <item>Thons en conserve</item>
+        <item>Yaourts à la grecque</item>
+        <item>Yaourts au citron</item>
+        <item>Nectars de mangue</item>
+        <item>Allege</item>
+        <item>Artichauts</item>
+        <item>Asperges en conserve</item>
+        <item>Asperges violettes</item>
+        <item>Assortiments de chocolats</item>
+        <item>Barquettes à la fraise</item>
+        <item>Bières avec des fruits</item>
+        <item>Biscuits-au-beurre</item>
+        <item>Boisson-aromatisee</item>
+        <item>Boisson-rafraichissante</item>
+        <item>Boissons énergétiques</item>
+        <item>Bonbons-au-chocolat</item>
+        <item>Bouillon-de-legumes</item>
+        <item>Boulettes-de-viande</item>
+        <item>Cafe-arabica</item>
+        <item>Cancoillotte</item>
+        <item>Cassonades</item>
+        <item>Chardonnay</item>
+        <item>Cidres rosés</item>
+        <item>Concentre-de-tomates</item>
+        <item>Conserve-de-legumes</item>
+        <item>Cotes-de-porc</item>
+        <item>Crèmes entières</item>
+        <item>Édulcorants de table</item>
+        <item>Epinards-haches</item>
+        <item>Feuilles-de-brick</item>
+        <item>Flammekueche</item>
+        <item>Fondants-au-chocolat</item>
+        <item>Fromage-au-lait-de-chevre</item>
+        <item>Galettes de blé noir</item>
+        <item>Gauffres</item>
+        <item>Gélatine</item>
+        <item>Guimauves</item>
+        <item>Jambons fumés</item>
+        <item>Jus-de-clementine</item>
+        <item>Kit</item>
+        <item>Lentilles préparées</item>
+        <item>Maasdam</item>
+        <item>Maroilles</item>
+        <item>Merlu-blanc</item>
+        <item>Mimolettes</item>
+        <item>Olives vertes en saumure</item>
+        <item>Pain-complet</item>
+        <item>Palmiers</item>
+        <item>Pastis</item>
+        <item>Pate-vegetal</item>
+        <item>Penne-rigate</item>
+        <item>Petits-suisses-pour-bebe</item>
+        <item>Pizzas surgelées</item>
+        <item>Pois-casses</item>
+        <item>Pollens</item>
+        <item>Pommes-rissolees</item>
+        <item>Praline</item>
+        <item>Purées de sésame</item>
+        <item>Quatre-quarts</item>
+        <item>Quenelles de volaille</item>
+        <item>Raviolis à la bolognaise</item>
+        <item>Rillettes de canard</item>
+        <item>Risotto</item>
+        <item>Riz blanc</item>
+        <item>Riz soufflé</item>
+        <item>Saint-felicien</item>
+        <item>Sauce-cuisinee</item>
+        <item>Saucisse-a-cuire</item>
+        <item>Saumon-fume-bio</item>
+        <item>Sesame</item>
+        <item>Sirop-sans-sucre</item>
+        <item>Sodas au citron light</item>
+        <item>Son</item>
+        <item>Sorbets à la framboise</item>
+        <item>Specialite-vegetale-a-base-de-tofu</item>
+        <item>Sticks-de-chocolat</item>
+        <item>Tagliatelles-carbonara</item>
+        <item>Thés à la menthe</item>
+        <item>Thés blancs</item>
+        <item>Toast-croustillant</item>
+        <item>Tourtes</item>
+        <item>Veloutés de légumes</item>
+        <item>Viennoiserie</item>
+        <item>Vinaigres de vins blancs</item>
+        <item>Thés verts japonais</item>
+        <item>Nectars de fruit de la passion</item>
+        <item>Poissons crus</item>
+        <item>Jus d\'orange frais</item>
+        <item>Yaourts à la fraise</item>
+        <item>Agar-agars</item>
+        <item>Ananas</item>
+        <item>Artichauts-grilles</item>
+        <item>Asperges vertes</item>
+        <item>Bananes séchées</item>
+        <item>Barres glacées</item>
+        <item>Beignets-de-crevettes</item>
+        <item>Beurres-de-baratte</item>
+        <item>Beurres pasteurisés</item>
+        <item>Biscuits-cuillers</item>
+        <item>Blanquette-de-veau</item>
+        <item>Boisson-lactee-fermentee-nature-sucree</item>
+        <item>Bonbons-a-la-menthe</item>
+        <item>Boudins noir aux oignons</item>
+        <item>Bouillon-de-volaille</item>
+        <item>Bretagne</item>
+        <item>Brioches au fruit</item>
+        <item>Brocolis</item>
+        <item>Burger</item>
+        <item>Cafés décaféinés</item>
+        <item>Cantals</item>
+        <item>Carottes-en-rondelles</item>
+        <item>Cervelas</item>
+        <item>Champignons en conserve</item>
+        <item>Chataignes</item>
+        <item>Chips-de-crevettes</item>
+        <item>Chocolat-fourre</item>
+        <item>Chocolats-au-lait-noirs-et-blancs</item>
+        <item>Chocolats pur beurre de cacao</item>
+        <item>Choux-de-bruxelles</item>
+        <item>Cidre-breton-doux</item>
+        <item>Clémentines</item>
+        <item>Coeurs-d-artichauts</item>
+        <item>Concasse-de-tomates</item>
+        <item>Cones-glaces</item>
+        <item>Confiserie-au-chocolat-au-lait</item>
+        <item>Coppa</item>
+        <item>Corn-flakes-bio</item>
+        <item>Cornet-de-glace</item>
+        <item>Court-bouillon</item>
+        <item>Couscous-grain-moyen</item>
+        <item>Creme-anglaise</item>
+        <item>Crêpes de froment</item>
+        <item>Crottin-de-chevre</item>
+        <item>Dinde</item>
+        <item>Dvd</item>
+        <item>Eau-mineral</item>
+        <item>Ecrase-de-pommes-de-terre</item>
+        <item>Equitable</item>
+        <item>Exhausteurs de goût</item>
+        <item>Farines de maïs</item>
+        <item>Figues</item>
+        <item>Flan</item>
+        <item>Fourres-chocolat</item>
+        <item>Framboises</item>
+        <item>Fromages au lait thermisé</item>
+        <item>Fusilli</item>
+        <item>Galette-de-tofu</item>
+        <item>Galettes de maïs</item>
+        <item>Gateaux-marbres</item>
+        <item>Gaufrettes fourrées</item>
+        <item>Genoises</item>
+        <item>Glaces rhum-raisin</item>
+        <item>Gratins de poisson</item>
+        <item>Haddocks fumés</item>
+        <item>Haricots-en-grains</item>
+        <item>Haut-medoc</item>
+        <item>Homards</item>
+        <item>Infusions aux fruits rouges</item>
+        <item>Jambonneau</item>
+        <item>Jambons ibériques</item>
+        <item>Jus-d-orange-refrigere</item>
+        <item>Jus-de-pomme-100-pur-jus</item>
+        <item>Lait-chocolate</item>
+        <item>Laits d\'avoine</item>
+        <item>Lardons-fumes-bio</item>
+        <item>Legume-cuit</item>
+        <item>Lentille</item>
+        <item>Levures-de-biere</item>
+        <item>Livarot</item>
+        <item>Marmelades</item>
+        <item>Mayonnaise-bio</item>
+        <item>Melange-de-fruits</item>
+        <item>Menus Légumes pour bébé</item>
+        <item>Morbiers</item>
+        <item>Moules-en-conserve</item>
+        <item>Moutardes au miel</item>
+        <item>Nappages</item>
+        <item>Nouilles-orientales</item>
+        <item>Nourriture pour chats</item>
+        <item>Orge</item>
+        <item>Pain-de-seigle-complet</item>
+        <item>Pains de campagne</item>
+        <item>Pate-a-tartiner-a-l-huile-de-coprah</item>
+        <item>Pate-feuillete</item>
+        <item>Pates-a-pizza</item>
+        <item>Pates-de-foie-de-porc</item>
+        <item>Pates-preparees</item>
+        <item>Petits pots pour bébé</item>
+        <item>Plats-a-preparer</item>
+        <item>Pockys</item>
+        <item>Pois-chiche</item>
+        <item>Poissons-prepares</item>
+        <item>Pomme-dauphine</item>
+        <item>Pommes-de-terre-entieres</item>
+        <item>Poudre-de-cacao</item>
+        <item>Pour-les-gateaux</item>
+        <item>Pousses de haricot mungo</item>
+        <item>Preparation-en-poudre-pour-entremets</item>
+        <item>Preparation-pour-glace</item>
+        <item>Preparations-a-base-de-crabe</item>
+        <item>Produit-a-la-figue</item>
+        <item>Produit-au-citron</item>
+        <item>Produit-lacte</item>
+        <item>Produits vendus dans les années 1980</item>
+        <item>Purées de noisette</item>
+        <item>Quiche-lorraine</item>
+        <item>Quinoa-rouge</item>
+        <item>Raviolis à la volaille</item>
+        <item>Reglisse</item>
+        <item>Rillettes de crustacés</item>
+        <item>Rillettes de poulet</item>
+        <item>Rillettes spéciales</item>
+        <item>Riz-cantonnais</item>
+        <item>Riz-incollable</item>
+        <item>Riz-long-blanc-bio</item>
+        <item>Riz Surinam</item>
+        <item>Rocamadour</item>
+        <item>Saint Agur</item>
+        <item>Salaison</item>
+        <item>Sauce-pour-snacking</item>
+        <item>Sauces au soja sucrées</item>
+        <item>Sauces pour pizzas</item>
+        <item>Saucisse-tofu</item>
+        <item>Saucisses-cocktail</item>
+        <item>Saucissons à l’ail</item>
+        <item>Saumons fumés de dégustation</item>
+        <item>Sirops aux fruits</item>
+        <item>Sodas aux fruits exotiques</item>
+        <item>Sorbets à la fraise</item>
+        <item>Soupe-au-miso</item>
+        <item>Soupe-potiron-carottes</item>
+        <item>Specialite-laitiere</item>
+        <item>Steak</item>
+        <item>Tablettes</item>
+        <item>Tartes au saumon</item>
+        <item>Thés verts chinois</item>
+        <item>Thons blancs au naturel</item>
+        <item>Tiramisu</item>
+        <item>Tomates-entieres-pelees-au-jus</item>
+        <item>Truffes en chocolat</item>
+        <item>Vegetarien</item>
+        <item>Viande-panee</item>
+        <item>Vinaigre-basalmique</item>
+        <item>Vinaigres d’alcools</item>
+        <item>Vins de pays</item>
+        <item>Yaourt-brasse-aux-fruits</item>
+        <item>Huiles d\'argan</item>
+        <item>Caviars</item>
+        <item>Huiles de pépins de raisins</item>
+        <item>Légumes labellisés</item>
+        <item>Yaourts mixés</item>
+        <item>Huiles de pavot</item>
+        <item>Saucisses espagnoles</item>
+        <item>Vins californiens</item>
+        <item>100-pur-jus-de-poire-bio</item>
+        <item>2-galettes-de-soja-recette-aux-legumes-bio</item>
+        <item>2-paves-de-saumon-bio</item>
+        <item>2-yaourts-au-lait-de-brebis-bio</item>
+        <item>8-crackers-a-la-farine-d-epeautre-et-aux-graines-de-tournesol</item>
+        <item>Abricots</item>
+        <item>Abricots-moelleux-bio</item>
+        <item>Achards</item>
+        <item>Aide-alimentaire</item>
+        <item>Aides-culinaires</item>
+        <item>Aiguillettes-de-poulet-aux-epices-tandoori</item>
+        <item>Ailladou</item>
+        <item>Allumettes-de-jambon</item>
+        <item>Amande-cuisine-bio</item>
+        <item>Amidon-de-mais</item>
+        <item>Ananas-en-tranches-au-sirop</item>
+        <item>Andouille</item>
+        <item>Antipasti</item>
+        <item>Arabica</item>
+        <item>Arachide-pralinee</item>
+        <item>Arbois</item>
+        <item>Arome-d-oranger</item>
+        <item>Asperges françaises</item>
+        <item>Asperges IGP</item>
+        <item>Aspirine</item>
+        <item>Assiette-vegetarienne-de-legumes-et-de-quinoa-bio</item>
+        <item>Assortiment-de-charcutrie</item>
+        <item>Attention produits multiples</item>
+        <item>Aubergines</item>
+        <item>Auces-vinaigrettes</item>
+        <item>Avoine-cuisine-bio</item>
+        <item>Bac-a-glace</item>
+        <item>Baguette-cereales</item>
+        <item>Baguettes-de-campagne</item>
+        <item>Bai Mu Dan</item>
+        <item>Baies-de-goji</item>
+        <item>Barre-cerealiere-au-chocolat</item>
+        <item>Barre-de-fruits-secs</item>
+        <item>Barre-son-d-avoine</item>
+        <item>Barres-cereales-amandes-et-noisettes</item>
+        <item>Barres-cereales-pepites-de-chocolat</item>
+        <item>Barres-cereales-pomme-verte</item>
+        <item>Barres-cranberries-cajou-quinoa</item>
+        <item>Barres-de-regime</item>
+        <item>Barres-de-regime-saveur-noix-de-coco-enrobees-de-chocolat-au-lait</item>
+        <item>Batavia</item>
+        <item>Batonnet-de-crabe</item>
+        <item>Bâtonnets au chocolat</item>
+        <item>Battonets-glace</item>
+        <item>Beauce-cola</item>
+        <item>Betterave</item>
+        <item>Beurre-de-baratte-biologique-doux</item>
+        <item>Beurre-tendre-doux</item>
+        <item>Beurres-crus</item>
+        <item>Beurres salés</item>
+        <item>Biere-aromatisee</item>
+        <item>Biere-d-abbaye</item>
+        <item>Bieres-aux-fruits</item>
+        <item>Biosson</item>
+        <item>Biscottes-au-sarrasin</item>
+        <item>Biscottes-completes-bio</item>
+        <item>Biscottes-sarrasin</item>
+        <item>Biscuit-aux-cereales</item>
+        <item>Biscuit-chocolat-noir</item>
+        <item>Biscuit-fourre-chocolat</item>
+        <item>Biscuit-sucre</item>
+        <item>Biscuits-apperitif</item>
+        <item>Biscuits-au-chocolat-noir</item>
+        <item>Biscuits-aux-chocolat-et-a-la-noix-de-coco</item>
+        <item>Biscuits-aux-oeufs</item>
+        <item>Biscuits-barres-chocolat-orange</item>
+        <item>Biscuits-chocolat-cacao</item>
+        <item>Biscuits-chocolates</item>
+        <item>Biscuits-enrobes-de-chocolat-au-lait-et-fourres-au-praline</item>
+        <item>Biscuits-fondants-saveur-peche-abricot</item>
+        <item>Biscuits-fourres-gout-chocolat</item>
+        <item>Biscuits-gout-chocolat-blanc</item>
+        <item>Biscuits-meringues</item>
+        <item>Biscuits-moelleux</item>
+        <item>Biscuits-nappes-chocolat-noir</item>
+        <item>Biscuits-nature</item>
+        <item>Biscuits-pavot</item>
+        <item>Biscuits-petit-dejeuner-cereales-et-pepites-de-chocolat</item>
+        <item>Biscuits-sables-fourrage-fraise-bio</item>
+        <item>Biscuits-saveur-pomme-figue</item>
+        <item>Blanc-de-poulet-en-tranches</item>
+        <item>Blanc-de-poulet-tranche</item>
+        <item>Blancs-d-oeufs</item>
+        <item>Blanquette-de-veau-aux-champignons-son-riz</item>
+        <item>Ble-dur-precuit</item>
+        <item>Blended whisky</item>
+        <item>Blés durs</item>
+        <item>Bloc de foie gras avec morceaux</item>
+        <item>Bocal-de-cornichons</item>
+        <item>Boisson-a-base-de-fruit-de-la-passion-concentre</item>
+        <item>Boisson-a-base-de-jus-de-citron-et-de-menthe</item>
+        <item>Boisson-a-la-mangue</item>
+        <item>Boisson-au-jus-de-pomme</item>
+        <item>Boisson-au-lait-de-soja-chocolatee</item>
+        <item>Boisson-au-soja-au-miel-bio</item>
+        <item>Boisson-au-soja-saveur-vanille-bio</item>
+        <item>Boisson-aux-extraits-de-the-aromatise-peche</item>
+        <item>Boisson-aux-fruits-a-base-de-jus-concentree-bio-abricot</item>
+        <item>Boisson-cacaoteee-bio</item>
+        <item>Boisson-concentree-a-diluer</item>
+        <item>Boisson-fruite</item>
+        <item>Boisson-gazeuse-aromatise-aux-fruits</item>
+        <item>Boisson-gazeuse-aromatisee-aux-fruits</item>
+        <item>Boisson-gazeuse-au-jus-de-canneberge-et-grenade-bio</item>
+        <item>Boisson-gazeuse-au-jus-de-pamplemousse-rose-bio</item>
+        <item>Boisson-gazeuse-light-aux-fruits</item>
+        <item>Boisson-soja-nature</item>
+        <item>Boisson-sucre</item>
+        <item>Boissons-au-citron</item>
+        <item>Boissons-au-the</item>
+        <item>Boissons-lactees</item>
+        <item>Boissons-sans-alcool</item>
+        <item>Bonbons-a-la-fraise</item>
+        <item>Bonbons-au-mentol</item>
+        <item>Bonbons-de-chocolat-noir</item>
+        <item>Bonbons-sans-sucres</item>
+        <item>Bouchee-a-la-reine</item>
+        <item>Boudin-blanc-aux-morilles</item>
+        <item>Bouillon-de-poule</item>
+        <item>Bouillons-de-poule</item>
+        <item>Bouillons-de-volaille</item>
+        <item>Boule-bio</item>
+        <item>Boulettes</item>
+        <item>Boulghour</item>
+        <item>Boulgour-gros-grains-bio</item>
+        <item>Bouquets garnis</item>
+        <item>Brandade-de-morue</item>
+        <item>Bretzels</item>
+        <item>Brie</item>
+        <item>Brioche-tressee</item>
+        <item>Brioches pur beurre</item>
+        <item>Brique</item>
+        <item>Brocolis-en-fleurette</item>
+        <item>Brownie-chocolat-noisettes</item>
+        <item>Brownies-bio</item>
+        <item>Burrito</item>
+        <item>Cacahuete</item>
+        <item>Cacahuetes-grillees</item>
+        <item>Cafe-a-la-chicoree</item>
+        <item>Cafe-grains</item>
+        <item>Cafes-viennois</item>
+        <item>Cakes-aux-figues</item>
+        <item>Calendrier-de-l-avent</item>
+        <item>Calissons-d-aix</item>
+        <item>Camembert-au-lait-pasteurise</item>
+        <item>Camemberts-moules-a-la-louche</item>
+        <item>Camenberts</item>
+        <item>Cancoillotte-ail-bio</item>
+        <item>Cannelle-moulue</item>
+        <item>Cannellonis</item>
+        <item>Capellini</item>
+        <item>Cappuccino-en-poudre</item>
+        <item>Caramel-liquide</item>
+        <item>Carottes-en-rondelles-bio-surgelees</item>
+        <item>Carpaccios</item>
+        <item>Carres-coupe-faim-minceur-cacao</item>
+        <item>Cassonade-de-candi-brune</item>
+        <item>Caviars d\'élevage</item>
+        <item>Céleri en conserve</item>
+        <item>Cereales-fourrees-chocolat</item>
+        <item>Cereales-pilaf-saveurs-forestieres</item>
+        <item>Cereales-soufflees-au-chocolat-bio</item>
+        <item>Cerelales-aux-chocolats</item>
+        <item>Cererales-pour-petit-dejeuner</item>
+        <item>Cervelas-a-l-alsacienne</item>
+        <item>Chablis</item>
+        <item>Champagne-brut</item>
+        <item>Champignons-de-paris-entiers-1er-choix-bio</item>
+        <item>Champignons-en-boite</item>
+        <item>Charcuteries à cuire</item>
+        <item>Chataignes-d-eau</item>
+        <item>Chevre</item>
+        <item>Chili-con-carne</item>
+        <item>Chipolatas aux herbes</item>
+        <item>Chips de patate douce</item>
+        <item>Chocolat-70</item>
+        <item>Chocolat-a-la-noix-de-coco</item>
+        <item>Chocolat-au-lait-cafe-cannelle</item>
+        <item>Chocolat-au-lait-et-aux-noisettes</item>
+        <item>Chocolat-au-lait-riz-souffle</item>
+        <item>Chocolat-aux-eclats-de-noisettes</item>
+        <item>Chocolat-blanc-fourrage-au-praline-et-aux-eclats-de-noisettes</item>
+        <item>Chocolat-fourrage-au-praline</item>
+        <item>Chocolat-fourre-au-fruit</item>
+        <item>Chocolat-lait-noisette</item>
+        <item>Chocolat-noir-70</item>
+        <item>Chocolat-noir-a-la-menthe</item>
+        <item>Chocolat-noir-aux-ecorces-d-orange-confites</item>
+        <item>Chocolat-noir-cacao-80-origine-equateur</item>
+        <item>Chocolat-noir-citron</item>
+        <item>Chocolat-noir-degustation</item>
+        <item>Chocolat-noir-eclats-de-menthe-bio</item>
+        <item>Chocolat-noir-extra</item>
+        <item>Chocolat-noir-fourrage-au-praline-et-aux-eclats-de-noisettes</item>
+        <item>Chocolat-noir-framboise</item>
+        <item>Chocolat-noir-parseme-de-grains-de-cacao</item>
+        <item>Chocolat-noir-pur</item>
+        <item>Chocolat-patissier</item>
+        <item>Chocolat-superieur-au-lait</item>
+        <item>Chocolats-au-lait-et-aux-noisettes</item>
+        <item>Chocolats diététiques</item>
+        <item>Chou-cuisine</item>
+        <item>Chouchen</item>
+        <item>Chutney</item>
+        <item>Cidre-aromatise-a-la-poire</item>
+        <item>Cidre-artisanal-bio</item>
+        <item>Cidre-bouche-de-normandie-doux</item>
+        <item>Cidre-cornouaille</item>
+        <item>Citronelle</item>
+        <item>Cocktail-non-sale</item>
+        <item>Cocos</item>
+        <item>Cola-bio</item>
+        <item>Colorants pour oeufs</item>
+        <item>Compote-de-peches</item>
+        <item>Compote-de-pomme-allegee-en-sucres-bio</item>
+        <item>Compote-de-pomme-peche-passion</item>
+        <item>Compote-pomme-nature-bio</item>
+        <item>Compote-pomme-vanille</item>
+        <item>Compotes-2-pomme-framboise-2-pomme-fraise</item>
+        <item>Compotes de fraise</item>
+        <item>Compotes fraise groseille</item>
+        <item>Compotes-pomme-abricot</item>
+        <item>Compotes-pomme-mirabelle</item>
+        <item>Compotes-pommes-banane</item>
+        <item>Compotes pommes châtaigne</item>
+        <item>Comte-20-24-mois-appellation-d-origine-protegee</item>
+        <item>Comte-rape</item>
+        <item>Concentre-tomate</item>
+        <item>Condiments à tartiner</item>
+        <item>Cone-patissier</item>
+        <item>Confiseries-sans-sucre</item>
+        <item>Confit-d-oignon</item>
+        <item>Confits d’oie</item>
+        <item>Confiture-d-angelique</item>
+        <item>Confiture-de-framboises</item>
+        <item>Confiture-extra</item>
+        <item>Confitures artisanales</item>
+        <item>Conserve-de-legumes-cuisines</item>
+        <item>Conserve-de-viande</item>
+        <item>Conserves-de-fruits</item>
+        <item>Cookies au chocolat et à la noix de coco</item>
+        <item>Cookies-aux-pepites-de-chocolat-noir-bio</item>
+        <item>Cookies-choco-noisette-coeur-fondant</item>
+        <item>Coppa-bio</item>
+        <item>Coquillettes-au-ble-integral-bio</item>
+        <item>Corbieres</item>
+        <item>Cornet</item>
+        <item>Cornets</item>
+        <item>Cosmetique</item>
+        <item>Cote-de-porc</item>
+        <item>Cotes-du-rhone-village</item>
+        <item>Coulis-de-fraises</item>
+        <item>Coup-double-bio</item>
+        <item>Courgette</item>
+        <item>Courgettes-en-rondelles-surgeles-bio</item>
+        <item>Couscous-aux-epices</item>
+        <item>Couscous-de-manioc</item>
+        <item>Couscous-semi-complet-grain-moyen</item>
+        <item>Crackers-fromages-tomate-bio</item>
+        <item>Crakers</item>
+        <item>Creme-au-caramel</item>
+        <item>Creme-de-caramel</item>
+        <item>Creme-dessert-au-chocolat-bio</item>
+        <item>Creme-fouettee</item>
+        <item>Creme-fraiche-legere</item>
+        <item>Creme-fraiche-sous-pression</item>
+        <item>Creme-glacee-chocolat</item>
+        <item>Creme-sous-pression</item>
+        <item>Cremes-d-anchoiade</item>
+        <item>Cremes-de-marrons</item>
+        <item>Crepes-au-fromage</item>
+        <item>Crepes-nature-bio</item>
+        <item>Crepes-sales</item>
+        <item>Crevettes-crues</item>
+        <item>Crevettes géantes tigrées</item>
+        <item>Crevettes nordiques</item>
+        <item>Crottin-de-chavignol</item>
+        <item>Crousti-pause-coeur-fondant-cacao-noisette</item>
+        <item>Crudites</item>
+        <item>Cuisine-asiatique</item>
+        <item>Cuisses-de-canard-confites</item>
+        <item>Cumin</item>
+        <item>Curry-rouge</item>
+        <item>Demi-margarine</item>
+        <item>Dès 15 mois</item>
+        <item>Des-de-cervelas</item>
+        <item>Dessert-au-soja-caramel-bio</item>
+        <item>Dessert-biofruits-pomme-nature</item>
+        <item>Dessert-de-fruits-pomme-abricot</item>
+        <item>Dessert-de-fruits-pomme-poire</item>
+        <item>Dessert-fruitier</item>
+        <item>Dessert-lacte-aux-oeufs</item>
+        <item>Dessert-oriental</item>
+        <item>Dessert-pomme-cassis-bio</item>
+        <item>Dessert-vegetal</item>
+        <item>Desserts lactés pour bébé</item>
+        <item>Dosettes-de-cafe</item>
+        <item>Duo-d-olives-a-la-toscane</item>
+        <item>Eau-de-coco-bio</item>
+        <item>Eau-gazeifiee</item>
+        <item>Eau-minerale-parfumee</item>
+        <item>Eaux-minerals-naturelles</item>
+        <item>Echalotes</item>
+        <item>Eclair-au-chocolat</item>
+        <item>Eminces-de-saumon-atlantique-fume-bio</item>
+        <item>Emmentals suisses</item>
+        <item>Enrobes-de-chocolat-noir</item>
+        <item>Entrées</item>
+        <item>Entremets</item>
+        <item>Epices-pour-guacamole</item>
+        <item>Epinards-a-la-creme</item>
+        <item>Epinards-en-branches</item>
+        <item>Epinards-en-conserve</item>
+        <item>Epinards-haches-a-la-creme-surgeles-bio</item>
+        <item>Epis-de-mais</item>
+        <item>Escalope</item>
+        <item>Espadon</item>
+        <item>Esturgeons-fumes</item>
+        <item>Expresso-en-dosettes</item>
+        <item>Extrait-naturel</item>
+        <item>Faiselle</item>
+        <item>Faisselles</item>
+        <item>Falafels-pois-chiches</item>
+        <item>Farine-complete</item>
+        <item>Farine-complete-de-quinoa-bio</item>
+        <item>Farines de blé tendre</item>
+        <item>Farines de petit épeautre T70</item>
+        <item>Farines de riz</item>
+        <item>Farines label rouge</item>
+        <item>Farines pâtissières</item>
+        <item>Fauffrette</item>
+        <item>Fenouils</item>
+        <item>Fetas</item>
+        <item>Figues-moelleuses-bio</item>
+        <item>Filet</item>
+        <item>Filet-de-harengs</item>
+        <item>Filet-mignon-de-porc</item>
+        <item>Filets-de-harengs</item>
+        <item>Filets-de-sardines-a-l-huile-d-olive-vierge-extra</item>
+        <item>Financiers-aux-amandes</item>
+        <item>Fines-galettes-epinards-et-pignons-bio</item>
+        <item>Fitou</item>
+        <item>Flageolets-verts</item>
+        <item>Flakes-d-epeautre-bio</item>
+        <item>Flan-a-la-vanille-nappe-de-caramel</item>
+        <item>Flans</item>
+        <item>Flocons</item>
+        <item>Foie-de-veau</item>
+        <item>Foies-gras-de-canard-entiers</item>
+        <item>Fonds-d-artifchauts</item>
+        <item>Fourre-tout-choco-bio</item>
+        <item>Fourres-chocolat-lait-bio</item>
+        <item>Friandises</item>
+        <item>Fromage-a-pate-demi-dure</item>
+        <item>Fromage-a-pate-dure-rape</item>
+        <item>Fromage-affine</item>
+        <item>Fromage-allege</item>
+        <item>Fromage-au-lait-d-ete</item>
+        <item>Fromage-au-lait-microfiltre</item>
+        <item>Fromage-blanc-0</item>
+        <item>Fromage-blanc-nature-allege</item>
+        <item>Fromage-de-lait-de-brebis</item>
+        <item>Fromage-dur-a-pate-cuite</item>
+        <item>Fromage-fouette</item>
+        <item>Fromage-frais-aux-fruits</item>
+        <item>Fromage-frais-de-chevre</item>
+        <item>Fromage-nature</item>
+        <item>Fromages-de-corse</item>
+        <item>Fromages en conserve</item>
+        <item>Fromages-fumes</item>
+        <item>Fromages-pour-croque-monsieur</item>
+        <item>Fructose-pur-cristallise</item>
+        <item>Fruits en conserve</item>
+        <item>Fusilli-carbonara</item>
+        <item>Galette-de-soja</item>
+        <item>Galettes-au-son-d-avoine</item>
+        <item>Galettes-bio</item>
+        <item>Galettes-cereales-sarrasin-comte-bio</item>
+        <item>Galettes-de-mais-chocolat-noir-bio</item>
+        <item>Galettes-de-riz-fourrees</item>
+        <item>Galettes-de-riz-gout-choco-noisettes-au-riz-complet-bio</item>
+        <item>Galettes-de-riz-nappees-de-chocolat-noir</item>
+        <item>Galettes-de-soja</item>
+        <item>Galettes-son-d-avoine-vanillees</item>
+        <item>Gaspacho</item>
+        <item>Gateau-au-chocolat</item>
+        <item>Gateau-de-semoule-nappage-chocolat</item>
+        <item>Gateau-marbre</item>
+        <item>Gateaux-de-riz</item>
+        <item>Gauffre</item>
+        <item>Gauffrettes</item>
+        <item>Gel-coiffant</item>
+        <item>Gentiane</item>
+        <item>Gesiers</item>
+        <item>Gewurztraminer</item>
+        <item>Glace-au-yaourt</item>
+        <item>Gnocchi-de-pommes-de-terre</item>
+        <item>Gnochetti</item>
+        <item>Gourdes-de-compote-de-pomme</item>
+        <item>Gouter-4s-aux-pommes</item>
+        <item>Gouters-dores-pocket</item>
+        <item>Graine-de-couscous-facile</item>
+        <item>Graines-de-lin</item>
+        <item>Graines-soja</item>
+        <item>Graisse-de-canard</item>
+        <item>Gratin-d-endives-au-jambon</item>
+        <item>Grattons</item>
+        <item>Grenadine</item>
+        <item>Guemene</item>
+        <item>Hache</item>
+        <item>Hachis-parmentier-bio</item>
+        <item>Hamburger-au-poulet</item>
+        <item>Haricots-beurres</item>
+        <item>Haricots-blancs-secs</item>
+        <item>Haricots-vert</item>
+        <item>Haricots-verts-surgeles</item>
+        <item>Harissas</item>
+        <item>Hove</item>
+        <item>Huile-de-noisette-bio</item>
+        <item>Huile-de-tournesol-vierge-bio</item>
+        <item>Hule-d-olive</item>
+        <item>Igp</item>
+        <item>Infusion-fenouil</item>
+        <item>Jambon-a-teneur-reduite-en-sel</item>
+        <item>Jambon-cuit-superieur-avec-couenne</item>
+        <item>Jambon-de-campagne</item>
+        <item>Jambonneau-en-boite</item>
+        <item>Jambons-eminces</item>
+        <item>Jambons-secs-italiens</item>
+        <item>Joghurt</item>
+        <item>Jus-d-agrumes</item>
+        <item>Jus-d-orange-100-pur-fruit-presse</item>
+        <item>Jus-d-orange-avec-pulpe-frais</item>
+        <item>Jus-d-orange-pasteurise-bio</item>
+        <item>Jus-d-orange-sans-pulpe</item>
+        <item>Jus-de-banane</item>
+        <item>Jus-de-citron-a-base-de-concentre</item>
+        <item>Jus-de-fruit-pasteurise</item>
+        <item>Jus-de-fruits-a-base-de-jus-concentres</item>
+        <item>Jus-de-fruits-multifruits-100-pur-jus</item>
+        <item>Jus-de-fruits-presses-pomme-mangue</item>
+        <item>Jus-de-goyave</item>
+        <item>Jus-de-mangue</item>
+        <item>Jus-de-pamplemouse</item>
+        <item>Jus-de-peche</item>
+        <item>Jus-de-pomme-100-pur-fruit-presse-bio</item>
+        <item>Jus-de-pomme-biologique</item>
+        <item>Jus-de-pomme-et-de-mangue</item>
+        <item>Jus-de-raisin-bio</item>
+        <item>Jus-multi-fruits</item>
+        <item>Jus-multifruit-a-base-de-concentre</item>
+        <item>Jus-multifruits-a-base-de-concentre</item>
+        <item>Jus-orange-banane</item>
+        <item>Kiwi</item>
+        <item>Knacks industrielles à teneur réduite en sel</item>
+        <item>Lait-100-vegetal</item>
+        <item>Lait-de-soja-chocolat</item>
+        <item>Lait-empresure-sucre-aromatise-cacao</item>
+        <item>Lait-parfume</item>
+        <item>Laits d’Épeautre</item>
+        <item>Laits-micro-filtres</item>
+        <item>Landes</item>
+        <item>Lapin-chasseur</item>
+        <item>Lardons-allumettes-nature</item>
+        <item>Lardons-natures-bio</item>
+        <item>Le-p-tit-nature-bio</item>
+        <item>Le-petit-beurre-tablette-chocolat-au-lait-fourre-noisette</item>
+        <item>Legumes-chinois</item>
+        <item>Légumes IGP</item>
+        <item>Legumes-sec-en-conserve</item>
+        <item>Legumes-secs-gourmands-lentilles-ble-pois-casses</item>
+        <item>Legumineuses</item>
+        <item>Lentilles-carottes-bio</item>
+        <item>Lentilles-vertes-aux-lardons</item>
+        <item>Lentilles-vertes-du-berry</item>
+        <item>Levure-de-biere</item>
+        <item>Levure-seche</item>
+        <item>Limonade-au-sucre-de-canne-bio</item>
+        <item>Lin</item>
+        <item>Litchi</item>
+        <item>Livre</item>
+        <item>Lychees au sirop</item>
+        <item>Macarons</item>
+        <item>Macon-blanc</item>
+        <item>Madeleines au beurre frais</item>
+        <item>Madeleines longues</item>
+        <item>Magret-de-canard</item>
+        <item>Mais-tendre</item>
+        <item>Mangues</item>
+        <item>Mangues séchées</item>
+        <item>Maquereaux-a-la-moutarde</item>
+        <item>Maquereaux fumés</item>
+        <item>Margaux</item>
+        <item>Marrons-cuits-a-la-vapeur</item>
+        <item>Mascarpone-cremeux-bio</item>
+        <item>Matiere-grasse-a-tartiner-et-a-cuire</item>
+        <item>Medoc</item>
+        <item>Melange-aperitif</item>
+        <item>Melange-d-huiles</item>
+        <item>Melange-de-ble-et-de-sarrasin</item>
+        <item>Melange-de-cereales-legumes-secs-ble</item>
+        <item>Melange-de-graines-pour-pain</item>
+        <item>Melange-quinoa-boulgour-bio</item>
+        <item>Melisse</item>
+        <item>Menthe</item>
+        <item>Mes-compotes-pommes-fraise-pommes-vanille</item>
+        <item>Microonde</item>
+        <item>Miels d’agrumes</item>
+        <item>Miels d’oranger</item>
+        <item>Miels de Bourgogne</item>
+        <item>Miels de forêt</item>
+        <item>Miels liquides</item>
+        <item>Milk-shake</item>
+        <item>Mini-aperitif-surgele</item>
+        <item>Mini-cakes-aux-fruits-bio</item>
+        <item>Mini-cakes-raisins</item>
+        <item>Mini-moelleux-au-chocolat-bio</item>
+        <item>Mini-toasts-graines-de-lin</item>
+        <item>Miso</item>
+        <item>Mothais</item>
+        <item>Mouchoirs</item>
+        <item>Moules-en-sauce</item>
+        <item>Mouline</item>
+        <item>Mouline-de-legumes-d-autrefois</item>
+        <item>Mousse-au-chocolat-noir</item>
+        <item>Mousse-de-marrons</item>
+        <item>Moutardes provençales</item>
+        <item>Mozzarellas</item>
+        <item>Muesli-aux-fruits-bio</item>
+        <item>Muesli-croustillant-chocolat-bio</item>
+        <item>Muesli-croustillant-natures-bio</item>
+        <item>Muesli-floconneux-5-cereales-nature-bio</item>
+        <item>Muesli-raisins-noisettes-bio</item>
+        <item>Muffins-complets</item>
+        <item>Myrtilles</item>
+        <item>Nappes-au-chocolat-au-lait</item>
+        <item>Nectar-d-orange-bio</item>
+        <item>Nectar-de-pomme-bio</item>
+        <item>Nectar-multivitamine-a-base-de-jus-concentres</item>
+        <item>Nectars-de-citron-vert</item>
+        <item>Nectars-exotiques</item>
+        <item>Nems-au-porc</item>
+        <item>Nids-d-oeufs</item>
+        <item>Noix-de-cajou-grillees-salees</item>
+        <item>Nougats de Montélimar</item>
+        <item>Nouilles-aux-oeufs</item>
+        <item>Nouilles-royales-bami-goreng</item>
+        <item>Oeuf-de-poule</item>
+        <item>Oeufs de cailles</item>
+        <item>Oeufs en chocolat</item>
+        <item>Oignons-frits</item>
+        <item>Olives-aux-amandes</item>
+        <item>Olives-farcies-pate-de-poivron</item>
+        <item>Olives-violettes</item>
+        <item>Orge-et-avoine</item>
+        <item>Pain-a-l-ail</item>
+        <item>Pain-au-son-tranche</item>
+        <item>Pain-aux-fibres-tranche</item>
+        <item>Pain-d-epices-au-sirop-d-agave</item>
+        <item>Pain-de-mie-blanc-bio</item>
+        <item>Pain-de-mie-sans-croute</item>
+        <item>Pain-grille-complet</item>
+        <item>Pain-special-de-campagne-bio</item>
+        <item>Pains azymes à la farine d\'épeautre</item>
+        <item>Pains azymes pilés</item>
+        <item>Pains-et-biscottes</item>
+        <item>Palets-chocolat-cookies-de-cacao</item>
+        <item>Palets-pepites-chocolat</item>
+        <item>Palmiers-allonges-aux-gouttes-de-chocolat</item>
+        <item>Palmiers-feuilletes-et-dores</item>
+        <item>Pamplemousses</item>
+        <item>Panes-de-poulet</item>
+        <item>Par origine de vente</item>
+        <item>Parmesan-rape</item>
+        <item>Pastilla</item>
+        <item>Pastilles</item>
+        <item>Pate-a-gateaux</item>
+        <item>Pate-capellini</item>
+        <item>Pate-de-foie-de-porc</item>
+        <item>Pâte de riz</item>
+        <item>Pate-imperial</item>
+        <item>Pate-molle</item>
+        <item>Pates-13-minutes</item>
+        <item>Pates-a-tartinee</item>
+        <item>Pates-abc</item>
+        <item>Pates-amorini</item>
+        <item>Pates-aux-ble-complet</item>
+        <item>Pates-castellane-parmigiane</item>
+        <item>Pates-cellentani</item>
+        <item>Pates-completes</item>
+        <item>Pates-d-alsace-nids</item>
+        <item>Pates-d-alsace-spaghetti</item>
+        <item>Pates-de-ble-dur</item>
+        <item>Pates-de-fruits-bio</item>
+        <item>Pates-en-croute</item>
+        <item>Pates-farfalle-tricolore</item>
+        <item>Pates-fraiches-cuites</item>
+        <item>Pates-fusilli-bio</item>
+        <item>Pates-gnocchetti-sardi</item>
+        <item>Pates-les-crozets-tomate-piment-d-espelette</item>
+        <item>Pates-mezze-penne-tricolore</item>
+        <item>Pates-piccolini-mini-penne-rigate-aux-courgettes-et-epinards</item>
+        <item>Pates-precuites</item>
+        <item>Pates-spatzle-d-alsace</item>
+        <item>Pates-torsettes-au-ble-complet</item>
+        <item>Patisserie-orientale</item>
+        <item>Pauvre-en-graisse-saturees</item>
+        <item>Paves-de-saumon</item>
+        <item>Penne-au-ble-integral-bio</item>
+        <item>Pepites-croustillantes-30-de-fruits</item>
+        <item>Pepites-croustillantes-fruits-rouges-framboise-fraise-myrtille</item>
+        <item>Pepites-de-chocolat-noir</item>
+        <item>Petales-de-ble</item>
+        <item>Petales-de-cereales-copeaux-de-chocolat</item>
+        <item>Petales-de-mais-sucres</item>
+        <item>Petal</item>
+    </string-array>
 
     <string name="title_activity_tab_test">TabTest</string>
     <string name="title_activity_test">Test</string>

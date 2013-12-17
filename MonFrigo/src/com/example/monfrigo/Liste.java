@@ -13,10 +13,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class Liste extends Activity {
 
@@ -37,6 +38,10 @@ public class Liste extends Activity {
 	private CustomAdapter adapter;
 
 	private List<Aliment> leFrigo;
+	
+	float historicX = Float.NaN, historicY = Float.NaN;
+	static final int DELTA = 50;
+	enum Direction {LEFT, RIGHT;}
 
 
 	@Override
@@ -71,6 +76,41 @@ public class Liste extends Activity {
 		//Ancien adapter
 		//final ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
 		maListe.setAdapter(adapter);
+		
+		maListe.setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) 
+		    {
+		        // TODO Auto-generated method stub
+		        switch (event.getAction()) 
+		        {
+		            case MotionEvent.ACTION_DOWN:
+		            historicX = event.getX();
+		            historicY = event.getY();
+		            break;
+		           case MotionEvent.ACTION_UP:
+		            if (event.getX() - historicX < -DELTA) 
+		            {
+		            	for(Aliment a : MesFrigos.getFrigoActuel().getLeFrigo()){
+		            		 v.getResources(); // ?
+		            	}
+		                return true;
+		            }
+		            else if (event.getX() - historicX > DELTA)  
+		            {
+		            	for(Aliment a : MesFrigos.getFrigoActuel().getLeFrigo()){
+		            		if( a.equals((String) v.toString())){
+		            			MesFrigos.getFrigoActuel().vomirUnAliment(a);
+		            			adapter.notifyDataSetChanged();
+		            		}
+		            	}
+		                return true;
+		            } break;
+		            default: return false;
+		        }
+		        return false;
+		    }
+		});
 
 		boutonTriAlpha.setOnClickListener(new View.OnClickListener() {
 			@Override
