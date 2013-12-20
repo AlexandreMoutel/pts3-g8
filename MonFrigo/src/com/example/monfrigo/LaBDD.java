@@ -24,7 +24,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + IDNOM + " Text PRIMARY KEY not null);";
 	
 	//Requête Table Aliment
-	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " (" + NOM + " Text PRIMARY KEY not null, "
+	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " (" + NOM + " Text not null, "
 			+ TYPE + " Text not null, " + DATEPEREMPTION + " Text not null, " + QUANTITE + " Integer not null, " + FRIGOETRANGER + " Text);";
 	
 	//Requête Création BDD

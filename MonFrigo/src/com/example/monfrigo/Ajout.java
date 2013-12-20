@@ -50,7 +50,7 @@ public class Ajout extends Activity {
 	//
 
 	//Type de produit
-	public EditText editTypeProduit = null;
+	public AutoCompleteTextView editTypeProduit = null;
 	public String leTypeDeProduit = null;
 	//
 
@@ -68,23 +68,28 @@ public class Ajout extends Activity {
 
 		//On récupère le tableau de String créé dans le fichier string.xml
 		String[] tableauAliments = getResources().getStringArray(R.array.tableau);
+		String[] tableauType = getResources().getStringArray(R.array.tableauCategorie);
 
 		//On récupère l'AutoCompleteTextView que l'on a créé dans le fichier main.xml
 		final AutoCompleteTextView autoComplete = (AutoCompleteTextView) findViewById(R.id.saisieAjout);
+		final AutoCompleteTextView autoCompletetype = (AutoCompleteTextView) findViewById(R.id.typeProd);
 
 		//On crée la liste d'autocomplétion à partir de notre tableau de string appelé tableauString
 		//android.R.layout.simple_dropdown_item_1line permet de définir le style d'affichage de la liste
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_dropdown_item_1line, tableauAliments);
+		
+		ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, tableauType);
 
 		//On affecte cette liste d'autocomplétion à notre objet d'autocomplétion
 		autoComplete.setAdapter(adapter);
-
+		autoCompletetype.setAdapter(adapterType);
 
 		//On initialise les EditText
 		nomProduit = (AutoCompleteTextView) findViewById(R.id.saisieAjout);
 		editDatePerem = (DatePicker) findViewById(R.id.datePerem);
-		editTypeProduit = (EditText) findViewById(R.id.typeProd);
+		editTypeProduit = (AutoCompleteTextView) findViewById(R.id.typeProd);
 		quantite = (EditText) findViewById(R.id.quantite);
 		//
 

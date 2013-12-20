@@ -16,8 +16,12 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Liste extends Activity {
 
@@ -34,6 +38,7 @@ public class Liste extends Activity {
 	ArrayList<HashMap<String, Object>> aliment;
 	HashMap<String, Object> temp;
 	LayoutInflater inflater;
+	String nomAliment;
 
 	private CustomAdapter adapter;
 
@@ -76,12 +81,11 @@ public class Liste extends Activity {
 		//Ancien adapter
 		//final ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
 		maListe.setAdapter(adapter);
-		
 		maListe.setOnTouchListener(new OnTouchListener() {
 		    @Override
-		    public boolean onTouch(View v, MotionEvent event) 
+		    public boolean onTouch(View view, MotionEvent event) 
 		    {
-		        // TODO Auto-generated method stub
+		    	TextView nomAliment =  (TextView) (((TextView) view).getText());
 		        switch (event.getAction()) 
 		        {
 		            case MotionEvent.ACTION_DOWN:
@@ -92,20 +96,32 @@ public class Liste extends Activity {
 		            if (event.getX() - historicX < -DELTA) 
 		            {
 		            	for(Aliment a : MesFrigos.getFrigoActuel().getLeFrigo()){
-		            		 v.getResources(); // ?
+		            		Log.e("AIDE", "Nom aliment = " + nomAliment + "Nom liste = " + a);
+		            		/*if( a.getNom().equals(nomAliment.)){
+		            			MesFrigos.getFrigoActuel().mangerUnAliment(a);
+		            			adapter.notifyDataSetChanged();
+			            		Toast.makeText(getBaseContext(), "Un "+nomAliment+" a bien été retiré", Toast.LENGTH_SHORT).show();
+		            		}*/
 		            	}
 		                return true;
 		            }
 		            else if (event.getX() - historicX > DELTA)  
 		            {
 		            	for(Aliment a : MesFrigos.getFrigoActuel().getLeFrigo()){
-		            		if( a.equals((String) v.toString())){
+		            		if( a.getNom().equals(nomAliment)){
 		            			MesFrigos.getFrigoActuel().vomirUnAliment(a);
 		            			adapter.notifyDataSetChanged();
+		            			Toast.makeText(getBaseContext(), "Un "+nomAliment+" a bien été ajouté", Toast.LENGTH_SHORT).show();
 		            		}
 		            	}
 		                return true;
-		            } break;
+		            }
+		            leFrigo = recupererListeAliment(); 
+		    		remplirTableau(leFrigo);
+		    		aliment = new ArrayList<HashMap<String, Object>>();
+		    		remplirHashMap();
+		    		adapter=new CustomAdapter(getBaseContext(), android.R.layout.activity_list_item, aliment, inflater); 
+		    		maListe.setAdapter(adapter);break;
 		            default: return false;
 		        }
 		        return false;

@@ -18,8 +18,6 @@
         android:inputType="text"
         tools:ignore="LabelFor" >
 
-        <requestFocus />
-
     </AutoCompleteTextView>
 
     <TextView
@@ -68,7 +66,7 @@
         android:layout_marginTop="18dp"
         android:text="@string/type_du_produit_" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/typeProd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
