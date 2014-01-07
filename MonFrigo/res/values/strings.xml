@@ -1330,5 +1330,6 @@
     <string name="tri_categorie">Tri par catégorie</string>
     <string name="title_activity_afficher_liste_de_course">AfficherListeDeCourse</string>
     <string name="selectFrigo">Selection du frigo</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 
 </resources>

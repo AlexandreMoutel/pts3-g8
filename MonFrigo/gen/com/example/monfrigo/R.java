@@ -25,18 +25,19 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int list_selector=0x7f020001;
-        public static final int tab_bg_selected=0x7f020002;
-        public static final int tab_bg_selector=0x7f020003;
-        public static final int tab_bg_unselected=0x7f020004;
-        public static final int tab_divider=0x7f020005;
-        public static final int tab_text_selector=0x7f020006;
+        public static final int frigo=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int list_selector=0x7f020002;
+        public static final int tab_bg_selected=0x7f020003;
+        public static final int tab_bg_selector=0x7f020004;
+        public static final int tab_bg_unselected=0x7f020005;
+        public static final int tab_divider=0x7f020006;
+        public static final int tab_text_selector=0x7f020007;
     }
     public static final class id {
         public static final int AbsoluteLayout1=0x7f0a000e;
         public static final int RelativeLayout1=0x7f0a000b;
-        public static final int action_settings=0x7f0a0019;
+        public static final int action_settings=0x7f0a001a;
         public static final int afficheNom=0x7f0a0005;
         public static final int afficheQuantite=0x7f0a0003;
         public static final int afficheType=0x7f0a0007;
@@ -46,19 +47,20 @@ public final class R {
         public static final int button_tri_alpha=0x7f0a0011;
         public static final int button_tri_categ=0x7f0a0010;
         public static final int button_tri_dlc=0x7f0a000f;
-        public static final int dateAliment=0x7f0a0014;
+        public static final int dateAliment=0x7f0a0015;
         public static final int datePerem=0x7f0a0004;
-        public static final int firstDivider=0x7f0a0018;
+        public static final int firstDivider=0x7f0a0019;
+        public static final int imgLogo=0x7f0a0012;
         public static final int listViewFrigo=0x7f0a000d;
         public static final int listView_liste=0x7f0a0000;
-        public static final int nomAliment=0x7f0a0012;
+        public static final int nomAliment=0x7f0a0013;
         public static final int quantite=0x7f0a0006;
-        public static final int quantiteAliment=0x7f0a0013;
+        public static final int quantiteAliment=0x7f0a0014;
         public static final int saisieAjout=0x7f0a0001;
-        public static final int tabsLayout=0x7f0a0016;
-        public static final int tabsText=0x7f0a0017;
+        public static final int tabsLayout=0x7f0a0017;
+        public static final int tabsText=0x7f0a0018;
         public static final int titreAjout=0x7f0a0002;
-        public static final int typeAliment=0x7f0a0015;
+        public static final int typeAliment=0x7f0a0016;
         public static final int typeProd=0x7f0a0008;
     }
     public static final class layout {
@@ -69,9 +71,10 @@ public final class R {
         public static final int activity_main=0x7f030004;
         public static final int activity_scan=0x7f030005;
         public static final int activity_scanner=0x7f030006;
-        public static final int layout_liste_frigo=0x7f030007;
-        public static final int liste_aliment=0x7f030008;
-        public static final int tab_item=0x7f030009;
+        public static final int activity_splash_screen=0x7f030007;
+        public static final int layout_liste_frigo=0x7f030008;
+        public static final int liste_aliment=0x7f030009;
+        public static final int tab_item=0x7f03000a;
     }
     public static final class menu {
         public static final int afficher_liste_de_course=0x7f090000;
@@ -81,8 +84,9 @@ public final class R {
         public static final int main=0x7f090004;
         public static final int scan=0x7f090005;
         public static final int scanner=0x7f090006;
-        public static final int tab_test=0x7f090007;
-        public static final int test=0x7f090008;
+        public static final int splash_screen=0x7f090007;
+        public static final int tab_test=0x7f090008;
+        public static final int test=0x7f090009;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -113,6 +117,7 @@ public final class R {
         public static final int title_activity_liste=0x7f060003;
         public static final int title_activity_scan=0x7f060019;
         public static final int title_activity_scanner=0x7f06001c;
+        public static final int title_activity_splash_screen=0x7f060022;
         public static final int title_activity_tab_test=0x7f060017;
         public static final int title_activity_test=0x7f060018;
         public static final int tri_alpha=0x7f06001d;
