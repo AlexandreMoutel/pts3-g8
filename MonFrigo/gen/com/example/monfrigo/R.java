@@ -37,7 +37,7 @@ public final class R {
     public static final class id {
         public static final int AbsoluteLayout1=0x7f0a000e;
         public static final int RelativeLayout1=0x7f0a000b;
-        public static final int action_settings=0x7f0a001a;
+        public static final int action_settings=0x7f0a001b;
         public static final int afficheNom=0x7f0a0005;
         public static final int afficheQuantite=0x7f0a0003;
         public static final int afficheType=0x7f0a0007;
@@ -47,20 +47,21 @@ public final class R {
         public static final int button_tri_alpha=0x7f0a0011;
         public static final int button_tri_categ=0x7f0a0010;
         public static final int button_tri_dlc=0x7f0a000f;
-        public static final int dateAliment=0x7f0a0015;
+        public static final int dateAliment=0x7f0a0016;
         public static final int datePerem=0x7f0a0004;
-        public static final int firstDivider=0x7f0a0019;
-        public static final int imgLogo=0x7f0a0012;
+        public static final int empty=0x7f0a0012;
+        public static final int firstDivider=0x7f0a001a;
+        public static final int imgLogo=0x7f0a0013;
         public static final int listViewFrigo=0x7f0a000d;
         public static final int listView_liste=0x7f0a0000;
-        public static final int nomAliment=0x7f0a0013;
+        public static final int nomAliment=0x7f0a0014;
         public static final int quantite=0x7f0a0006;
-        public static final int quantiteAliment=0x7f0a0014;
+        public static final int quantiteAliment=0x7f0a0015;
         public static final int saisieAjout=0x7f0a0001;
-        public static final int tabsLayout=0x7f0a0017;
-        public static final int tabsText=0x7f0a0018;
+        public static final int tabsLayout=0x7f0a0018;
+        public static final int tabsText=0x7f0a0019;
         public static final int titreAjout=0x7f0a0002;
-        public static final int typeAliment=0x7f0a0016;
+        public static final int typeAliment=0x7f0a0017;
         public static final int typeProd=0x7f0a0008;
     }
     public static final class layout {
@@ -96,6 +97,7 @@ public final class R {
         public static final int ajouter_la_date_de_p_remption=0x7f06000f;
         public static final int ajouter_un_aliment=0x7f060007;
         public static final int app_name=0x7f060000;
+        public static final int aucun_r_sultats=0x7f060023;
         public static final int autocompletion_ajout=0x7f060016;
         public static final int exit=0x7f06000a;
         public static final int frigo=0x7f060015;

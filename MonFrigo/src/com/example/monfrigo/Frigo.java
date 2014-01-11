@@ -61,18 +61,6 @@ public class Frigo {
 		close();
 	}
 	
-	public void vomirUnAliment(Aliment lePaté){
-		open();
-		ContentValues values = new ContentValues();
-		values.put(NOM, lePaté.getNom());
-		values.put(TYPE, lePaté.getType());
-		values.put(DATEPEREMPTION, lePaté.getDate());
-		values.put(QUANTITE, String.valueOf(Integer.parseInt(lePaté.getQuantite())+1));
-		values.put(FRIGOETRANGER, this.getNom());
-		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = '" + lePaté.getNom() + "'", null);
-		close();
-	}
-	
 	public void transformerUnAliment(Aliment lePaté){
 		open();
 		ContentValues values = new ContentValues();

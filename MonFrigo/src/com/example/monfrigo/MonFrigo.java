@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class SplashScreen extends Activity {
+public class MonFrigo extends Activity {
 	ImageView image;
  
     @Override
@@ -23,7 +23,7 @@ public class SplashScreen extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-               Intent i = new Intent(SplashScreen.this, MainActivity.class);
+               Intent i = new Intent(MonFrigo.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

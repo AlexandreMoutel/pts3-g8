@@ -112,13 +112,13 @@ public class Ajout extends Activity {
 					Toast.makeText(Ajout.this,"Veuillez renseigner la quantité", Toast.LENGTH_LONG).show();
 				else{
 
-					String mois =  String.valueOf(editDatePerem.getMonth());
+					String mois =  String.valueOf(editDatePerem.getMonth() + 1);
 					String jour =  String.valueOf(editDatePerem.getDayOfMonth());
 					String annee =  String.valueOf(editDatePerem.getYear());
 					//On crée l'aliment et on met dans la liste
 					leProduit = nomProduit.getText().toString();
 					leTypeDeProduit = editTypeProduit.getText().toString();
-					laDateDePerem = mois +"/"+ jour +"/" + annee;
+					laDateDePerem = jour +"/"+ mois +"/" + annee;
 					laQuantite = quantite.getText().toString();
 					//On Crée un aliment et on l'ajoute au frigo
 

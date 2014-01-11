@@ -11,7 +11,7 @@
     tools:ignore="Deprecated" >
 
     <ListView
-        android:id="@+id/listView_liste"
+        android:id="@id/android:list"
         android:layout_width="wrap_content"
         android:layout_height="702dp"
         android:layout_x="10dp"
@@ -58,5 +58,15 @@
         android:layout_y="800dp"
         android:background="@drawable/tab_bg_selected"
         android:text="@string/tri_alpha" />
+
+     <TextView
+         android:id="@+id/empty"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_x="21dp"
+         android:layout_y="54dp"
+         android:gravity="center"
+         android:text="@string/aucun_r_sultats"
+         android:textSize="18dp" />
 
 </AbsoluteLayout>
