@@ -16,6 +16,7 @@ public class Frigo {
 	private final static String TYPE = "Type";
 	private final static String DATEPEREMPTION = "DateDePeremption";
 	private final static String QUANTITE = "Quantite";
+	private final static String ID = "id";
 	private final static String FRIGOETRANGER = "Frigo";
 	private SQLiteDatabase laBelleDindeDorée;
 
@@ -43,6 +44,18 @@ public class Frigo {
 		laBelleDindeDorée.insert(ALIMENT, null, values);
 		close();
 	}
+	
+	/*public void ajouterAlimentCourse(Aliment leJambon){
+		  open();
+		  ContentValues values = new ContentValues();
+		  values.put(NOM, leJambon.getNom());
+		  values.put(TYPE, leJambon.getType());
+		  values.put(DATEPEREMPTION, leJambon.getDate());
+		  values.put(QUANTITE, leJambon.getQuantite());
+		  values.put(FRIGOETRANGER, null);
+		  laBelleDindeDorée.insert(ALIMENT, null, values);
+		  close();
+		 }*/
 
 	public void mangerTousLesAliment(Aliment lePetitGigot){
 		open();
@@ -103,6 +116,20 @@ public class Frigo {
 		close();
 		return laListeDeCourse;
 	}
+	
+	public int heyLesAlimentsIlsOntUnNombreCestDroleNon(Aliment leDénombré){
+		  open();
+		  Cursor laDinde = laBelleDindeDorée.rawQuery("SELECT " + ID + " FROM " + ALIMENT + " WHERE " + NOM + " = '" + leDénombré.getNom() + "' AND " +
+		    DATEPEREMPTION + " = " + leDénombré.getDate(), null); 
+		    
+		  if(laDinde.getCount() == 0){
+		   close();
+		   return -1;
+		  }
+		  laDinde.moveToFirst();
+		  close();
+		  return laDinde.getInt(0);
+		 }
 	
 	public List<Aliment> getLeFrigo() {
 		open();

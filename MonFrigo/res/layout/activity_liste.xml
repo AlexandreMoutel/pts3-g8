@@ -61,12 +61,12 @@
 
      <TextView
          android:id="@+id/empty"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:layout_x="21dp"
-         android:layout_y="54dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_x="2dp"
+         android:layout_y="50dp"
          android:gravity="center"
          android:text="@string/aucun_r_sultats"
-         android:textSize="18dp" />
+         android:textSize="18sp" />
 
 </AbsoluteLayout>

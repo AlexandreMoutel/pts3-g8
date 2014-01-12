@@ -1331,6 +1331,9 @@
     <string name="title_activity_afficher_liste_de_course">AfficherListeDeCourse</string>
     <string name="selectFrigo">Selection du frigo</string>
     <string name="title_activity_splash_screen">MonFrigo</string>
-    <string name="aucun_r_sultats">Aucun résultats</string>
+    <string name="aucun_r_sultats">Aucun résultat</string>
+    <string name="todo">TODO</string>
+    <string name="aucunFrigo">Il n\' y actuellement aucun frigo de créé</string>
+    <string name="title_activity_activity_notification">ActivityNotification</string>
 
 </resources>

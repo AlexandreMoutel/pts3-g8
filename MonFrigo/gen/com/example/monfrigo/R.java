@@ -25,69 +25,73 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int frigo=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int list_selector=0x7f020002;
-        public static final int tab_bg_selected=0x7f020003;
-        public static final int tab_bg_selector=0x7f020004;
-        public static final int tab_bg_unselected=0x7f020005;
-        public static final int tab_divider=0x7f020006;
-        public static final int tab_text_selector=0x7f020007;
+        public static final int fond=0x7f020000;
+        public static final int frigo=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int icon=0x7f020003;
+        public static final int list_selector=0x7f020004;
+        public static final int tab_bg_selected=0x7f020005;
+        public static final int tab_bg_selector=0x7f020006;
+        public static final int tab_bg_unselected=0x7f020007;
+        public static final int tab_divider=0x7f020008;
+        public static final int tab_text_selector=0x7f020009;
     }
     public static final class id {
-        public static final int AbsoluteLayout1=0x7f0a000e;
-        public static final int RelativeLayout1=0x7f0a000b;
+        public static final int AbsoluteLayout1=0x7f0a000c;
         public static final int action_settings=0x7f0a001b;
-        public static final int afficheNom=0x7f0a0005;
-        public static final int afficheQuantite=0x7f0a0003;
-        public static final int afficheType=0x7f0a0007;
-        public static final int buttonAjout=0x7f0a0009;
-        public static final int button_new_frigo=0x7f0a000c;
-        public static final int button_scanner=0x7f0a000a;
+        public static final int afficheNom=0x7f0a0006;
+        public static final int afficheQuantite=0x7f0a0004;
+        public static final int afficheType=0x7f0a0008;
+        public static final int buttonAjout=0x7f0a000a;
+        public static final int button_new_frigo=0x7f0a000d;
+        public static final int button_scanner=0x7f0a000b;
         public static final int button_tri_alpha=0x7f0a0011;
         public static final int button_tri_categ=0x7f0a0010;
         public static final int button_tri_dlc=0x7f0a000f;
         public static final int dateAliment=0x7f0a0016;
-        public static final int datePerem=0x7f0a0004;
+        public static final int datePerem=0x7f0a0005;
         public static final int empty=0x7f0a0012;
         public static final int firstDivider=0x7f0a001a;
-        public static final int imgLogo=0x7f0a0013;
-        public static final int listViewFrigo=0x7f0a000d;
-        public static final int listView_liste=0x7f0a0000;
+        public static final int imageView1=0x7f0a0000;
+        public static final int listView_liste=0x7f0a0001;
         public static final int nomAliment=0x7f0a0014;
-        public static final int quantite=0x7f0a0006;
+        public static final int progressBar1=0x7f0a0013;
+        public static final int quantite=0x7f0a0007;
         public static final int quantiteAliment=0x7f0a0015;
-        public static final int saisieAjout=0x7f0a0001;
+        public static final int saisieAjout=0x7f0a0002;
         public static final int tabsLayout=0x7f0a0018;
         public static final int tabsText=0x7f0a0019;
-        public static final int titreAjout=0x7f0a0002;
+        public static final int textViewEmptyFrigo=0x7f0a000e;
+        public static final int titreAjout=0x7f0a0003;
         public static final int typeAliment=0x7f0a0017;
-        public static final int typeProd=0x7f0a0008;
+        public static final int typeProd=0x7f0a0009;
     }
     public static final class layout {
-        public static final int activity_afficher_liste_de_course=0x7f030000;
-        public static final int activity_ajout=0x7f030001;
-        public static final int activity_creer_frigo=0x7f030002;
-        public static final int activity_liste=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_scan=0x7f030005;
-        public static final int activity_scanner=0x7f030006;
-        public static final int activity_splash_screen=0x7f030007;
-        public static final int layout_liste_frigo=0x7f030008;
-        public static final int liste_aliment=0x7f030009;
-        public static final int tab_item=0x7f03000a;
+        public static final int activity_activity_notification=0x7f030000;
+        public static final int activity_afficher_liste_de_course=0x7f030001;
+        public static final int activity_ajout=0x7f030002;
+        public static final int activity_creer_frigo=0x7f030003;
+        public static final int activity_liste=0x7f030004;
+        public static final int activity_main=0x7f030005;
+        public static final int activity_scan=0x7f030006;
+        public static final int activity_scanner=0x7f030007;
+        public static final int activity_splash_screen=0x7f030008;
+        public static final int layout_liste_frigo=0x7f030009;
+        public static final int liste_aliment=0x7f03000a;
+        public static final int tab_item=0x7f03000b;
     }
     public static final class menu {
-        public static final int afficher_liste_de_course=0x7f090000;
-        public static final int ajout=0x7f090001;
-        public static final int creer_frigo=0x7f090002;
-        public static final int liste=0x7f090003;
-        public static final int main=0x7f090004;
-        public static final int scan=0x7f090005;
-        public static final int scanner=0x7f090006;
-        public static final int splash_screen=0x7f090007;
-        public static final int tab_test=0x7f090008;
-        public static final int test=0x7f090009;
+        public static final int activity_notification=0x7f090000;
+        public static final int afficher_liste_de_course=0x7f090001;
+        public static final int ajout=0x7f090002;
+        public static final int creer_frigo=0x7f090003;
+        public static final int liste=0x7f090004;
+        public static final int main=0x7f090005;
+        public static final int scan=0x7f090006;
+        public static final int scanner=0x7f090007;
+        public static final int splash_screen=0x7f090008;
+        public static final int tab_test=0x7f090009;
+        public static final int test=0x7f09000a;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -97,6 +101,7 @@ public final class R {
         public static final int ajouter_la_date_de_p_remption=0x7f06000f;
         public static final int ajouter_un_aliment=0x7f060007;
         public static final int app_name=0x7f060000;
+        public static final int aucunFrigo=0x7f060025;
         public static final int aucun_r_sultats=0x7f060023;
         public static final int autocompletion_ajout=0x7f060016;
         public static final int exit=0x7f06000a;
@@ -113,6 +118,7 @@ public final class R {
         public static final int scanner=0x7f06001b;
         public static final int selectFrigo=0x7f060021;
         public static final int textview=0x7f060012;
+        public static final int title_activity_activity_notification=0x7f060026;
         public static final int title_activity_afficher_liste_de_course=0x7f060020;
         public static final int title_activity_ajout=0x7f060006;
         public static final int title_activity_creer_frigo=0x7f060013;
@@ -122,6 +128,7 @@ public final class R {
         public static final int title_activity_splash_screen=0x7f060022;
         public static final int title_activity_tab_test=0x7f060017;
         public static final int title_activity_test=0x7f060018;
+        public static final int todo=0x7f060024;
         public static final int tri_alpha=0x7f06001d;
         public static final int tri_categorie=0x7f06001f;
         public static final int tri_ldc=0x7f06001e;

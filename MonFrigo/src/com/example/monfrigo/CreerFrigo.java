@@ -2,17 +2,13 @@ package com.example.monfrigo;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ClipData;
+import android.app.ListActivity;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.DragEvent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.DragShadowBuilder;
-import android.view.View.OnDragListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -21,31 +17,44 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class CreerFrigo extends Activity {
+public class CreerFrigo extends ListActivity {
 
 	Button newFrigo;
 	ArrayAdapter<String> adapter;
-	 List<String> listeFrigo = MesFrigos.getMesFrigos();
-	 ListView maListe;
+	List<String> listeFrigo = MesFrigos.getMesFrigos();
+	ListView maListe;
+	TextView emptyFrigo;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_creer_frigo);
 
 		newFrigo = (Button) findViewById(R.id.button_new_frigo);
-		
+		emptyFrigo = (TextView) findViewById(R.id.textViewEmptyFrigo);
+
+
 		listeFrigo = recupererListeFrigo();
-		maListe = (ListView) findViewById(R.id.listViewFrigo);
-		
-		
+		//maListe = (ListView) findViewById(R.id.listViewFrigo);
+		maListe = getListView();
+		maListe.setEmptyView(maListe.getEmptyView());
+
 		adapter = new ArrayAdapter<String>(this, R.layout.layout_liste_frigo, listeFrigo);
 		maListe.setSelector(R.drawable.list_selector);
-		maListe.setAdapter(adapter);
-		
+
+
 		maListe.setItemsCanFocus(false);
-        maListe.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		maListe.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+		if(listeFrigo == null){
+			emptyFrigo.setText("Il n' y actuellement aucun frigo de créé");
+		}else{
+			emptyFrigo.setText("");
+			maListe.setAdapter(adapter);
+		}
+
+
 
 		newFrigo.setOnClickListener(new View.OnClickListener() {
 
@@ -65,7 +74,15 @@ public class CreerFrigo extends Activity {
 						String nomFrigo = inputNomFrigo.getText().toString();
 						MesFrigos.ajouterFrigo(nomFrigo);
 						listeFrigo = recupererListeFrigo();
-						adapter.insert(nomFrigo, 0);
+						adapter = new ArrayAdapter<String>(getBaseContext(), R.layout.layout_liste_frigo, listeFrigo);
+						//adapter.insert(nomFrigo, 0);
+						maListe.setSelector(R.drawable.list_selector);
+						maListe.setAdapter(adapter);
+
+						maListe.setItemsCanFocus(false);
+						maListe.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+						emptyFrigo.setText("");
+						MesFrigos.setFrigoActuel(nomFrigo);
 					}
 				})
 				.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
@@ -76,10 +93,9 @@ public class CreerFrigo extends Activity {
 				.show(); 
 			}
 		});
-		
+
 		//Test du drag and drop
 		maListe.setOnItemLongClickListener(new OnItemLongClickListener() {
-			myDragEventListener dragListener = new myDragEventListener();
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, final View v,
 					int arg2, long arg3) {
@@ -87,9 +103,9 @@ public class CreerFrigo extends Activity {
 		        DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
 				v.startDrag(data, shadowBuilder, v, 0);
 				v.setOnDragListener(dragListener);*/
-				
+
 				final EditText modifNomFrigo = new EditText(getBaseContext());
-				
+
 				new AlertDialog.Builder(CreerFrigo.this)
 				.setTitle("Modification de Frigo")
 				.setMessage("Nom du frigo")
@@ -101,7 +117,7 @@ public class CreerFrigo extends Activity {
 						String nomFrigo = modifNomFrigo.getText().toString();
 						MesFrigos.getFrigoActuel().setNom(nomFrigo);
 						listeFrigo = recupererListeFrigo();
-						maListe = (ListView) findViewById(R.id.listViewFrigo);
+						maListe = getListView();
 						adapter = new ArrayAdapter<String>(CreerFrigo.this, R.layout.layout_liste_frigo, listeFrigo);
 						maListe.setAdapter(adapter);
 					}
@@ -120,11 +136,21 @@ public class CreerFrigo extends Activity {
 							if(listeFrigo.get(i) == nomFrigo)
 								listeFrigo.remove(i);
 							MesFrigos.supprimerFrigo(MesFrigos.getFrigoActuel().getNom());
+							
+							Log.e("DEBUG", "Frigo actuel : " + MesFrigos.getFrigoActuel().getNom());
 						}
 						listeFrigo = recupererListeFrigo();
-						maListe = (ListView) findViewById(R.id.listViewFrigo);
+						maListe = getListView();
 						adapter = new ArrayAdapter<String>(CreerFrigo.this, R.layout.layout_liste_frigo, listeFrigo);
-						maListe.setAdapter(adapter);
+
+						if(listeFrigo == null){
+							emptyFrigo.setText("Il n' y actuellement aucun frigo de créé");
+						}
+						else{
+							emptyFrigo.setText("");
+							maListe.setAdapter(adapter);
+						}
+						
 					}
 				})
 				.show(); 
@@ -132,16 +158,21 @@ public class CreerFrigo extends Activity {
 				return false;
 			}
 		});
-		
-		
-		
+
+
+
 		//Gérer la selection de frigo
 		maListe.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int arg2,
 					long arg3) {
-				 MesFrigos.setFrigoActuel(((TextView) v).getText().toString());
+				MesFrigos.setFrigoActuel(((TextView) v).getText().toString());
+				for(int i = 0; i < listeFrigo.size(); i++){
+					if(maListe.getItemAtPosition(i) == MesFrigos.getFrigoActuel()){
+						maListe.setSelection(i);
+					}
+				}
 			}
 		});
 	}
@@ -149,17 +180,31 @@ public class CreerFrigo extends Activity {
 	private List<String> recupererListeFrigo() {
 		listeFrigo = null;
 		return MesFrigos.getMesFrigos();
-		
+
 	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Log.e("passage1", "passage1");
 		listeFrigo = recupererListeFrigo();
-		maListe = (ListView) findViewById(R.id.listViewFrigo);
+		maListe = getListView();
 		adapter = new ArrayAdapter<String>(this, R.layout.layout_liste_frigo, listeFrigo);
-		maListe.setAdapter(adapter);
+		if(listeFrigo != null){
+			maListe.setAdapter(adapter);
+			for(int i = 0; i < listeFrigo.size(); i++){
+				if(MesFrigos.getFrigoActuel() != null)
+					if(maListe.getItemAtPosition(i).toString().equals(MesFrigos.getFrigoActuel().getNom())){
+						maListe.setItemChecked(i, true);
+						maListe.setSelection(i);
+						Log.e("passage", "passage");
+					}
+			}
+		}
+
 		adapter.notifyDataSetChanged();
+
+
 	}
 
 	@Override
@@ -168,39 +213,4 @@ public class CreerFrigo extends Activity {
 		getMenuInflater().inflate(R.menu.creer_frigo, menu);
 		return true;
 	}
-	
-	protected class myDragEventListener implements OnDragListener {
-
-		@Override
-		public boolean onDrag(View v, DragEvent event) {
-			final int action = event.getAction();
-			
-			switch(action){
-			case DragEvent.ACTION_DROP: 
-				Toast.makeText(getBaseContext(), "Drop", Toast.LENGTH_SHORT).show();
-			break;
-			case DragEvent.ACTION_DRAG_EXITED: 
-				Toast.makeText(getBaseContext(), "Exit", Toast.LENGTH_SHORT).show();
-			break;
-			case DragEvent.ACTION_DRAG_STARTED: 
-				Toast.makeText(getBaseContext(), "Start", Toast.LENGTH_SHORT).show();
-				
-			break;
-			case DragEvent.ACTION_DRAG_ENTERED: 
-				Toast.makeText(getBaseContext(), "Enter", Toast.LENGTH_SHORT).show();
-			break;
-			case DragEvent.ACTION_DRAG_ENDED: 
-				Toast.makeText(getBaseContext(), "End", Toast.LENGTH_SHORT).show();
-			break;
-			case DragEvent.ACTION_DRAG_LOCATION: 
-				Toast.makeText(getBaseContext(), "Location", Toast.LENGTH_SHORT).show();
-			break;
-			}
-		
-			return false;
-		}
-		
-	}
-
-
 }

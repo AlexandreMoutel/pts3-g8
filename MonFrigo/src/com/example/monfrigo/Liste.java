@@ -26,7 +26,7 @@ public class Liste extends ListActivity {
 	Button boutonTriAlpha;
 	Button boutonTriDlc;
 	Button boutonTriCategorie;
-	
+
 	TextView listeVide;
 
 	//Déclaration des tableaux
@@ -93,8 +93,12 @@ public class Liste extends ListActivity {
 					public void onClick(DialogInterface dialog, int whichButton)
 					{
 						HashMap alimentSelect = (HashMap) maListe.getItemAtPosition(arg2);
-						MesFrigos.getFrigoActuel().mangerTousLesAliment(new Aliment(alimentSelect.get("nom").toString(), alimentSelect.get("type").toString(), alimentSelect.get("date").toString(), alimentSelect.get("quantite").toString()));
 						adapter.remove(alimentSelect);
+						MesFrigos.getFrigoActuel().mangerTousLesAliment(new Aliment(alimentSelect.get("nom").toString(), alimentSelect.get("type").toString(), alimentSelect.get("date").toString(), alimentSelect.get("quantite").toString()));
+						if(MesFrigos.getFrigoActuel().getLeFrigo() == null){
+							listeVide.setText("Aucun aliment");
+							leFrigo = null;
+						}
 					}
 				})
 				.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
@@ -113,17 +117,18 @@ public class Liste extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				//Tri par ordre Alphabétique
-				Collections.sort(leFrigo, new Comparator<Aliment>(){
+				if(leFrigo != null){
+					Collections.sort(leFrigo, new Comparator<Aliment>(){
 
-					@Override
-					public int compare(Aliment a1, Aliment a2) {
-						return a1.getNom().compareTo(a2.getNom());
-					}
-				});
-				remplirTableau(leFrigo);
-				remplirHashMap();
-				adapter.notifyDataSetChanged();
-
+						@Override
+						public int compare(Aliment a1, Aliment a2) {
+							return a1.getNom().compareTo(a2.getNom());
+						}
+					});
+					remplirTableau(leFrigo);
+					remplirHashMap();
+					adapter.notifyDataSetChanged();
+				}
 			}
 		});
 
@@ -131,16 +136,18 @@ public class Liste extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				//Tri par type
-				Collections.sort(leFrigo, new Comparator<Aliment>(){
+				if(leFrigo != null){
+					Collections.sort(leFrigo, new Comparator<Aliment>(){
 
-					@Override
-					public int compare(Aliment a1, Aliment a2) {
-						return a1.getType().compareTo(a2.getType());
-					}
-				});
-				remplirTableau(leFrigo);
-				remplirHashMap();
-				adapter.notifyDataSetChanged();
+						@Override
+						public int compare(Aliment a1, Aliment a2) {
+							return a1.getType().compareTo(a2.getType());
+						}
+					});
+					remplirTableau(leFrigo);
+					remplirHashMap();
+					adapter.notifyDataSetChanged();
+				}
 			}
 		});
 
@@ -148,41 +155,43 @@ public class Liste extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				//Tri par date
-				Collections.sort(leFrigo, new Comparator<Aliment>(){
+				if(leFrigo != null){
+					Collections.sort(leFrigo, new Comparator<Aliment>(){
 
-					@Override
-					public int compare(Aliment a1, Aliment a2) {
-						String aliment1 = String.valueOf(a1.getDate());
-						String aliment2 = String.valueOf(a2.getDate());
+						@Override
+						public int compare(Aliment a1, Aliment a2) {
+							String aliment1 = String.valueOf(a1.getDate());
+							String aliment2 = String.valueOf(a2.getDate());
 
-						String[] sAliment1 = aliment1.split("/");
-						String[] sAliment2 = aliment2.split("/");
+							String[] sAliment1 = aliment1.split("/");
+							String[] sAliment2 = aliment2.split("/");
 
-						int jourAliment1 = Integer.parseInt(sAliment1[0]);
-						int moisAliment1 = Integer.parseInt(sAliment1[1]);
-						int anneeAliment1 = Integer.parseInt(sAliment1[2]);
+							int jourAliment1 = Integer.parseInt(sAliment1[0]);
+							int moisAliment1 = Integer.parseInt(sAliment1[1]);
+							int anneeAliment1 = Integer.parseInt(sAliment1[2]);
 
-						int jourAliment2 = Integer.parseInt(sAliment2[0]);
-						int moisAliment2 = Integer.parseInt(sAliment2[1]);
-						int anneeAliment2 = Integer.parseInt(sAliment2[2]);
+							int jourAliment2 = Integer.parseInt(sAliment2[0]);
+							int moisAliment2 = Integer.parseInt(sAliment2[1]);
+							int anneeAliment2 = Integer.parseInt(sAliment2[2]);
 
-						if(anneeAliment1 != anneeAliment2)
-							return a1.getDate().substring(6).compareTo(a2.getDate().substring(6));
+							if(anneeAliment1 != anneeAliment2)
+								return a1.getDate().substring(6).compareTo(a2.getDate().substring(6));
 
-						if(moisAliment1 != moisAliment2)
-							return a1.getDate().substring(3).compareTo(a2.getDate().substring(3));
+							if(moisAliment1 != moisAliment2)
+								return a1.getDate().substring(3).compareTo(a2.getDate().substring(3));
 
-						if(jourAliment1 != jourAliment2)
-							return a1.getDate().substring(0).compareTo(a2.getDate().substring(0));
+							if(jourAliment1 != jourAliment2)
+								return a1.getDate().substring(0).compareTo(a2.getDate().substring(0));
 
-						return 1;
+							return 1;
 
 
-					}
-				});
-				remplirTableau(leFrigo);
-				remplirHashMap();
-				adapter.notifyDataSetChanged();
+						}
+					});
+					remplirTableau(leFrigo);
+					remplirHashMap();
+					adapter.notifyDataSetChanged();
+				}
 			}
 		});
 	}

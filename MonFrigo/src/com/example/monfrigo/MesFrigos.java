@@ -6,12 +6,13 @@ import java.util.List;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class MesFrigos{
 	private final static String FRIGO = "Frigo";
 	private final static String IDNOM = "Nom";
 	private static SQLiteDatabase laBelleDindeDorée;
-	private static Frigo frigoActuel = new Frigo("Mon_Premier_Frigo");
+	private static Frigo frigoActuel = new Frigo("Mon premier frigo");
 
 	public MesFrigos(){
 	}
@@ -73,8 +74,10 @@ public class MesFrigos{
 			close();
 			return leFrigo;
 		}
-		else 
+		else{ 
+			Log.e("MESFRIGOS", "getUnFrigo retourne null");
 			return null;
+		}
 	}
 
 	public static Frigo getFrigoActuel(){

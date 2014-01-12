@@ -3,21 +3,28 @@ package com.example.monfrigo;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.StringTokenizer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -30,8 +37,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.fasterxml.jackson.core.JsonParser;
 
 public class Ajout extends Activity {
 	//Bouton
@@ -60,11 +65,14 @@ public class Ajout extends Activity {
 	//
 
 
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ajout);
+		
+		//service
+		 startService(new Intent(Ajout.this, VerifDate.class));
+		 
 
 		//On récupère le tableau de String créé dans le fichier string.xml
 		String[] tableauAliments = getResources().getStringArray(R.array.tableau);
@@ -78,7 +86,7 @@ public class Ajout extends Activity {
 		//android.R.layout.simple_dropdown_item_1line permet de définir le style d'affichage de la liste
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_dropdown_item_1line, tableauAliments);
-		
+
 		ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this,
 				android.R.layout.simple_dropdown_item_1line, tableauType);
 
@@ -110,6 +118,8 @@ public class Ajout extends Activity {
 					Toast.makeText(Ajout.this,"Veuillez renseigner le type.", Toast.LENGTH_LONG).show();
 				else if("".equals(quantite.getText().toString()))
 					Toast.makeText(Ajout.this,"Veuillez renseigner la quantité", Toast.LENGTH_LONG).show();
+				else if(MesFrigos.getFrigoActuel().getNom().equals(null))
+					Toast.makeText(Ajout.this,"Vous devez d'abord créer un frigo ou en sélectionner un !", Toast.LENGTH_LONG).show();
 				else{
 
 					String mois =  String.valueOf(editDatePerem.getMonth() + 1);
@@ -124,14 +134,100 @@ public class Ajout extends Activity {
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
 					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
-
+					createNotify(monAliment, 2, 10, 0, 0);
+					createNotify(monAliment, 1, 10, 0, 0);
+					createNotify(monAliment, 0, 10, 0, 0);
 
 					//Le message toast apparait et on reste sur la vue d'ajout
 					String stringAliment = nomProduit.getText().toString();
-					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
+					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();
+					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
+
+
+					//Le message toast apparait et on reste sur la vue d'ajout
+					String stringAliment1 = nomProduit.getText().toString();
+					Toast.makeText(Ajout.this,"L'aliment " + stringAliment1 + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
 				}
 			}
+
+			/**
+			 * 
+			 * @param monAliment
+			 * @param nbJours
+			 * @param heure
+			 * Pour ce paramètre le format de l'heure est "hh:mm:ss"
+			 */
+
+			public void createNotify(Aliment monAliment, int nbJours, int heure, int minutes, int secondes){
+				NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);        
+				String texteNotification;
+				int ID_NOTIFICATION;
+
+				/**
+				 * On récupère la date de péremption
+				 */
+				SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
+				StringTokenizer st = new StringTokenizer(monAliment.getDate(), "/");
+				String mois = st.nextToken();
+				String jour = st.nextToken();
+				String annee = st.nextToken();
+				Calendar calendar = Calendar.getInstance();
+
+
+				/**
+				 * On créer l'ID en fonction du nombre de jours avant la péremption de l'Aliment
+				 */
+				if(nbJours == 2){
+					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " dans " + nbJours + " jours.";   
+					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment) + 20000;
+				}
+				else if(nbJours == 1){
+					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " dans " + nbJours + " jour.";   
+					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment) + 10000;
+				}
+				else{
+					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment);
+					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " aujourd'hui";   
+				}
+
+				/**
+				 * On créer la notification en fonction du nombre de jous avant la péremption
+				 */
+
+				int intJour = Integer.parseInt(mois) - nbJours;
+				int intMois = Integer.parseInt(jour);
+				int intAnnee = Integer.parseInt(annee);
+
+				calendar.set(intAnnee, intMois, intJour, heure, minutes, secondes);
+				long when = calendar.getTimeInMillis();
+				Log.e("Notif", "" + when);
+				Notification notification = new Notification(R.drawable.icon, "Péremption d'un aliment bientôt !", when);
+				String titreNotification = "Péremption d'un Aliment !";
+
+				/**
+				 * On envoie les infos de l'aliment a ActivityNotification pour pouvoir le récupérer
+				 */
+				Intent t = new Intent(getBaseContext(), ActivityNotification.class);
+				t.putExtra("monAlimentNom", monAliment.getNom());
+				t.putExtra("monAlimentType", monAliment.getType());
+				t.putExtra("monAlimentQuantite", monAliment.getQuantite());
+				t.putExtra("monAlimentDate", monAliment.getDate());
+				t.putExtra("nbJours", nbJours);
+				PendingIntent pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, t, 0);
+
+				notification.setLatestEventInfo(getBaseContext(), titreNotification, texteNotification, pendingIntent);
+
+				/**
+				 * On ajoute la notification avec un ID correspondant
+				 */
+				notificationManager.notify(ID_NOTIFICATION, notification);
+			}
 		});
+
+
+
+
+
 
 		scanner.setOnClickListener(new View.OnClickListener() {
 

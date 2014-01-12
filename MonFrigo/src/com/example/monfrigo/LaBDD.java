@@ -22,7 +22,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	private final static String IDNOM = "Nom";
 	
 	//Requête Table Frigo
-	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + IDNOM + " Text PRIMARY KEY not null);";
+	private final static String CREATE_TABLE_FRIGO = "Create table " + FRIGO + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + IDNOM + " Text);";
 	
 	//Requête Table Aliment
 	private final static String CREATE_TABLE_ALIMENT = "Create table " + ALIMENT + " ("  + ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + NOM + " Text not null, "
@@ -38,7 +38,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CREATE_TABLE_ALIMENT);
 		db.execSQL(CREATE_TABLE_FRIGO);
-		db.execSQL("Insert into Frigo values ('Mon_Premier_Frigo')");
+		//db.execSQL("Insert into Frigo values ('Mon_Premier_Frigo')");
 	}
 
 	@Override
