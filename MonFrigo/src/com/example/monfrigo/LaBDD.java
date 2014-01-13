@@ -38,7 +38,7 @@ public class LaBDD extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CREATE_TABLE_ALIMENT);
 		db.execSQL(CREATE_TABLE_FRIGO);
-		//db.execSQL("Insert into Frigo values ('Mon_Premier_Frigo')");
+		db.execSQL("Insert into Frigo values ('Mon_Premier_Frigo')");
 	}
 
 	@Override

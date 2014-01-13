@@ -75,7 +75,6 @@ public class MesFrigos{
 			return leFrigo;
 		}
 		else{ 
-			Log.e("MESFRIGOS", "getUnFrigo retourne null");
 			return null;
 		}
 	}

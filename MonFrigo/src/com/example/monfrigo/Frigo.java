@@ -44,18 +44,6 @@ public class Frigo {
 		laBelleDindeDorée.insert(ALIMENT, null, values);
 		close();
 	}
-	
-	/*public void ajouterAlimentCourse(Aliment leJambon){
-		  open();
-		  ContentValues values = new ContentValues();
-		  values.put(NOM, leJambon.getNom());
-		  values.put(TYPE, leJambon.getType());
-		  values.put(DATEPEREMPTION, leJambon.getDate());
-		  values.put(QUANTITE, leJambon.getQuantite());
-		  values.put(FRIGOETRANGER, null);
-		  laBelleDindeDorée.insert(ALIMENT, null, values);
-		  close();
-		 }*/
 
 	public void mangerTousLesAliment(Aliment lePetitGigot){
 		open();
@@ -84,6 +72,14 @@ public class Frigo {
 		values.put(FRIGOETRANGER, this.getNom());
 		laBelleDindeDorée.update(ALIMENT, values,  NOM + " = '" + lePaté.getNom() + "'", null);
 		close();
+	}
+	
+	public void viderFrigo(){
+		open();
+		String nomFrigo = MesFrigos.getFrigoActuel().getNom();
+		laBelleDindeDorée.rawQuery("DELETE FROM Aliment WHERE Frigo = '" + nomFrigo + "'", null);
+		close();
+		
 	}
 	
 	public void changerUnAlimentDeFrigo(Aliment lesBiscuits, String nomNouveauFrigo){

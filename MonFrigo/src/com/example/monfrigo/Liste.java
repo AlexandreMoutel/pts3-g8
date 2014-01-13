@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 public class Liste extends ListActivity {
 
+	//Liste d'aliment
 	Button boutonTriAlpha;
 	Button boutonTriDlc;
 	Button boutonTriCategorie;
@@ -50,8 +51,6 @@ public class Liste extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_liste);
 
-
-
 		inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		listeVide = (TextView) findViewById(R.id.empty);
 		listeVide.setText(" ");
@@ -76,12 +75,11 @@ public class Liste extends ListActivity {
 		remplirHashMap();
 		adapter=new CustomAdapter(this, android.R.layout.activity_list_item, aliment, inflater); 
 
-		//Ancien adapter
-		//final ArrayAdapter<Aliment> adapter = new ArrayAdapter<Aliment>(this, android.R.layout.simple_list_item_1, leFrigo);
 		maListe.setAdapter(adapter);
 
 		maListe.setOnItemLongClickListener(new OnItemLongClickListener() {
 
+			//Suppression d'aliment
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					final int arg2, long arg3) {

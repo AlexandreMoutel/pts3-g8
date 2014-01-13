@@ -1,5 +1,9 @@
 package com.example.monfrigo;
 
+
+/**
+ * Cette classe est inutile pour le moment
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

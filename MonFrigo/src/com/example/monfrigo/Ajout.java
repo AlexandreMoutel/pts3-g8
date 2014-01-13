@@ -69,10 +69,10 @@ public class Ajout extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ajout);
-		
+
 		//service
-		 startService(new Intent(Ajout.this, VerifDate.class));
-		 
+		startService(new Intent(Ajout.this, VerifDate.class));
+
 
 		//On récupère le tableau de String créé dans le fichier string.xml
 		String[] tableauAliments = getResources().getStringArray(R.array.tableau);
@@ -134,14 +134,10 @@ public class Ajout extends Activity {
 
 					Aliment monAliment = new Aliment(leProduit, leTypeDeProduit, laDateDePerem, laQuantite);
 					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
-					createNotify(monAliment, 2, 10, 0, 0);
-					createNotify(monAliment, 1, 10, 0, 0);
-					createNotify(monAliment, 0, 10, 0, 0);
 
 					//Le message toast apparait et on reste sur la vue d'ajout
 					String stringAliment = nomProduit.getText().toString();
 					Toast.makeText(Ajout.this,"L'aliment " + stringAliment + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();
-					((Frigo) MesFrigos.getFrigoActuel()).ajouterAliment(monAliment);
 
 
 					//Le message toast apparait et on reste sur la vue d'ajout
@@ -149,86 +145,9 @@ public class Ajout extends Activity {
 					Toast.makeText(Ajout.this,"L'aliment " + stringAliment1 + " a bien été ajouté dans " + MesFrigos.getFrigoActuel().getNom(), Toast.LENGTH_LONG).show();	
 				}
 			}
-
-			/**
-			 * 
-			 * @param monAliment
-			 * @param nbJours
-			 * @param heure
-			 * Pour ce paramètre le format de l'heure est "hh:mm:ss"
-			 */
-
-			public void createNotify(Aliment monAliment, int nbJours, int heure, int minutes, int secondes){
-				NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);        
-				String texteNotification;
-				int ID_NOTIFICATION;
-
-				/**
-				 * On récupère la date de péremption
-				 */
-				SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
-				StringTokenizer st = new StringTokenizer(monAliment.getDate(), "/");
-				String mois = st.nextToken();
-				String jour = st.nextToken();
-				String annee = st.nextToken();
-				Calendar calendar = Calendar.getInstance();
-
-
-				/**
-				 * On créer l'ID en fonction du nombre de jours avant la péremption de l'Aliment
-				 */
-				if(nbJours == 2){
-					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " dans " + nbJours + " jours.";   
-					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment) + 20000;
-				}
-				else if(nbJours == 1){
-					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " dans " + nbJours + " jour.";   
-					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment) + 10000;
-				}
-				else{
-					ID_NOTIFICATION = MesFrigos.getFrigoActuel().heyLesAlimentsIlsOntUnNombreCestDroleNon(monAliment);
-					texteNotification = "Péremption d'un produit du nom de : " + monAliment.getNom() + " aujourd'hui";   
-				}
-
-				/**
-				 * On créer la notification en fonction du nombre de jous avant la péremption
-				 */
-
-				int intJour = Integer.parseInt(mois) - nbJours;
-				int intMois = Integer.parseInt(jour);
-				int intAnnee = Integer.parseInt(annee);
-
-				calendar.set(intAnnee, intMois, intJour, heure, minutes, secondes);
-				long when = calendar.getTimeInMillis();
-				Log.e("Notif", "" + when);
-				Notification notification = new Notification(R.drawable.icon, "Péremption d'un aliment bientôt !", when);
-				String titreNotification = "Péremption d'un Aliment !";
-
-				/**
-				 * On envoie les infos de l'aliment a ActivityNotification pour pouvoir le récupérer
-				 */
-				Intent t = new Intent(getBaseContext(), ActivityNotification.class);
-				t.putExtra("monAlimentNom", monAliment.getNom());
-				t.putExtra("monAlimentType", monAliment.getType());
-				t.putExtra("monAlimentQuantite", monAliment.getQuantite());
-				t.putExtra("monAlimentDate", monAliment.getDate());
-				t.putExtra("nbJours", nbJours);
-				PendingIntent pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, t, 0);
-
-				notification.setLatestEventInfo(getBaseContext(), titreNotification, texteNotification, pendingIntent);
-
-				/**
-				 * On ajoute la notification avec un ID correspondant
-				 */
-				notificationManager.notify(ID_NOTIFICATION, notification);
-			}
 		});
 
-
-
-
-
-
+		//Permet de lancer le scanner
 		scanner.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -239,6 +158,7 @@ public class Ajout extends Activity {
 		});	
 	}
 
+	//Cette méthode récupère le résultat du scanner et remplit les champs du formulaire
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
 		if (scanResult != null) {

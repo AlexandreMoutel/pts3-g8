@@ -36,7 +36,6 @@ public class CreerFrigo extends ListActivity {
 
 
 		listeFrigo = recupererListeFrigo();
-		//maListe = (ListView) findViewById(R.id.listViewFrigo);
 		maListe = getListView();
 		maListe.setEmptyView(maListe.getEmptyView());
 
@@ -47,6 +46,7 @@ public class CreerFrigo extends ListActivity {
 		maListe.setItemsCanFocus(false);
 		maListe.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
+		//Si la liste liste est vide, on affiche le message
 		if(listeFrigo == null){
 			emptyFrigo.setText("Il n' y actuellement aucun frigo de créé");
 		}else{
@@ -63,6 +63,7 @@ public class CreerFrigo extends ListActivity {
 
 				final EditText inputNomFrigo = new EditText(getBaseContext());
 
+				//Ajout de frigo
 				new AlertDialog.Builder(CreerFrigo.this)
 				.setTitle("Ajout de Frigo")
 				.setMessage("Veuillez rentrer le nom du frigo")
@@ -94,15 +95,11 @@ public class CreerFrigo extends ListActivity {
 			}
 		});
 
-		//Test du drag and drop
+		//Modification de frigo (Modification du nom ou suppression)
 		maListe.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, final View v,
 					int arg2, long arg3) {
-				/*ClipData data = ClipData.newPlainText("", "");
-		        DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
-				v.startDrag(data, shadowBuilder, v, 0);
-				v.setOnDragListener(dragListener);*/
 
 				final EditText modifNomFrigo = new EditText(getBaseContext());
 
@@ -136,8 +133,6 @@ public class CreerFrigo extends ListActivity {
 							if(listeFrigo.get(i) == nomFrigo)
 								listeFrigo.remove(i);
 							MesFrigos.supprimerFrigo(MesFrigos.getFrigoActuel().getNom());
-							
-							Log.e("DEBUG", "Frigo actuel : " + MesFrigos.getFrigoActuel().getNom());
 						}
 						listeFrigo = recupererListeFrigo();
 						maListe = getListView();
@@ -145,6 +140,7 @@ public class CreerFrigo extends ListActivity {
 
 						if(listeFrigo == null){
 							emptyFrigo.setText("Il n' y actuellement aucun frigo de créé");
+							MesFrigos.getFrigoActuel().viderFrigo();
 						}
 						else{
 							emptyFrigo.setText("");
@@ -186,7 +182,6 @@ public class CreerFrigo extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Log.e("passage1", "passage1");
 		listeFrigo = recupererListeFrigo();
 		maListe = getListView();
 		adapter = new ArrayAdapter<String>(this, R.layout.layout_liste_frigo, listeFrigo);
@@ -197,7 +192,6 @@ public class CreerFrigo extends ListActivity {
 					if(maListe.getItemAtPosition(i).toString().equals(MesFrigos.getFrigoActuel().getNom())){
 						maListe.setItemChecked(i, true);
 						maListe.setSelection(i);
-						Log.e("passage", "passage");
 					}
 			}
 		}
